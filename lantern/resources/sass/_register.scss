@@ -1,0 +1,26 @@
+.form-group {
+  .btn{
+    border-radius: 30px;
+  }
+}
+
+.form-control {
+  padding: 0.3rem 0.3rem;
+  height: calc(1.6em + 0.75rem + 10px);
+  border-radius: 30px;
+  
+    &:focus {
+      border-color: hsl(49, 71%, 78%);
+      box-shadow: 0 0 0 0.2rem #ffc107;
+    }
+}
+
+// 補完機能の背景色（水色）削除
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+
+a {
+  color: #dfae1d;
+}
