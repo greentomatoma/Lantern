@@ -17088,12 +17088,12 @@ readers do not read off random characters that represent icons */
 
 .form-group .btn {
   border-radius: 30px;
-  padding: 2px, 0;
 }
 
 .form-control {
   padding: 0.3rem 0.3rem;
-  height: calc(1.6em + 0.75rem + 2px);
+  height: calc(1.6em + 0.75rem + 10px);
+  border-radius: 30px;
 }
 
 .form-control:focus {
