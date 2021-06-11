@@ -15,6 +15,7 @@
 
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">
+
               <!-- Authentication Links -->
               @guest
                   <li class="nav-item">
@@ -32,6 +33,9 @@
                       </a>
 
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ route('recipes.create') }}" >
+                              レシピを投稿する
+                          </a>
                           <a class="dropdown-item" href="{{ route('logout') }}"
                               onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
