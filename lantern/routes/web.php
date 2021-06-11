@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'RecipesController@index')->name('recipes.index');
+
+Route::resource('/recipes', 'RecipesController')->except(['index']);
+
