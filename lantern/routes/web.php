@@ -16,5 +16,5 @@ Auth::routes();
 
 Route::get('/', 'RecipesController@index')->name('recipes.index');
 
-Route::resource('/recipes', 'RecipesController')->except(['index']);
+Route::resource('/recipes', 'RecipesController')->except(['index'])->middleware('auth');
 
