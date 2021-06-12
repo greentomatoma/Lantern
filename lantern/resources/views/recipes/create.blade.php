@@ -11,13 +11,6 @@
 <div class="container">
     <div class="card border-light" style="width: 700px">
         <div class="row">
-          <div class="col-8 offset-2">
-            @if(session('status'))
-              <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-              </div>
-            @endif
-          </div>
         </div>
           <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">レシピ投稿</div>
 
