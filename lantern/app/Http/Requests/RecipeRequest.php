@@ -24,11 +24,11 @@ class RecipeRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'string', 'max:50'],
+            'title' => ['required', 'string', 'max: 50'],
             'cook_time' => ['required', 'integer'],
-            'ingredients' => ['required', 'string', 'max500'],
-            'description' => ['required', 'string', 'max1000'],
-            'comment' => ['string', 'max1000'],
+            'ingredients' => ['required', 'string', 'max: 500'],
+            'description' => ['required', 'string', 'max: 1000'],
+            'comment' => ['string', 'max: 1000'],
             'cooking_img_file' => ['file', 'image'],
         ];
     }
