@@ -15,28 +15,19 @@
         <div class="card-body">
             <div class="font-weight-bold text-center border-bottom pb-3" style="font-size: 24px">ログイン</div>
 
+            @include('layouts/error_card_list')
+
             <form method="POST" action="{{ route('login') }}" class="pt-5 pr-5 pb-3 pl-5">
                 @csrf
 
-
                 <div class="form-group">
                     <label for="email">メールアドレス</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレスを入力">
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレスを入力">
                 </div>
 
                 <div class="form-group">
                     <label for="password">パスワード</label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="パスワードを入力">
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password" placeholder="パスワードを入力">
                 </div>
 
 
