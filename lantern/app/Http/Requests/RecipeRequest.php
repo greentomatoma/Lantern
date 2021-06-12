@@ -28,8 +28,8 @@ class RecipeRequest extends FormRequest
             'cook_time' => ['required', 'integer'],
             'ingredients' => ['required', 'string', 'max: 500'],
             'description' => ['required', 'string', 'max: 1000'],
-            'comment' => ['string', 'max: 1000'],
-            'cooking_img_file' => ['file', 'image'],
+            'comment' => ['nullable', 'string', 'max: 1000'],
+            'cooking_img_file' => ['nullable', 'file', 'image'],
         ];
     }
 
