@@ -18,7 +18,7 @@
 
             <form method="POST" action="{{ route('recipes.store') }}" class="pt-5 pr-5 pb-3 pl-5">
 
-                @include('form')
+                @include('recipes/form')
 
                 <div class="form-group mt-5">
                     <button type="submit" class="btn btn-block btn-warning p-2">
