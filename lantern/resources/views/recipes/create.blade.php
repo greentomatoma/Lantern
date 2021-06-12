@@ -11,16 +11,9 @@
 <div class="container">
     <div class="card border-light" style="width: 700px">
         <div class="row">
-          <div class="col-8 offset-2">
-            @if(session('status'))
-              <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-              </div>
-            @endif
-          </div>
         </div>
           <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">レシピ投稿</div>
-            <form method="POST" action="{{ route('register') }}" class="pt-5 pr-5 pb-3 pl-5">
+            <form method="POST" action="{{ route('recipes.store') }}" class="pt-5 pr-5 pb-3 pl-5">
                 @csrf
 
                 {{-- 料理画像 --}}
@@ -62,7 +55,7 @@
                 {{-- 材料 --}}
                 <div class="ingredients form-group">
                     <label for="ingredients">材料</label>
-                    <textarea id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" required ></textarea>
+                    <textarea id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" required >{{ old('ingredients') }}</textarea>
                     @error('ingredients')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -74,7 +67,7 @@
                 {{-- 作り方 --}}
                 <div class="description form-group">
                     <label for="description">作り方</label>
-                    <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" required ></textarea>
+                    <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description"  required >{{ old('description') }}</textarea>
                     @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -86,7 +79,7 @@
                 {{-- コメント --}}
                 <div class="comment form-group">
                     <label for="comment">コメント</label>
-                    <textarea id="comment" type="text" class="form-control @error('comment') is-invalid @enderror" name="comment"></textarea>
+                    <textarea id="comment" type="text" class="form-control @error('comment') is-invalid @enderror" name="comment" >{{ old('comment') }}</textarea>
                 </div>
 
 
