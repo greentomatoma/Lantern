@@ -17110,3 +17110,26 @@ a {
   color: #dfae1d;
 }
 
+
+.ingredients .form-control,
+.description .form-control,
+.comment .form-control {
+  border-radius: 6px;
+  height: 100px;
+  width: 100%;
+  resize: none;
+}
+
+.cook_time .form-control {
+  text-align: center;
+  width: 30%;
+}
+
+.cook_time .minute {
+  margin: 0;
+  text-align: center;
+}
+
+.card-body .btn {
+  border-radius: 30px;
+}

@@ -15,5 +15,13 @@ $fa-font-path: "../webfonts";
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
 
-//register
+
+// register
 @import 'register';
+
+// recipe.create
+@import 'recipe_create';
+
+// recipe.index
+@import 'recipe_index';
+
