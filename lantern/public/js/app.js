@@ -37345,6 +37345,26 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+document.addEventListener('DOMContentLoaded', function () {
+  var inputGet = document.querySelector('.image-picker input');
+
+  if (!inputGet) {
+    return false;
+  }
+
+  inputGet.addEventListener('change', function (e) {
+    var input = e.target;
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      // 画像読み込み後の処理
+      input.closest('.image-picker').querySelector('img').src = e.target.result;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  });
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
