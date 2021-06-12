@@ -146,9 +146,12 @@ return [
     */
 
     'attributes' => [
-      
       'email' => 'メールアドレス',
       'password' => 'パスワード',
+      'title' => '料理名',
+      'cook_time' => '調理時間',
+      'ingredients' => '材料',
+      'description' => '作り方',
     ],
-
+    
 ];

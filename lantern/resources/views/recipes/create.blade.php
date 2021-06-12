@@ -13,7 +13,11 @@
         <div class="row">
         </div>
           <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">レシピ投稿</div>
+
+            @include('layouts/error_card_list')
+
             <form method="POST" action="{{ route('recipes.store') }}" class="pt-5 pr-5 pb-3 pl-5">
+
                 @csrf
 
                 {{-- 料理画像 --}}
@@ -28,7 +32,7 @@
                 {{-- 料理名 --}}
                 <div class="title form-group mt-5">
                     <label for="title">料理名</label>
-                    <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus placeholder="料理名">
+                    <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus placeholder="料理名">
                     @error('title')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -41,7 +45,7 @@
                 <div class="cook_time form-group">
                     <label for="cook_time">調理時間</label>
                     <div class="d-flex">
-                      <input id="cook_time" type="text" class="form-control @error('cook_time') is-invalid @enderror" name="cook_time" value="{{ old('cook_time') }}" required autocomplete="cook_time">
+                      <input id="cook_time" type="text" class="form-control" name="cook_time" value="{{ old('cook_time') }}" required autocomplete="cook_time">
                       <label class="minute">分</label>
                     </div>
                     @error('cook_time')
@@ -55,31 +59,21 @@
                 {{-- 材料 --}}
                 <div class="ingredients form-group">
                     <label for="ingredients">材料</label>
-                    <textarea id="ingredients" type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" required >{{ old('ingredients') }}</textarea>
-                    @error('ingredients')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <textarea id="ingredients" type="text" class="form-control" name="ingredients" required >{{ old('ingredients') }}</textarea>
                 </div>
 
 
                 {{-- 作り方 --}}
                 <div class="description form-group">
                     <label for="description">作り方</label>
-                    <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description"  required >{{ old('description') }}</textarea>
-                    @error('description')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                    <textarea id="description" type="text" class="form-control" name="description"  required >{{ old('description') }}</textarea>
                 </div>
 
 
                 {{-- コメント --}}
                 <div class="comment form-group">
                     <label for="comment">コメント</label>
-                    <textarea id="comment" type="text" class="form-control @error('comment') is-invalid @enderror" name="comment" >{{ old('comment') }}</textarea>
+                    <textarea id="comment" type="text" class="form-control" name="comment" >{{ old('comment') }}</textarea>
                 </div>
 
 
