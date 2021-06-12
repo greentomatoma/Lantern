@@ -1,0 +1,18 @@
+.ingredients, .description, .comment {
+  .form-control {
+    border-radius: 6px;
+    height: 100px;
+    width: 100%;
+    resize: none;
+  }
+}
+.cook_time {
+  .form-control {
+    text-align: center;
+    width: 30%;
+  }
+  .minute {
+    margin: 0;
+    text-align: center;
+  }
+}

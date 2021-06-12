@@ -17110,7 +17110,6 @@ a {
   color: #dfae1d;
 }
 
-
 .ingredients .form-control,
 .description .form-control,
 .comment .form-control {
@@ -17130,6 +17129,8 @@ a {
   text-align: center;
 }
 
+
 .card-body .btn {
   border-radius: 30px;
 }
+
