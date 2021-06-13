@@ -2,13 +2,13 @@
 
 
 @section('title')
-新規登録画面
+新規登録
 @endsection
 
 @include('layouts/nav')
 
 @section('content')
-<div class="container">
+<div class="container d-flex justify-content-center mt-3">
     <div class="card border-light" style="width: 500px">
         <div class="card-body border-light">
             <div class="font-weight-bold text-center border-bottom pb-3" style="font-size: 24px">新規登録</div>

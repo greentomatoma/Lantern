@@ -21,11 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <main class="d-flex justify-content-center mt-3">
-            <div class="col-auto">
-                @yield('content')
-            </div>
-        </main>
+        @yield('content')
     </div>
 </body>
 </html>
