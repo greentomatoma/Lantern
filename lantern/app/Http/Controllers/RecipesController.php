@@ -39,7 +39,7 @@ class RecipesController extends Controller
 
         $recipe->save();
 
-        return redirect()->route('article.index');
+        return redirect()->route('recipes.index');
     }
 
 
@@ -75,5 +75,11 @@ class RecipesController extends Controller
           $meta = stream_get_meta_data($tmp_fp);
 
           return $meta["uri"];
+      }
+
+
+      public function show(Recipe $recipe)
+      {
+          return view('recipes.show', ['recipe' => $recipe]);
       }
 }
