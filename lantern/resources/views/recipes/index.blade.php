@@ -13,7 +13,7 @@
         <img src="..." class="card-img-top" alt="img">
         <div class="card-body">
           <h5 class="card-title">{{ $recipe->title }}</h5>
-          <a href="#" class="btn btn-warning">レシピをみる</a>
+          <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}" class="btn btn-warning">レシピをみる</a>
         </div>
       </div>
     @endforeach
