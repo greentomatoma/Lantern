@@ -76,4 +76,10 @@ class RecipesController extends Controller
 
           return $meta["uri"];
       }
+
+
+      public function show(Recipe $recipe)
+      {
+          return view('recipes.show', ['recipe' => $recipe]);
+      }
 }
