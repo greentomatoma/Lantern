@@ -8,7 +8,7 @@
 @include('layouts/nav')
 
 @section('content')
-<div class="container">
+<div class="container d-flex justify-content-center mt-3">
     <div class="card border-light" style="width: 700px">
         <div class="row">
         </div>
