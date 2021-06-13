@@ -16,7 +16,7 @@
 
             @include('layouts/error_card_list')
 
-            <form method="POST" action="{{ route('recipes.store') }}" class="pt-5 pr-5 pb-3 pl-5">
+            <form method="POST" action="{{ route('recipes.store') }}" class="pt-5 pr-5 pb-3 pl-5" enctype="multipart/form-data">
 
                 @include('recipes/form')
 

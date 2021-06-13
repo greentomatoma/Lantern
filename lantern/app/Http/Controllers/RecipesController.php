@@ -33,7 +33,7 @@ class RecipesController extends Controller
 
         // 画像保存処理
         if($request->has('cooking_img_file')) {
-            $fileName = $this->saveRecipe($request->file('cooking_img_file'));
+            $fileName = $this->saveImage($request->file('cooking_img_file'));
             $recipe->cooking_img_file = $fileName;
         }
 
@@ -50,17 +50,17 @@ class RecipesController extends Controller
      * @return string レシピ画像
      */
 
-     private function saveRecipe(UploadedFile $file): string
-     {
-         $tempPath = $this->makeTempPath();
+    private function saveImage(UploadedFile $file): string
+    {
+        $tempPath = $this->makeTempPath();
 
-         Image::make($file)->fit(300, 200)->save($tempPath);
+        Image::make($file)->fit(300, 200)->save($tempPath);
 
-         $filePath = Storage::disk('public')
-            ->putFile('recipes', new File($tempPath));
+        $filePath = Storage::disk('public')
+            ->putFile('cooking_img_file', new File($tempPath));
 
         return basename($filePath);
-     }
+    }
 
 
      /**
