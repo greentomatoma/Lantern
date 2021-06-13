@@ -39,7 +39,7 @@ class RecipesController extends Controller
 
         $recipe->save();
 
-        return redirect()->route('article.index');
+        return redirect()->route('recipes.index');
     }
 
 
