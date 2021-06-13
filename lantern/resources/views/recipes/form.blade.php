@@ -13,11 +13,6 @@
 <div class="title form-group mt-5">
     <label for="title">料理名</label>
     <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus placeholder="料理名">
-    @error('title')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
 </div>
 
 
@@ -28,11 +23,6 @@
       <input id="cook_time" type="text" class="form-control" name="cook_time" value="{{ old('cook_time') }}" required autocomplete="cook_time">
       <label class="minute">分</label>
     </div>
-    @error('cook_time')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
 </div>
 
 
