@@ -31,13 +31,21 @@ class RecipesController extends Controller
         $recipe->fill($request->all());
         $recipe->user_id = $request->user()->id;
 
-        // 画像保存処理
-        if($request->has('cooking_img_file')) {
-            $fileName = $this->saveImage($request->file('cooking_img_file'));
-            $recipe->cooking_img_file = $fileName;
-        }
+        $recipe_image = $request->file('cooking_img_file');
 
+        // 画像保存処理
+        if($recipe_image) {
+            // $recipeImagePath = $recipe_image->store('public/recipes');
+            $path = Storage::put('/public/recipes', $recipe_image);
+            $recipeFileName = basename($path);
+            // $fileName = $this->saveRecipeImage($request->file('cooking_img_file'));
+            $recipe->cooking_img_file = $recipeFileName;
+        } else {
+            $path = null;
+        }
+        
         $recipe->save();
+        // dd(basename($recipe));
 
         return redirect()->route('recipes.index');
     }
@@ -50,32 +58,30 @@ class RecipesController extends Controller
      * @return string レシピ画像
      */
 
-    private function saveImage(UploadedFile $file): string
-    {
-        $tempPath = $this->makeTempPath();
+    // private function saveRecipeImage(UploadedFile $file): string
+    // {
+    //     $tempPath = $this->makeTempPath();
 
-        Image::make($file)->fit(300, 200)->save($tempPath);
+    //     Image::make($file)->fit(300, 200)->save($tempPath);
 
-        $filePath = Storage::disk('public')
-            ->putFile('cooking_img_file', new File($tempPath));
+    //     $filePath = Storage::disk('public')
+    //         ->putFile('recipes', new File($tempPath));
 
-        return basename($filePath);
-    }
+    //     return basename($filePath);
+    // }
 
 
-     /**
+       /**
       * 一時的なファイルを生成してパスを返す
       *
       * @return string ファイルパス
       */
-
-      private function makeTempPath(): string
-      {
-          $tmp_fp = tmpfile();
-          $meta = stream_get_meta_data($tmp_fp);
-
-          return $meta["uri"];
-      }
+    //   private function makeTempPath(): string
+    //   {
+    //       $tmp_fp = tmpfile();
+    //       $meta   = stream_get_meta_data($tmp_fp);
+    //       return $meta["uri"];
+    //   }
 
 
       public function show(Recipe $recipe)
@@ -99,6 +105,12 @@ class RecipesController extends Controller
 
     public function destroy(Recipe $recipe)
     {
+        $delRecipeId = Recipe::find($recipe->id);
+        $delRecipeImage = $delRecipeId->cooking_img_file;
+        // storage/app/public/imagesから画像ファイルを削除
+        $delPath = storage_path() . '/app/public/recipes/' . $delRecipeImage;
+        Storage::delete($delPath);
+        // dd($delPath);
         $recipe->delete();
         return redirect()->route('recipes.index');
     }

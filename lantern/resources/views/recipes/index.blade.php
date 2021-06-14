@@ -9,16 +9,15 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-5">
     @foreach($recipes as $recipe)
-      <div class="col">
+      <div class="col mb-3">
         <div class="card shadow-sm">
           <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
             @if(!empty($recipe->cooking_img_file))
               <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top" style="object-fit: cover;">
             @else
-              <img src="/images/default-recipe-image.png" class="card-img-top" style="object-fit: cover;">
+              <img src="/images/default-recipe-image.png" class="card-img-top" style="object-fit: cover; width: 100%; height: 100%;">
             @endif
           </a>
-          <rect width="100%" height="100%" fill="#55595c"></rect>
 
           <div class="card-body">
             <h5 class="card-title">{{ $recipe->title }}</h5>
@@ -49,7 +48,7 @@
                       @csrf
                       @method('DELETE')
                       <div class="modal-body">
-                        {{ $recipe->title}}を削除します。よろしいですか？
+                        「{{ $recipe->title}}」を削除します。削除されたレシピは元に戻すことはできません。
                       </div>
                       <div class="modal-footer justify-content-between">
                         <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
