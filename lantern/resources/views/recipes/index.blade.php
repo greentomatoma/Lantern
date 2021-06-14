@@ -29,10 +29,10 @@
               @if(Auth::id() === $recipe->user_id )
               <div class="d-flex aline-items-center">
                 <a href="{{ route('recipes.edit', ['recipe' => $recipe]) }}" class="btn btn-warning mr-1">
-                  <i class="fas fa-pen"></i>
+                  <i class="fas fa-pen mt-1"></i>
                 </a>
                 <a class="btn btn-warning" data-toggle="modal" data-target="#modal-delete-{{ $recipe->id }}">
-                  <i class="fas fa-trash-alt"></i>
+                  <i class="fas fa-trash-alt mt-1"></i>
                 </a>
               </div>
 
