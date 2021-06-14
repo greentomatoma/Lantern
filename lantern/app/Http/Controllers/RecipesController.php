@@ -106,10 +106,12 @@ class RecipesController extends Controller
     public function destroy(Recipe $recipe)
     {
         $delRecipeId = Recipe::find($recipe->id);
-        $delRecipeImage = $delRecipeId->cooking_img_file;
         // storage/app/public/imagesから画像ファイルを削除
-        $delPath = storage_path() . '/app/public/recipes/' . $delRecipeImage;
-        Storage::delete($delPath);
+        $delPath = '/public/recipes/' . $delRecipeId->cooking_img_file;
+        if(Storage::exists($delPath)) {
+            Storage::delete($delPath);
+        }
+        // $delRecipeImage = $delRecipeId->cooking_img_file;
         // dd($delPath);
         $recipe->delete();
         return redirect()->route('recipes.index');
