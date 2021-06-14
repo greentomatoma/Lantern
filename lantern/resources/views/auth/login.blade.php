@@ -10,7 +10,7 @@
 
 
 @section('content')
-<div class="container">
+<div class="container d-flex justify-content-center mt-3">
     <div class="card border-light" style="width: 500px">
         <div class="card-body">
             <div class="font-weight-bold text-center border-bottom pb-3" style="font-size: 24px">ログイン</div>

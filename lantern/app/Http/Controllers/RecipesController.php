@@ -82,4 +82,24 @@ class RecipesController extends Controller
       {
           return view('recipes.show', ['recipe' => $recipe]);
       }
+
+
+      public function edit(Recipe $recipe)
+      {
+          return view('recipes.edit', ['recipe' => $recipe]);
+    }
+
+
+    public function update(RecipeRequest $request, Recipe $recipe)
+    {
+        $recipe->fill($request->all())->save();
+        return redirect()->route('recipes.index');
+    }
+
+
+    public function destroy(Recipe $recipe)
+    {
+        $recipe->delete();
+        return redirect()->route('recipes.index');
+    }
 }
