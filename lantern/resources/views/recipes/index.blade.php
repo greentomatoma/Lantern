@@ -12,11 +12,13 @@
       <div class="col mb-3">
         <div class="card shadow-sm">
           <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
-            @if(!empty($recipe->cooking_img_file))
-              <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top" style="object-fit: cover;">
-            @else
-              <img src="/images/default-recipe-image.png" class="card-img-top" style="object-fit: cover; width: 100%; height: 100%;">
-            @endif
+            <div class="bd-placeholder-img card-img-top" style="width: 100%; height: 225px; object-fit: cover;">
+              @if(!empty($recipe->cooking_img_file))
+                <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top" style="object-fit: cover; width: 100%; height: 100%;">
+              @else
+                <img src="/images/default-recipe-image.png" class="card-img-top" style="object-fit: cover; width: 100%; height: 100%;">
+              @endif
+            </div>
           </a>
 
           <div class="card-body">
