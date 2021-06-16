@@ -27,5 +27,13 @@ class Recipe extends Model
         return $this->BelongsToMany('App\User', 'stocks')->withTimestamps();
     }
 
+    //  レシピを保存済みか判定
+    public function isStockedBy(?User $user): bool
+    {
+        return $user 
+            ?(bool)$this->stocks->where('id', $user->id)->count()
+            : false;
+    }
+
 
 }
