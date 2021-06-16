@@ -13,6 +13,11 @@ class CreateRecipesTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('recipes')) {
+            // テーブルが存在していればリターン
+            return;
+        }
+
         Schema::create('recipes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
