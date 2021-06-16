@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f7f7f7;
+  background-color: #fefbef;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -510,7 +510,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f7f7f7;
+  background-color: #fefbef;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -4256,15 +4256,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f7f7f7, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #fefbef, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f7f7f7, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #fefbef, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f7f7f7, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #fefbef, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4467,8 +4467,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f7f7f7;
-  border-color: #dee2e6 #dee2e6 #f7f7f7;
+  background-color: #fefbef;
+  border-color: #dee2e6 #dee2e6 #fefbef;
 }
 
 .nav-tabs .dropdown-menu {
@@ -17131,5 +17131,56 @@ a {
 
 .card-body .btn {
   border-radius: 30px;
+}
+
+.main-recipe {
+  background-color: white;
+  margin: 10px 50px;
+}
+
+.main-recipe .recipe-title {
+  font-size: 24px;
+}
+
+.main-recipe .top {
+  display: flex;
+  height: 600px;
+}
+
+.main-recipe .top .recipe-image {
+  width: 670vw;
+  padding: 20px;
+}
+
+.main-recipe .top-right {
+  width: 670vw;
+}
+
+.main-recipe .top-right .top-right-category {
+  margin-top: 20px;
+}
+
+.main-recipe .top-right .top-right-category ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.main-recipe .top-right .top-right-category ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-recipe .top-right .ingredients-list {
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+}
+
+.main-recipe .top-right .ingredients-list .ingredients-title {
+  font-size: 20px;
 }
 
