@@ -1,4 +1,15 @@
-require('./bootstrap');
+import './bootstrap'
+import Vue from 'vue'
+import RecipeStock from './components/RecipeStock'
+
+
+const app = new Vue({
+  el: '#app',
+  components: {
+    RecipeStock,
+  }
+})
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
