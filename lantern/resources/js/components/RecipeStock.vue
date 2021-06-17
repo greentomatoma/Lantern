@@ -10,7 +10,7 @@
       @click="clickStock"
     ></i>
     </button>
-    3
+    {{ countStocks }}
   </div>
 </template>
 
@@ -20,6 +20,10 @@
       initialIsStockedBy: {
           type: Boolean,
           default: false,
+      },
+      initialCountStocks: {
+        type: Number,
+        default: 0,
       },
       authorized: {
         type: Boolean,
@@ -32,6 +36,7 @@
     data() {
       return {
         isStockedBy: this.initialIsStockedBy,
+        countStocks: this.initialCountStocks,
       }
     },
     computed: {
@@ -54,20 +59,21 @@
         }
 
         this.isStockedBy
-        ? this.unstock()
-        : this.stock()
+          ? this.unstock()
+          : this.stock()
       },
       async stock() {
-        // const response = await axios.put(this.endpoint)
+        const response = await axios.put(this.endpoint)
 
         this.isStockedBy = true
+        this.countStocks = response.data.countStocks
       },
       async unstock() {
-        // const response = await axios.put(this.endpoint)
+        const response = await axios.delete(this.endpoint)
 
         this.isStockedBy = false
+        this.countStocks = response.data.countStocks
       },
-
-    }
+    },
   }
 </script>

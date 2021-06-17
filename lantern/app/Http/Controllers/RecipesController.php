@@ -122,7 +122,8 @@ class RecipesController extends Controller
         $recipe->stocks()->attach($request->user()->id);
 
         return [
-            'id'=> $recipe->id,
+            'id' => $recipe->id,
+            'countStocks' => $recipe->count_stocks,
         ];
 
     }
@@ -132,8 +133,8 @@ class RecipesController extends Controller
         $recipe->stocks()->detach($request->user()->id);
 
         return [
-            'id'=> $recipe->id,
+            'id' => $recipe->id,
+            'countStocks' => $recipe->count_stocks,
         ];
-
     }
 }

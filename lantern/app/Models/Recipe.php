@@ -25,7 +25,7 @@ class Recipe extends Model
 
     public function stocks(): BelongsToMany
     {
-        return $this->BelongsToMany('App\User', 'stocks')->withTimestamps();
+        return $this->belongsToMany('App\User', 'stocks')->withTimestamps();
     }
 
     //  レシピを保存済みか判定
@@ -34,6 +34,11 @@ class Recipe extends Model
         return $user
         ? (bool)$this->stocks->where('id', $user->id)->count()
         : false;
+    }
+
+    public function getCountStocksAttribute(): int
+    {
+        return $this->stocks->count();
     }
 
 

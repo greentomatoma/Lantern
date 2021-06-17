@@ -30,8 +30,9 @@
               @if(Auth::id() !== $recipe->user_id)
               <recipe-stock
                 :initial-is-stocked-by = '@json($recipe->isStockedBy(Auth::user()))'
+                :initial-count-stocks = '@json($recipe->count_stocks)'
                 :authorized = '@json(Auth::check())'
-                endpoint = "{{ route('recipes.stock', ['recipe' => '$recipe']) }}"
+                endpoint = "{{ route('recipes.stock', ['recipe' => $recipe]) }}"
               >
               </recipe-stock>
               @endif
