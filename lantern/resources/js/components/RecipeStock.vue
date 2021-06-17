@@ -7,6 +7,7 @@
     >
     <i
       :class="buttonIcon"
+      @click="clickStock"
     ></i>
     </button>
     3
@@ -20,6 +21,13 @@
           type: Boolean,
           default: false,
       },
+      authorized: {
+        type: Boolean,
+        default: false,
+      },
+      endpoint: {
+        type: String,
+      },
     },
     data() {
       return {
@@ -29,8 +37,9 @@
     computed: {
       buttonColor() {
         return this.isStockedBy
-        ? 'btn btn-light'
-        : 'btn btn-warning'
+        ? 'btn btn-warning'
+        : 'btn btn-light'
+        
       },
       buttonIcon() {
         return this.isStockedBy
@@ -38,5 +47,27 @@
         : 'far fa-bookmark fa-lg'
       },
     },
+    methods: {
+      clickStock() {
+        if(!this.authorized) {
+          return view('login')
+        }
+
+        this.isStockedBy
+        ? this.unstock()
+        : this.stock()
+      },
+      async stock() {
+        // const response = await axios.put(this.endpoint)
+
+        this.isStockedBy = true
+      },
+      async unstock() {
+        // const response = await axios.put(this.endpoint)
+
+        this.isStockedBy = false
+      },
+
+    }
   }
 </script>

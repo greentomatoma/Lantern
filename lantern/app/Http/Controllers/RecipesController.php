@@ -112,8 +112,28 @@ class RecipesController extends Controller
             Storage::delete($delPath);
         }
         // $delRecipeImage = $delRecipeId->cooking_img_file;
-        // dd($delPath);
         $recipe->delete();
         return redirect()->route('recipes.index');
+    }
+
+    public function stock(RecipeRequest $request, Recipe $recipe)
+    {
+        $recipe->stocks()->detach($request->user()->id);
+        $recipe->stocks()->attach($request->user()->id);
+
+        return [
+            'id'=> $recipe->id,
+        ];
+
+    }
+
+    public function unstock(RecipeRequest $request, Recipe $recipe)
+    {
+        $recipe->stocks()->detach($request->user()->id);
+
+        return [
+            'id'=> $recipe->id,
+        ];
+
     }
 }

@@ -29,7 +29,9 @@
               {{-- 保存機能 --}}
               @if(Auth::id() !== $recipe->user_id)
               <recipe-stock
-                :initial-is-stocked-by='@json($recipe->isStockedBy(Auth::user()))'
+                :initial-is-stocked-by = '@json($recipe->isStockedBy(Auth::user()))'
+                :authorized = '@json(Auth::check())'
+                endpoint = "{{ route('recipes.stock', ['recipe' => '$recipe']) }}"
               >
               </recipe-stock>
               @endif

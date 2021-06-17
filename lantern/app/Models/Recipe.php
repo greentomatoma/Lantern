@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\User;
 
 class Recipe extends Model
 {
@@ -30,9 +31,9 @@ class Recipe extends Model
     //  レシピを保存済みか判定
     public function isStockedBy(?User $user): bool
     {
-        return $user 
-            ?(bool)$this->stocks->where('id', $user->id)->count()
-            : false;
+        return $user
+        ? (bool)$this->stocks->where('id', $user->id)->count()
+        : false;
     }
 
 
