@@ -19,3 +19,8 @@ Route::get('/', 'RecipesController@index')->name('recipes.index');
 Route::resource('/recipes', 'RecipesController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/recipes', 'RecipesController')->only(['show']);
 
+Route::prefix('recipes')->name('recipes.')->group(function() {
+  Route::put('/{recipe}/stock', 'RecipesController@stock')->name('stock')->middleware('auth');
+  Route::delete('/{recipe}/stock', 'RecipesController@unstock')->name('unstock')->middleware('auth');
+});
+

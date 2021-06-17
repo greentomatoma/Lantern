@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+
 
 class User extends Authenticatable
 {
@@ -36,4 +38,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
+    public function isStockedBy(?User $user): bool
+    {
+        return $user 
+            ?(bool)$this->stocks->where('id', $user->id)->count()
+            : false;
+    }
 }

@@ -23,17 +23,28 @@
 
           <div class="card-body">
             <h5 class="card-title">{{ $recipe->title }}</h5>
-            <div class="d-flex justify-content-between aline-items-center">
-              <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}" class="btn btn-warning">レシピをみる</a>
+            <div class="d-flex justify-content-between">
+              <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}" class="btn btn-warning mt-2">レシピをみる</a>
+
+              {{-- 保存機能 --}}
+              @if(Auth::id() !== $recipe->user_id)
+              <recipe-stock
+                :initial-is-stocked-by = '@json($recipe->isStockedBy(Auth::user()))'
+                :initial-count-stocks = '@json($recipe->count_stocks)'
+                :authorized = '@json(Auth::check())'
+                endpoint = "{{ route('recipes.stock', ['recipe' => $recipe]) }}"
+              >
+              </recipe-stock>
+              @endif
 
               {{-- 編集・削除 --}}
-              @if(Auth::id() === $recipe->user_id )
+              @if(Auth::id() === $recipe->user_id)
               <div class="d-flex aline-items-center">
                 <a href="{{ route('recipes.edit', ['recipe' => $recipe]) }}" class="btn btn-warning mr-1">
-                  <i class="fas fa-pen mt-1"></i>
+                  <i class="fas fa-pen mt-1 fa-lg"></i>
                 </a>
                 <a class="btn btn-warning" data-toggle="modal" data-target="#modal-delete-{{ $recipe->id }}">
-                  <i class="fas fa-trash-alt mt-1"></i>
+                  <i class="fas fa-trash-alt mt-1 fa-lg"></i>
                 </a>
               </div>
 
