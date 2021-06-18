@@ -39,11 +39,11 @@
 
               {{-- 編集・削除 --}}
               @if(Auth::id() === $recipe->user_id)
-              <div class="d-flex aline-items-center">
-                <a href="{{ route('recipes.edit', ['recipe' => $recipe]) }}" class="btn btn-warning mr-1">
+              <div class="d-flex aline-items-center mt-2">
+                <a class="btn mr-1" href="{{ route('recipes.edit', ['recipe' => $recipe]) }}">
                   <i class="fas fa-pen mt-1 fa-lg"></i>
                 </a>
-                <a class="btn btn-warning" data-toggle="modal" data-target="#modal-delete-{{ $recipe->id }}">
+                <a class="btn mr-1" data-toggle="modal" data-target="#modal-delete-{{ $recipe->id }}">
                   <i class="fas fa-trash-alt mt-1 fa-lg"></i>
                 </a>
               </div>
