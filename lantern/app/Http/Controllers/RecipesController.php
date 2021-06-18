@@ -36,7 +36,8 @@ class RecipesController extends Controller
         // 画像保存処理
         if($recipe_image) {
             // $recipeImagePath = $recipe_image->store('public/recipes');
-            $path = Storage::put('/public/recipes', $recipe_image);
+            $path = Storage::disk('public')->putFile('recipes', $recipe_image);
+
             $recipeFileName = basename($path);
             // $fileName = $this->saveRecipeImage($request->file('cooking_img_file'));
             $recipe->cooking_img_file = $recipeFileName;
@@ -45,7 +46,6 @@ class RecipesController extends Controller
         }
         
         $recipe->save();
-        // dd(basename($recipe));
 
         return redirect()->route('recipes.index');
     }
