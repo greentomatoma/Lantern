@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -45,5 +45,10 @@ class User extends Authenticatable
         return $user 
             ?(bool)$this->stocks->where('id', $user->id)->count()
             : false;
+    }
+
+    public function recipes(): HasMany
+    {
+        return $this->hasMany('App\Models\Recipe');
     }
 }

@@ -33,6 +33,9 @@
                       </a>
 
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ route('users.show', ['name' => Auth::user()->name]) }}" >
+                              マイページ
+                          </a>
                           <a class="dropdown-item" href="{{ route('recipes.create') }}" >
                               レシピを投稿する
                           </a>
