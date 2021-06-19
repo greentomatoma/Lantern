@@ -23,3 +23,5 @@ Route::prefix('recipes')->name('recipes.stock')->group(function() {
   Route::put('/{recipe}/stock', 'RecipesController@stock')->middleware('auth');
   Route::delete('/{recipe}/stock', 'RecipesController@unstock')->middleware('auth');
 });
+
+Route::get('{name}', 'UserController@show')->name('users.show');
