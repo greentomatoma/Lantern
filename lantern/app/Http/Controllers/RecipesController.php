@@ -125,7 +125,6 @@ class RecipesController extends Controller
             'id' => $recipe->id,
             'countStocks' => $recipe->count_stocks,
         ];
-
     }
 
     public function unstock(RecipeRequest $request, Recipe $recipe)

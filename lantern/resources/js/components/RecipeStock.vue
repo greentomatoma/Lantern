@@ -4,10 +4,10 @@
       type="button"
       class="btn btn-warning p-2 shadow-none"
       :class="buttonColor"
+      @click="clickStock()"
     >
     <i
       :class="buttonIcon"
-      @click="clickStock"
     ></i>
     </button>
     {{ countStocks }}
@@ -55,24 +55,27 @@
     methods: {
       clickStock() {
         if(!this.authorized) {
-          return view('login')
+          // return view('login')
+          alert('レシピを保存するにはログインする必要があります')
+          return
         }
 
         this.isStockedBy
           ? this.unstock()
           : this.stock()
       },
-      async stock() {
-        const response = await axios.put(this.endpoint)
+      stock() {
+        const response = axios.put(this.endpoint)
 
         this.isStockedBy = true
         this.countStocks = response.data.countStocks
       },
-      async unstock() {
-        const response = await axios.delete(this.endpoint)
+      unstock() {
+        const response = axios.delete(this.endpoint)
 
         this.isStockedBy = false
         this.countStocks = response.data.countStocks
+        console.log(this.countStocks);
       },
     },
   }
