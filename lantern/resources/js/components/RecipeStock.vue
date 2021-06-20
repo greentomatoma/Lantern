@@ -4,7 +4,7 @@
       type="button"
       class="btn btn-warning p-2 shadow-none"
       :class="buttonColor"
-      @click="clickStock()"
+      @click="clickStock"
     >
     <i
       :class="buttonIcon"
@@ -55,7 +55,6 @@
     methods: {
       clickStock() {
         if(!this.authorized) {
-          // return view('login')
           alert('レシピを保存するにはログインする必要があります')
           return
         }
@@ -64,18 +63,17 @@
           ? this.unstock()
           : this.stock()
       },
-      stock() {
-        const response = axios.put(this.endpoint)
+      async stock() {
+        const response = await axios.put(this.endpoint)
 
         this.isStockedBy = true
         this.countStocks = response.data.countStocks
       },
-      unstock() {
-        const response = axios.delete(this.endpoint)
+      async unstock() {
+        const response = await axios.delete(this.endpoint)
 
         this.isStockedBy = false
         this.countStocks = response.data.countStocks
-        console.log(this.countStocks);
       },
     },
   }

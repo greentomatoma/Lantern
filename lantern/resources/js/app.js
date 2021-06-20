@@ -3,7 +3,7 @@ import Vue from 'vue'
 import RecipeStock from './components/RecipeStock'
 
 
-const app = new Vue({
+new Vue({
   el: '#app',
   components: {
     RecipeStock,

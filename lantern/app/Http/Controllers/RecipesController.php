@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Recipe;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -116,24 +117,31 @@ class RecipesController extends Controller
         return redirect()->route('recipes.index');
     }
 
-    public function stock(RecipeRequest $request, Recipe $recipe)
+    public function stock(Recipe $recipe)
     {
-        $recipe->stocks()->detach($request->user()->id);
-        $recipe->stocks()->attach($request->user()->id);
+        $user_id = Auth::id();
+
+        $recipe->stocks()->detach($user_id);
+        $recipe->stocks()->attach($user_id);
 
         return [
-            'id' => $recipe->id,
+            'userId' => $user_id,
+            'recipeId' => $recipe->id,
             'countStocks' => $recipe->count_stocks,
         ];
     }
 
-    public function unstock(RecipeRequest $request, Recipe $recipe)
+    public function unstock(Recipe $recipe)
     {
-        $recipe->stocks()->detach($request->user()->id);
+        $user_id = Auth::id();
+
+        $recipe->stocks()->detach($user_id);
 
         return [
-            'id' => $recipe->id,
+            'userId' => $user_id,
+            'recipeId' => $recipe->id,
             'countStocks' => $recipe->count_stocks,
         ];
+
     }
 }
