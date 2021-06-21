@@ -7,10 +7,6 @@
 @section('content')
 <div class="container d-flex mt-4">
   
-  
-  <form method="POST" action="" enctype="multipart/form-data">
-    @csrf
-  
     <div class="user-detail mr-3" style="width: 360px; height: 590px; background-color: white; padding: 24px;">
       <div class="user-detail-top d-flex" style="flex-direction: column;">
         {{-- アバター画像 --}}
@@ -28,12 +24,11 @@
       </div>
 
       <div class="form-group" style="margin-top: 24px;">
-        <button type="submit" class="btn btn-block btn-secondary">
+        <a href="{{ route('users.edit', ['name' => Auth::user()->name]) }}" class="btn btn-warning mt-2">
           プロフィールを編集する
-        </button>
+        </a>
       </div>
     </div>
-  </form>
 
   {{-- 投稿レシピ一覧 --}}
   <div class="all-post-lists" style="width: 690px; height: 1000px; background-color: white;">
