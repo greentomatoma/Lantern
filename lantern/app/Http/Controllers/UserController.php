@@ -17,4 +17,10 @@ class UserController extends Controller
             'recipes' => $recipes,
         ]);
     }
+
+    public function edit(string $name, User $user)
+    {
+        $user = User::where('name', $name)->first();
+        return view('users.edit', ['user' => $user]);
+    }
 }
