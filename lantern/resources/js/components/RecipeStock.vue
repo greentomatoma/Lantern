@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="mt-2">
     <button
       type="button"
-      class="btn btn-warning p-2 shadow-none"
+      class="btn btn-warning shadow-none p-2"
       :class="buttonColor"
       @click="clickStock"
     >

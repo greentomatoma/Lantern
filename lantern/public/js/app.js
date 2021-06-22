@@ -38460,11 +38460,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "mt-2" }, [
     _c(
       "button",
       {
-        staticClass: "btn btn-warning p-2 shadow-none",
+        staticClass: "btn btn-warning shadow-none p-2",
         class: _vm.buttonColor,
         attrs: { type: "button" },
         on: { click: _vm.clickStock }
