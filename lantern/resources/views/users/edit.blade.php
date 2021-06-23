@@ -21,9 +21,13 @@
   
           {{-- アバター画像 --}}
             <div class="avatar-form image-picker text-center">
-              <input type="file" name="avatar" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
+              <input type="file" name="avatar_img_file" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
               <label for="avatar" class="d-inline-block">
-                <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 100px; height: 100px;">
+                @if (!empty($user->avatar_img_file))
+                  <img src="/storage/avatars/{{$user->avatar_img_file}}" class="rounded-circle" style="object-fit: cover; width: 100px; height: 100px;">
+                @else
+                  <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 100px; height: 100px;">
+                @endif
               </label>
             </div>
       
