@@ -26,4 +26,5 @@ Route::prefix('recipes')->name('recipes.stock')->group(function() {
 
 Route::get('{name}', 'UserController@show')->name('users.show');
 Route::get('{name}/edit-profile', 'UserController@edit')->name('users.edit')->middleware('auth');
+Route::get('{name}/my-note', 'UserController@note')->name('users.note')->middleware('auth');
 Route::post('edit-profile', 'UserController@update')->name('users.update')->middleware('auth');
