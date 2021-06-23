@@ -59,4 +59,16 @@ class UserController extends Controller
                 ])
             ->with('status', 'プロフィールを変更しました');
     }
+
+
+    public function note(string $name)
+    {
+        $user = User::where('name', $name)->first();
+        $recipes = $user->note->sortByDesc('created_at');
+
+        return view('users.note', [
+            'user' => $user,
+            'recipes' => $recipes,
+        ]);
+    }
 }
