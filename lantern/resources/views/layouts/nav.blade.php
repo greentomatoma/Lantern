@@ -36,6 +36,9 @@
                           <a class="dropdown-item" href="{{ route('users.show', ['name' => Auth::user()->name]) }}" >
                               マイページ
                           </a>
+                          <a class="dropdown-item" href="{{ route('users.note', ['name' => Auth::user()->name]) }}" >
+                              マイノート
+                          </a>
                           <a class="dropdown-item" href="{{ route('recipes.create') }}" >
                               レシピを投稿する
                           </a>

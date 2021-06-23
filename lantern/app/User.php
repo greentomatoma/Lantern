@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,8 +48,16 @@ class User extends Authenticatable
             : false;
     }
 
+
     public function recipes(): HasMany
     {
         return $this->hasMany('App\Models\Recipe');
     }
+
+
+    public function note(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Models\Recipe', 'stocks')->withTimestamps();
+    }
+
 }
