@@ -23,6 +23,20 @@
 
           <div class="card-body">
             <h5 class="card-title">{{ $recipe->title }}</h5>
+
+            @foreach($recipe->tags as $tag)
+              @if($loop->first)
+              <div class="card-body pt-0 pl-3">
+                <div class="card-text line-height">
+              @endif
+                <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="text-muted">
+                  {{ $tag->hashtag }}
+                </a>
+              @if($loop->last)
+                </div>
+              </div>
+              @endif
+            @endforeach
             <div class="d-flex justify-content-between">
               <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}" class="btn btn-warning mt-2">レシピをみる</a>
 

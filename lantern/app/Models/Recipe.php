@@ -41,5 +41,10 @@ class Recipe extends Model
         return $this->stocks->count();
     }
 
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Models\Tag')->withTimestamps();
+    }
+
 
 }
