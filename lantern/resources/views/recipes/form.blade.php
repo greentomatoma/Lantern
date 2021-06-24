@@ -1,7 +1,10 @@
 @csrf
 
 <div class="form-group">
-    <recipe-tags>
+    <recipe-tags
+        :initial-tags='@json($tagNames ?? [])'
+        :autocomplete-items='@json($allTagNames ?? [])'
+    >
     </recipe-tags>
 </div>
 

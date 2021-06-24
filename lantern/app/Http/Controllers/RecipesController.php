@@ -11,6 +11,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use phpDocumentor\Reflection\DocBlock\Tag as DocBlockTag;
 
 class RecipesController extends Controller
 {
@@ -24,7 +25,13 @@ class RecipesController extends Controller
     
     public function create()
     {
-        return view('recipes.create');
+        $allTagNames = Tag::all()->map(function($tag) {
+            return ['text' => $tag->name]; 
+        });
+
+        return view('recipes.create', [
+            'allTagNames' => $allTagNames,
+        ]);
     }
 
 
@@ -99,13 +106,32 @@ class RecipesController extends Controller
 
       public function edit(Recipe $recipe)
       {
-          return view('recipes.edit', ['recipe' => $recipe]);
+          $tagNames = $recipe->tags->map(function($tag) {
+            return ['text' => $tag->name];
+          });
+
+          $allTagNames = Tag::all()->map(function($tag) {
+            return ['text' => $tag->name]; 
+        });
+
+          return view('recipes.edit', [
+              'recipe' => $recipe,
+              'tagNames' => $tagNames,
+              'allTagNames' => $allTagNames,
+              ]);
     }
 
 
     public function update(RecipeRequest $request, Recipe $recipe)
     {
         $recipe->fill($request->all())->save();
+        
+        $recipe->tags()->detach();
+        $request->tags->each(function($tagName) use ($recipe) {
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            $recipe->tags()->attach($tag);
+        });
+
         return redirect()->route('recipes.index');
     }
 

@@ -2085,21 +2085,20 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     VueTagsInput: _johmun_vue_tags_input__WEBPACK_IMPORTED_MODULE_0___default.a
   },
+  props: {
+    initialTags: {
+      type: Array,
+      "default": []
+    },
+    autocompleteItems: {
+      type: Array,
+      "default": []
+    }
+  },
   data: function data() {
     return {
-      tag: '',
-      tags: [],
-      autocompleteItems: [{
-        text: 'Spain'
-      }, {
-        text: 'France'
-      }, {
-        text: 'USA'
-      }, {
-        text: 'Germany'
-      }, {
-        text: 'China'
-      }]
+      tag: "",
+      tags: this.initialTags
     };
   },
   computed: {
