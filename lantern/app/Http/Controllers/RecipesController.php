@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RecipeRequest;
 use Illuminate\Http\Request;
 use App\Models\Recipe;
+use App\Models\Tag;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +48,11 @@ class RecipesController extends Controller
         }
         
         $recipe->save();
+
+        $request->tags->each(function($tagName) use ($recipe) {
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            $recipe->tags()->attach($tag);
+        });
 
         return redirect()->route('recipes.index');
     }
