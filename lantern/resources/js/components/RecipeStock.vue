@@ -2,7 +2,7 @@
   <div class="mt-2">
     <button
       type="button"
-      class="btn btn-warning shadow-none p-2"
+      class="btn shadow-none p-2"
       :class="buttonColor"
       @click="clickStock"
     >
@@ -44,7 +44,6 @@
         return this.isStockedBy
         ? 'btn btn-warning'
         : 'btn btn-light'
-        
       },
       buttonIcon() {
         return this.isStockedBy

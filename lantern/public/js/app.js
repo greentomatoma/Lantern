@@ -39236,7 +39236,7 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn btn-warning shadow-none p-2",
+        staticClass: "btn shadow-none p-2",
         class: _vm.buttonColor,
         attrs: { type: "button" },
         on: { click: _vm.clickStock }
