@@ -30,6 +30,7 @@ class RecipeRequest extends FormRequest
             'description' => ['required', 'string', 'max: 1000'],
             'comment' => ['nullable', 'string', 'max: 1000'],
             'cooking_img_file' => ['file', 'image'],
+            'tags' => ['json', 'regex:/^(?!.*\s).+$/u', 'regex:/^(?!.*\/).*$/u'],
         ];
     }
 
@@ -40,6 +41,15 @@ class RecipeRequest extends FormRequest
             'cook_time' => '調理時間',
             'ingredients' => '材料',
             'description' => '作り方',
+            'tags' => 'タグ',
         ];
+    }
+
+    public function passedValidation()
+    {
+        $this->tags = collect(json_decode($this->tags))
+            ->map(function($requestTag) {
+                return $requestTag->text;
+            });
     }
 }
