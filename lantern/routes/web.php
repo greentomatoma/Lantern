@@ -11,6 +11,7 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
@@ -19,12 +20,17 @@ Route::get('/', 'RecipesController@index')->name('recipes.index');
 Route::resource('/recipes', 'RecipesController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/recipes', 'RecipesController')->only(['show']);
 
+// レシピ
 Route::prefix('recipes')->name('recipes.stock')->group(function() {
   Route::put('/{recipe}/stock', 'RecipesController@stock')->middleware('auth');
   Route::delete('/{recipe}/stock', 'RecipesController@unstock')->middleware('auth');
 });
 
+// マイページ
 Route::get('{name}', 'UserController@show')->name('users.show');
 Route::get('{name}/edit-profile', 'UserController@edit')->name('users.edit')->middleware('auth');
 Route::get('{name}/my-note', 'UserController@note')->name('users.note')->middleware('auth');
 Route::post('edit-profile', 'UserController@update')->name('users.update')->middleware('auth');
+
+// タグ
+Route::get('/tags/{name}', 'TagController@show')->name('tags.show');

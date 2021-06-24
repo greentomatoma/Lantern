@@ -26,10 +26,10 @@
 
             @foreach($recipe->tags as $tag)
               @if($loop->first)
-              <div class="card-body pt-0 pb-4 pl-3">
+              <div class="card-body pt-0 pl-3">
                 <div class="card-text line-height">
               @endif
-                <a href="" class="text-muted">
+                <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="text-muted">
                   {{ $tag->hashtag }}
                 </a>
               @if($loop->last)
