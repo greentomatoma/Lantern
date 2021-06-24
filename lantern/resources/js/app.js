@@ -1,12 +1,14 @@
 import './bootstrap'
 import Vue from 'vue'
 import RecipeStock from './components/RecipeStock'
+import RecipeTags from './components/RecipeTags'
 
 
 new Vue({
   el: '#app',
   components: {
     RecipeStock,
+    RecipeTags,
   }
 })
 

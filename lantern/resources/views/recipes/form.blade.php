@@ -1,5 +1,10 @@
 @csrf
 
+<div class="form-group">
+    <recipe-tags>
+    </recipe-tags>
+</div>
+
 {{-- 料理画像 --}}
 <div>料理画像</div>
 <span class="cooking-image-form image-picker">
