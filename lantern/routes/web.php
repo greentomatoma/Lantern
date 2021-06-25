@@ -34,3 +34,6 @@ Route::post('edit-profile', 'UserController@update')->name('users.update')->midd
 
 // タグ
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
+
+// 検索
+Route::get('Search','SearchController@index')->name('search');
