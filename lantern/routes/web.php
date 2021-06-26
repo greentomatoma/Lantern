@@ -27,13 +27,15 @@ Route::prefix('recipes')->name('recipes.stock')->group(function() {
 });
 
 // マイページ
-Route::get('{name}', 'UserController@show')->name('users.show');
-Route::get('{name}/edit-profile', 'UserController@edit')->name('users.edit')->middleware('auth');
-Route::get('{name}/my-note', 'UserController@note')->name('users.note')->middleware('auth');
-Route::post('edit-profile', 'UserController@update')->name('users.update')->middleware('auth');
+Route::prefix('users')->name('users.')->group(function() {
+  Route::get('/{name}', 'UserController@show')->name('show');
+  Route::get('/{name}/edit-profile', 'UserController@edit')->name('edit')->middleware('auth');
+  Route::get('/{name}/my-note', 'UserController@note')->name('note')->middleware('auth');
+  Route::post('/edit-profile', 'UserController@update')->name('update')->middleware('auth');
+});
 
 // タグ
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 
 // 検索
-Route::post('/search','SearchController@index')->name('search');
+Route::get('/search','SearchController@index')->name('search.index');
