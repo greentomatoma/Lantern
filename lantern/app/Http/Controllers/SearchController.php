@@ -33,7 +33,10 @@ class SearchController extends Controller
             foreach ($keywords as $keyword) {
                 $query->where('title', 'like', "%$keyword%")
                     ->orWhere('cook_time', 'like', "%$keyword%")
-                    ->orWhere('ingredients', 'like', "%$keyword%");
+                    ->orWhere('ingredients', 'like', "%$keyword%")
+                    ->orWhereHas('tags', function($query) use ($keyword) {
+                        $query->where('name', 'like', "%$keyword%" );
+                    });
             }
         }
 
