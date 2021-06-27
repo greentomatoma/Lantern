@@ -13,6 +13,11 @@ class CreateRecipeTagTable extends Migration
      */
     public function up()
     {
+        if (Schema::hasTable('recipe_tag')) {
+            // テーブルが存在していればリターン
+            return;
+        }
+
         Schema::create('recipe_tag', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('recipe_id');
