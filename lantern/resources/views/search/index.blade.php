@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'の検索結果')
+@section('title', 'レシピ検索')
 
 @include('layouts/nav')
 
@@ -9,6 +9,8 @@
 
   {{-- 検索結果一覧 --}}
   <div class="all-post-lists" style="width: 690px; height: 1000px; background-color: white; margin: auto;">
+
+  <!-- {{ $searchCount }}品 -->
 
     @if(!empty($recipes))
       @foreach($recipes as $recipe)
@@ -38,10 +40,6 @@
       該当するレシピはありませんでした。
     @endif
 
-
-    <div class="d-flex justify-content-center">
-     </div>
-  </div>
 </div>
 
 @endsection

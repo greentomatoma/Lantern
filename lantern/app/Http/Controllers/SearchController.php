@@ -38,10 +38,12 @@ class SearchController extends Controller
         }
 
         $recipes = $query->get()->sortByDesc('created_at');
+        $searchCount = $query->get()->count();
 
         return view('search.index', [
             'recipes' => $recipes,
             'keywords' => $keywords,
+            'searchCount' => $searchCount,
         ]);
     }
 
