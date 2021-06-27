@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 「 . $user->name . 」 . 'の検索結果')
+@section('title', 'の検索結果')
 
 @include('layouts/nav')
 
@@ -40,7 +40,6 @@
 
 
     <div class="d-flex justify-content-center">
-         {{ $recipe->withQueryString()->links() }}
      </div>
   </div>
 </div>

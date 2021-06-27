@@ -8,24 +8,35 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function index(RecipeRequest $request)
+    public function index(Request $request)
     {
         $query = Recipe::query();
 
         $keyword = '%' . $this->escape($request->input('keyword')) . '%';
-        if($request->filled('keyword')) {
-            $query->where(function($query) use ($keyword) {
-            $query->where('title', 'LIKE', $keyword)->orWhere('cook_time', 'LIKE', $keyword);
 
-            });
-        }
+        if(!empty($keyword)) {
+            $query->where('title', 'LIKE', $keyword)
+            ->orWhere('cook_time', 'LIKE', $keyword)
+            ->orWhere('ingredients', 'LIKE', $keyword)
+            ->get();
+            $recipes = $query->get()->sortByDesc('created_at');
+        } else {
+            $recipes = Recipe::all()->sortByDesc('created_at');
+        };
+        
+        
+        // if($request->filled('keyword')) {
+        //     $query->where(function($query) use ($keyword) {
+        //     $query->where('title', 'LIKE', $keyword)->orWhere('cook_time', 'LIKE', $keyword);
+        //     });
+        // }
 
-        $recipes = $query->orderBy('created_at', 'desc')->paginate(10);
-
-        return view('search', [
+        return view('search.index', [
             'recipes' => $recipes,
             'keyword' => $keyword,
         ]);
+        // return view('search.index');
+
     }
 
 

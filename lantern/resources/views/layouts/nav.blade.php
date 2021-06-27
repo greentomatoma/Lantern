@@ -8,15 +8,12 @@
       </button> -->
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          
           <ul class="navbar-nav mr-auto">
-            <form class="form-inline" method="POST" action="{{ route('search') }}">
-                <input class="form-control pl-4" type="text" name="keyword" placeholder="キーワード検索">
-                <div class="header-search">
+            <form class="form-inline" method="GET" action="{{ route('search.index')}}">
+                <input class="form-control pl-4" type="search" name="keyword" placeholder="キーワード検索">
                     <button type="submit" class="btn btn-outline-dark">
                         <i class="fas fa-search"></i>
                     </button>
-                </div>
             </form>
           </ul>
 
