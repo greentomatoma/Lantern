@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecipeTagTable extends Migration
+class CreateMealTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateRecipeTagTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('recipe_tag')) {
+        if (Schema::hasTable('meal_types')) {
             // テーブルが存在していればリターン
             return;
         }
 
-        Schema::create('recipe_tag', function (Blueprint $table) {
+        Schema::create('meal_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('recipe_id');
-            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('cascade');
-            $table->unsignedBigInteger('tag_id');
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
+            $table->string('name');
+            $table->integer('sort_no');
             $table->timestamps();
         });
     }
@@ -35,6 +33,6 @@ class CreateRecipeTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recipe_tag');
+        Schema::dropIfExists('meal_types');
     }
 }
