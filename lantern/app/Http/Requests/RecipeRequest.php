@@ -31,6 +31,7 @@ class RecipeRequest extends FormRequest
             'comment' => ['nullable', 'string', 'max: 1000'],
             'cooking_img_file' => ['file', 'image'],
             'tags' => ['json', 'regex:/^(?!.*\s).+$/u', 'regex:/^(?!.*\/).*$/u'],
+            'meal_type_id' => ['required', 'integer'],
         ];
     }
 
@@ -42,6 +43,7 @@ class RecipeRequest extends FormRequest
             'ingredients' => '材料',
             'description' => '作り方',
             'tags' => 'タグ',
+            'meal_type_id' => '料理の種類',
         ];
     }
 

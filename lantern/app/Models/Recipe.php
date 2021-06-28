@@ -16,6 +16,7 @@ class Recipe extends Model
         'description',
         'comment',
         'cooking_img_file',
+        'meal_type_id',
     ];
 
     public function user(): BelongsTo
