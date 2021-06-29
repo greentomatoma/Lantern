@@ -32,6 +32,7 @@ class RecipeRequest extends FormRequest
             'cooking_img_file' => ['file', 'image'],
             'tags' => ['json', 'regex:/^(?!.*\s).+$/u', 'regex:/^(?!.*\/).*$/u'],
             'meal_type_id' => ['required', 'integer'],
+            'meal_class_id' => ['nullable', 'integer'],
         ];
     }
 
@@ -44,6 +45,7 @@ class RecipeRequest extends FormRequest
             'description' => '作り方',
             'tags' => 'タグ',
             'meal_type_id' => '料理の種類',
+            'meal_class_id' => '料理の区分',
         ];
     }
 
