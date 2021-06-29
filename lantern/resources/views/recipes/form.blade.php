@@ -39,8 +39,21 @@
     <label for="meal_type_id">料理の種類</label>
     <select name="meal_type_id" class="custom-select form-control pl-4">
         @foreach($meal_types as $meal_type)
-            <option value="{{ $meal_type->id }}" {{ old('meal_type', $recipe->meal_type_id) == $meal_type->id ? 'selected' : '' }}>
-            {{ $meal_type->name }}
+            <option value="{{ $meal_type->id }}" {{ old('meal_type', $recipe->meal_type_id ?? '') == $meal_type->id ? 'selected' : '' }}>
+                {{ $meal_type->name }}
+            </option>
+        @endforeach
+    </select>
+</div>
+
+
+{{-- 料理の区分 --}}
+<div class="form-group mt-3">
+    <label for="meal_class_id">料理の区分</label>
+    <select name="meal_class_id" class="custom-select form-control pl-4">
+        @foreach($meal_classes as $meal_class)
+            <option value="{{ $meal_class->id }}" {{ old('meal_class', $recipe->meal_class_id ?? '') == $meal_class->id ? 'selected' : '' }}>
+                {{ $meal_class->name }}
             </option>
         @endforeach
     </select>
