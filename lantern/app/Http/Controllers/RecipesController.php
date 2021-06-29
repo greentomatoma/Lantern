@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RecipeRequest;
+use App\Models\MealClass;
 use App\Models\MealType;
 use Illuminate\Http\Request;
 use App\Models\Recipe;
@@ -31,10 +32,12 @@ class RecipesController extends Controller
         });
 
         $meal_types = MealType::orderBy('sort_no')->get();
+        $meal_classes = MealClass::orderBy('sort_no')->get();
 
         return view('recipes.create', [
             'allTagNames' => $allTagNames,
             'meal_types' => $meal_types,
+            'meal_classes' => $meal_classes,
         ]);
     }
 
@@ -119,6 +122,7 @@ class RecipesController extends Controller
           });
 
           $meal_types = MealType::orderBy('sort_no')->get();
+          $meal_classes = MealClass::orderBy('sort_no')->get();
             //  dd($recipe);
 
           return view('recipes.edit', [
@@ -126,6 +130,7 @@ class RecipesController extends Controller
               'tagNames' => $tagNames,
               'allTagNames' => $allTagNames,
               'meal_types' => $meal_types,
+              'meal_classes' => $meal_classes,
               ]);
     }
 
