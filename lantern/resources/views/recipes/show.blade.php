@@ -16,29 +16,25 @@
     <div class="top">
       <div class="recipe-image">
         @if(!empty($recipe->cooking_img_file))
-          <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top">
+          <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top" style="width: 200px; height: 200px;">
         @else
-          <img src="/images/default-recipe-image.png" class="card-img-top">
+          <img src="/images/default-recipe-image.png" class="card-img-top" style="width: 200px; height: 200px;">
         @endif
       </div>
       <div class="top-right mt-5">
         <div class="top-right-category">
           <ul>
-            <li class="li-people">
+            <li class="meal_type">
               <div class="icon" style="background-color: grey; width: 64px; height: 64px; "></div>
-              <span class="for-people">２人分</span>
-            </li>
-            <li class="li-genre">
-              <div class="icon" style="background-color: grey; width: 64px; height: 64px; "></div>
-              <span class="genre">ジャンル</span>
-            </li>
-            <li class="li-category">
-              <div class="icon" style="background-color: grey; width: 64px; height: 64px; "></div>
-              <span class="category">カテゴリ</span>
+              <span class="for-people">{{ $recipe->mealType->name }}</span>
             </li>
             <li class="li-time">
               <div class="icon" style="background-color: grey; width: 64px; height: 64px; "></div>
               <span class="time">{{ $recipe->cook_time }}分</span>
+            </li>
+            <li class="meal_class">
+              <div class="icon" style="background-color: grey; width: 64px; height: 64px; "></div>
+              <span class="category">{{ $recipe->mealClass->name }}</span>
             </li>
           </ul>
         </div>
