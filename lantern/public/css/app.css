@@ -17086,17 +17086,45 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.card {
+  width: 500px;
+}
+
+.card .card-title {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 3px;
+  font-size: 24px;
+}
+
+.card .form-area {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
 .form-group .btn {
   border-radius: 30px;
 }
 
-.form-control {
-  padding: 0.3rem 0.3rem;
+.form-group label {
+  margin-left: 20px;
+}
+
+.form-group .form-control,
+.form-group .form-btn.button {
+  padding: 10px 10px 10px 20px;
   height: calc(1.6em + 0.75rem + 10px);
   border-radius: 30px;
 }
 
-.form-control:focus {
+.form-group .form-control:focus,
+.form-group .form-btn.button:focus {
   border-color: #efe09f;
   box-shadow: 0 0 0 0.2rem #ffc107;
 }

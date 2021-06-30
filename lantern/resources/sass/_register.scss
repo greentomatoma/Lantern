@@ -1,19 +1,44 @@
-.form-group {
-  .btn{
-    border-radius: 30px;
+.card {
+  width: 500px;
+
+  .card-title {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 3px;
+    font-size: 24px;
+  }
+
+  .form-area {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
   }
 }
 
-.form-control {
-  padding: 0.3rem 0.3rem;
-  height: calc(1.6em + 0.75rem + 10px);
-  border-radius: 30px;
-  
-    &:focus {
-      border-color: hsl(49, 71%, 78%);
-      box-shadow: 0 0 0 0.2rem #ffc107;
-    }
+.form-group {
+  margin-bottom: 30px;
+
+  .btn{
+    border-radius: 30px;
+  }
+
+  label {
+    margin-left: 20px;
+  }
+
+  .form-control, .form-btn.button {
+    padding: 10px 10px 10px 20px;
+    height: calc(1.6em + 0.75rem + 10px);
+    border-radius: 30px;
+    
+      &:focus {
+        border-color: hsl(49, 71%, 78%);
+        box-shadow: 0 0 0 0.2rem #ffc107;
+      }
+  }
 }
+
 
 // 補完機能の背景色（水色）削除
 input:-webkit-autofill {
