@@ -18,7 +18,11 @@ $fa-font-path: "../webfonts";
 // register
 @import 'register';
 
+
 // recipe
 @import 'recipe_create';
 @import 'recipe_index';
 @import 'recipe_show';
+
+// nav
+@import 'nav';
