@@ -1,0 +1,25 @@
+.navbar {
+  
+  background-color: $yellow;
+
+  .navbar-nav {
+    .dropdown-item.active, .navbar .dropdown-item:active {
+        color: #fff;
+        text-decoration: none;
+        background-color: #ffe366;
+    }
+    .dropdown-item:hover, .dropdown-item:focus {
+        color: #16181b;
+        text-decoration: none;
+        background-color: #ffeebd;
+    }
+  }
+}
+
+
+@media all and (max-width: 767px) {
+    .navbar {
+      width: 100%;
+      display: flex;
+    }
+}
