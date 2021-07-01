@@ -7,6 +7,15 @@
 @section('content')
 
 <div class="container">
+
+  <ul class="navbar-nav mr-auto">
+    <form class="form-inline" method="GET" action="{{ route('search.index')}}">
+        <input class="form-control pl-4" type="search" name="keyword" placeholder="キーワード検索">
+            <button type="submit" class="btn btn-outline-dark">
+                <i class="fas fa-search"></i>
+            </button>
+    </form>
+  </ul>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-5">
     @foreach($recipes as $recipe)
       <div class="col mb-3">
