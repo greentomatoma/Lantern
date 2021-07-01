@@ -17116,17 +17116,28 @@ readers do not read off random characters that represent icons */
   margin-left: 20px;
 }
 
-.form-group .form-control,
-.form-group .form-btn.button {
+.form-group .form-control {
   padding: 10px 10px 10px 20px;
   height: calc(1.6em + 0.75rem + 10px);
   border-radius: 30px;
 }
 
-.form-group .form-control:focus,
-.form-group .form-btn.button:focus {
+.form-group .form-control:focus {
   border-color: #efe09f;
   box-shadow: 0 0 0 0.2rem #ffc107;
+}
+
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.btn-warning:hover {
+  background-color: #ffd454;
+  border-color: white;
 }
 
 input:-webkit-autofill {
@@ -17135,7 +17146,13 @@ input:-webkit-autofill {
 }
 
 a {
-  color: #dfae1d;
+  color: #fdca2f;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #d1891c;
+  text-decoration: none;
 }
 
 .ingredients .form-control,

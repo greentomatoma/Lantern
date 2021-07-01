@@ -27,7 +27,7 @@
     margin-left: 20px;
   }
 
-  .form-control, .form-btn.button {
+  .form-control {
     padding: 10px 10px 10px 20px;
     height: calc(1.6em + 0.75rem + 10px);
     border-radius: 30px;
@@ -40,6 +40,20 @@
 }
 
 
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  max-width: 50%;
+  margin: 0 auto;
+
+    &:hover {
+      background-color: #ffd454;
+      border-color: white;
+    }
+}
+
+
 // 補完機能の背景色（水色）削除
 input:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s !important;
@@ -47,5 +61,11 @@ input:-webkit-autofill {
 
 
 a {
-  color: #dfae1d;
+  color: #fdca2f;
+  font-weight: bold;
+
+    &:hover {
+      color: #d1891c;
+      text-decoration: none;
+    }
 }
