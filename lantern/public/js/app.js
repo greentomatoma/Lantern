@@ -1982,7 +1982,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   computed: {
     buttonColor: function buttonColor() {
-      return this.isStockedBy ? 'btn btn-warning' : 'btn btn-light';
+      return this.isStockedBy ? 'stocked' : 'no-stock';
     },
     buttonIcon: function buttonIcon() {
       return this.isStockedBy ? 'fas fa-bookmark fa-lg' : 'far fa-bookmark fa-lg';
@@ -39232,7 +39232,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "mt-2" }, [
+  return _c("div", { staticClass: "stock-btn mt-2" }, [
     _c(
       "button",
       {

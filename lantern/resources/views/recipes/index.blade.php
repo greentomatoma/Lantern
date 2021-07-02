@@ -6,101 +6,97 @@
 
 @section('content')
 
-<div class="container">
 
-  <ul class="navbar-nav mr-auto">
-    <form class="form-inline" method="GET" action="{{ route('search.index')}}">
-        <input class="form-control pl-4" type="search" name="keyword" placeholder="キーワード検索">
-            <button type="submit" class="btn btn-outline-dark">
-                <i class="fas fa-search"></i>
-            </button>
-    </form>
-  </ul>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-5">
-    @foreach($recipes as $recipe)
-      <div class="col mb-3">
-        <div class="card shadow-sm">
-          <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
-            <div class="bd-placeholder-img card-img-top" style="width: 100%; height: 225px; object-fit: cover;">
-              @if(!empty($recipe->cooking_img_file))
-                <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top" style="object-fit: cover; width: 100%; height: 100%;">
-              @else
-                <img src="/images/default-recipe-image.png" class="card-img-top" style="object-fit: cover; width: 100%; height: 100%;">
-              @endif
+{{-- 検索窓 --}}
+<!-- <div class="search">
+  <form class="form-inline" method="GET" action="{{ route('search.index')}}">
+    <input class="form-control pl-4" type="search" name="keyword" placeholder="キーワード検索" />
+    <button type="submit" class="btn btn-outline-dark">
+      <i class="fas fa-search"></i>
+    </button>
+  </form>
+</div> -->
+
+<div class="recipe-container">
+  <div class="recipe">
+    <div class="recipe-cards row">
+      @foreach($recipes as $recipe)
+        <div class="recipe-card shadow-sm-4 col-md-3 col-sm-6 col-xs-12">
+          <div class="card-top">
+            <div class="recipe-post-user">
+              <a href="{{ route('users.show', ['name' => $recipe->user->name]) }}">
+                @if(!empty($user->avatar_file_name))
+                  <img src="/storage/avatars/{{ $user->avatar_file_name}}" class="rounded-circle">
+                @else
+                  <img src="/images/avatar-default.svg" class="rounded-circle">
+                @endif
+                {{ $recipe->user->name}}
+              </a>
             </div>
-          </a>
+
+            {{-- 保存機能 --}}
+              @if(Auth::id() !== $recipe->user_id)
+              <div class="recipe-stock mb-1">
+                <recipe-stock
+                  :initial-is-stocked-by = '@json($recipe->isStockedBy(Auth::user()))'
+                  :initial-count-stocks = '@json($recipe->count_stocks)'
+                  :authorized = '@json(Auth::check())'
+                  endpoint = "{{ route('recipes.stock', ['recipe' => $recipe]) }}"
+                >
+                </recipe-stock>
+              </div>
+              @endif
+          </div>
+
+          <div class="bd-placeholder-img card-img-top">
+            <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
+              @if(!empty($recipe->cooking_img_file))
+                <img class="card-img-top" src="/storage/recipes/{{ $recipe->cooking_img_file }}">
+              @else
+                <img class="card-img-top" src="/images/default-recipe-image.png">
+              @endif
+            </a>
+          </div>
 
           <div class="card-body">
-            <h5 class="card-title">{{ $recipe->title }}</h5>
+            <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
+                <h1 class="recipe-title">{{ $recipe->title }}</h1>
+            </a>
 
-            @foreach($recipe->tags as $tag)
-              @if($loop->first)
-              <div class="card-body pt-0 pl-3">
-                <div class="card-text line-height">
-              @endif
-                <a href="{{ route('tags.show', ['name' => $tag->name]) }}" class="text-muted">
-                  {{ $tag->hashtag }}
-                </a>
-              @if($loop->last)
+            <div class="card-body-md">
+                <div class="body-md meal-type ">
+                  <div class="meal-type-icon"></div>
+                  <p class="meal-type" style="font-size: 12px;">{{ $recipe->mealType->name }}</p>
                 </div>
-              </div>
-              @endif
-            @endforeach
-            <div class="d-flex justify-content-between">
-              <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}" class="btn btn-warning mt-2">レシピをみる</a>
+                <div class="body-md cook-time ">
+                  <div class="cook-time-icon"></div>
+                  <p class="cook-time" style="font-size: 12px;">{{ $recipe->cook_time }}分</p>
+                </div>
+                <div class="body-md meal-class ">
+                  <div class="meal-class-icon"></div>
+                  <p class="meal-class" style="font-size: 12px;">{{ $recipe->mealClass->name }}</p>
+                </div>
+            </div>
 
-              {{-- 保存機能 --}}
-              @if(Auth::id() !== $recipe->user_id)
-              <recipe-stock
-                :initial-is-stocked-by = '@json($recipe->isStockedBy(Auth::user()))'
-                :initial-count-stocks = '@json($recipe->count_stocks)'
-                :authorized = '@json(Auth::check())'
-                endpoint = "{{ route('recipes.stock', ['recipe' => $recipe]) }}"
-              >
-              </recipe-stock>
-              @endif
-
-              {{-- 編集・削除 --}}
-              @if(Auth::id() === $recipe->user_id)
-              <div class="d-flex aline-items-center mt-2">
-                <a class="btn mr-1" href="{{ route('recipes.edit', ['recipe' => $recipe]) }}">
-                  <i class="fas fa-pen mt-1 fa-lg"></i>
-                </a>
-                <a class="btn mr-1" data-toggle="modal" data-target="#modal-delete-{{ $recipe->id }}">
-                  <i class="fas fa-trash-alt mt-1 fa-lg"></i>
-                </a>
-              </div>
-
-              <!-- modal -->
-              <div id="modal-delete-{{ $recipe->id }}" class="modal fade" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <form method="POST" action="{{ route('recipes.destroy', ['recipe' => $recipe]) }}">
-                      @csrf
-                      @method('DELETE')
-                      <div class="modal-body">
-                        「{{ $recipe->title}}」を削除します。削除されたレシピは元に戻すことはできません。
-                      </div>
-                      <div class="modal-footer justify-content-between">
-                        <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
-                        <button type="submit" class="btn btn-danger">削除する</button>
-                      </div>
-                    </form>
+            <div class="card-tags">
+              @foreach($recipe->tags as $tag)
+                @if($loop->first)
+                <div class="tag">
+                  <div class="card-text line-height">
+                @endif
+                  <a class="text-muted" href="{{ route('tags.show', ['name' => $tag->name]) }}">
+                    {{ $tag->hashtag }}
+                  </a>
+                @if($loop->last)
                   </div>
                 </div>
-              </div>
-              <!-- modal -->
-              @endif
+                @endif
+              @endforeach
             </div>
           </div>
         </div>
-      </div>
-    @endforeach
+      @endforeach
+    </div>
   </div>
 </div>
 
