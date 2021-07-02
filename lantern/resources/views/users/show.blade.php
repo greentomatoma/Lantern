@@ -44,20 +44,56 @@
             {{ $recipe->user->name}}さんが{{ $recipe->created_at->format('Y年m月d日') }}に投稿
         </div>
         <div class="card-middle d-flex">
-        <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
-            <div class="card-img" style="width: 240px; height: 150px;">
-                @if(!empty($recipe->cooking_img_file))
-                  <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top" style="width: 240px; height: 150px; object-fit: cover;">
-                @else
-                  <img src="/images/default-recipe-image.png" class="card-img-top" style="width: 240px; height: 150px; object-fit: cover;">
-                @endif
-            </div>
+          <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
+              <div class="card-img" style="width: 240px; height: 150px;">
+                  @if(!empty($recipe->cooking_img_file))
+                    <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top" style="width: 240px; height: 150px; object-fit: cover;">
+                  @else
+                    <img src="/images/default-recipe-image.png" class="card-img-top" style="width: 240px; height: 150px; object-fit: cover;">
+                  @endif
+              </div>
           </a>
           <h3 class="card-title" style="font-size: 20px;">
             <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">{{ $recipe->title }}</a>
-          </div>
+          </h3>
+        </div>
         <div class="card-bottom" style="height: 45px; ">
-            タグとブックマーク入る
+            {{-- 編集・削除 --}}
+            @if(Auth::id() === $recipe->user_id)
+            <div class="d-flex aline-items-center mt-2">
+              <a class="btn mr-1" href="{{ route('recipes.edit', ['recipe' => $recipe]) }}">
+                <i class="fas fa-pen mt-1 fa-lg"></i>
+              </a>
+              <a class="btn mr-1" data-toggle="modal" data-target="#modal-delete-{{ $recipe->id }}">
+                <i class="fas fa-trash-alt mt-1 fa-lg"></i>
+              </a>
+            </div>
+
+            <!-- modal -->
+            <div id="modal-delete-{{ $recipe->id }}" class="modal fade" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <form method="POST" action="{{ route('recipes.destroy', ['recipe' => $recipe]) }}">
+                    @csrf
+                    @method('DELETE')
+                    <div class="modal-body">
+                      「{{ $recipe->title}}」を削除します。削除されたレシピは元に戻すことはできません。
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                      <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
+                      <button type="submit" class="btn btn-danger">削除する</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- modal -->
+            @endif
         </div>
       </div>
     @endforeach

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-2">
+  <div class="stock-btn mt-2">
     <button
       type="button"
       class="btn shadow-none p-2"
@@ -42,8 +42,8 @@
     computed: {
       buttonColor() {
         return this.isStockedBy
-        ? 'btn btn-warning'
-        : 'btn btn-light'
+        ? 'stocked'
+        : 'no-stock'
       },
       buttonIcon() {
         return this.isStockedBy
