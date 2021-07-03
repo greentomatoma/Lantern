@@ -24,7 +24,7 @@
       font-size: 2rem;
       font-weight: bold;
       margin-left: 30px;
-        p.title {
+        div.title {
           margin: 0;
           text-align: center;
         }
@@ -48,11 +48,18 @@
         }
     }
 
+    .card-text {
+      margin-left: 30px;
+      .text-muted {
+        font-weight: lighter;
+        font-size: 1rem
+      }
+    }
+
     .recipe-detail-top {
       display: flex;
       justify-content: space-around;
       margin-bottom: 25px;
-      // height: 450px;
 
       .recipe-image {
           margin: 50px 0 0 0;
@@ -122,9 +129,6 @@
 
 
   @media screen and (max-width: 768px) {
-    .navbar {
-        max-width: 100%;
-    }
     .recipe-detail {
       max-width: 100%;
       margin: 10px 50px;
@@ -149,7 +153,9 @@
           }
       }
     }
-
+    .top-page-button {
+      max-width: 13%;
+    }
   }
 
 
@@ -208,4 +214,7 @@
           margin-bottom: 8px;
         }
     }
+    .top-page-button {
+      max-width: 33%;
+  }
   }

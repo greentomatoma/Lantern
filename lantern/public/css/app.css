@@ -17332,7 +17332,7 @@ a:hover {
   margin-left: 30px;
 }
 
-.recipe-detail .recipe-title p.title {
+.recipe-detail .recipe-title div.title {
   margin: 0;
   text-align: center;
 }
@@ -17355,6 +17355,15 @@ a:hover {
 
 .recipe-detail .recipe-title .recipe-stock i {
   font-size: 2rem;
+}
+
+.recipe-detail .card-text {
+  margin-left: 30px;
+}
+
+.recipe-detail .card-text .text-muted {
+  font-weight: lighter;
+  font-size: 1rem;
 }
 
 .recipe-detail .recipe-detail-top {
@@ -17433,10 +17442,6 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
-    max-width: 100%;
-  }
-
   .recipe-detail {
     max-width: 100%;
     margin: 10px 50px;
@@ -17464,6 +17469,10 @@ a:hover {
        object-fit: cover;
     width: 30px;
     height: 30px;
+  }
+
+  .top-page-button {
+    max-width: 13%;
   }
 }
 
@@ -17522,6 +17531,10 @@ a:hover {
 
   .recipe-detail .item-title {
     margin-bottom: 8px;
+  }
+
+  .top-page-button {
+    max-width: 33%;
   }
 }
 

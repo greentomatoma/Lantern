@@ -23,7 +23,7 @@
       </a>
     </div>
     <div class="recipe-title border-bottom pb-3 pt-3">
-     <p class="title">{{ $recipe->title }}</p>
+     <div class="title">{{ $recipe->title }}</div>
       
       {{-- 保存機能 --}}
       @if(Auth::id() !== $recipe->user_id)
@@ -42,7 +42,21 @@
 
 
       
+    @foreach($recipe->tags as $tag)
+      @if($loop->first)
+      <div class="tag">
+        <div class="card-text line-height">
+      @endif
+        <a class="text-muted" href="{{ route('tags.show', ['name' => $tag->name]) }}">
+          {{ $tag->hashtag }}
+        </a>
+      @if($loop->last)
+        </div>
+      </div>
+      @endif
+    @endforeach
     <div class="recipe-detail-top">
+
       <div class="recipe-image">
         @if(!empty($recipe->cooking_img_file))
           <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top">
