@@ -17108,10 +17108,6 @@ readers do not read off random characters that represent icons */
   margin-bottom: 30px;
 }
 
-.form-group .btn {
-  border-radius: 30px;
-}
-
 .form-group label {
   margin-left: 20px;
 }
@@ -17138,6 +17134,10 @@ readers do not read off random characters that represent icons */
 .btn-warning:hover {
   background-color: #ffd454;
   border-color: white;
+}
+
+button.btn {
+  border-radius: 30px;
 }
 
 input:-webkit-autofill {

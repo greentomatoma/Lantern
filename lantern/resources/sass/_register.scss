@@ -19,10 +19,6 @@
 .form-group {
   margin-bottom: 30px;
 
-  .btn{
-    border-radius: 30px;
-  }
-
   label {
     margin-left: 20px;
   }
@@ -51,6 +47,10 @@
       background-color: #ffd454;
       border-color: white;
     }
+}
+
+button.btn {
+    border-radius: 30px;
 }
 
 
