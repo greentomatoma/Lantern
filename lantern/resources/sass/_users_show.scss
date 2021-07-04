@@ -1,0 +1,176 @@
+.user-page {
+  margin: 20px 150px;
+  display: flex;
+
+  // ユーザー情報
+  .user-detail {
+    margin-right: 16px;
+    padding: 24px;
+    width: 360px; 
+    height: 590px; 
+    background-color: white; 
+    
+      .user-detail-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .avatar-image {
+        margin-bottom: 10px;
+         & img {
+            object-fit: cover; 
+            width: 100px; 
+            height: 100px;
+         }
+      }
+  
+      .user-name {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+  
+      .edit-profile {
+        margin-top: 50px;
+        text-align: center;
+        .edit-button {
+            color: white;
+            font-size: 0.8rem;
+            border-radius: 30px;
+            padding: 10px 15px;
+            background-color:  orange;
+              &:hover {
+                color: white;
+                background-color: #ffd454;
+              }
+          }
+      }
+  }
+
+  // 投稿レシピ一覧
+  .all-post-lists {
+    width: 700px; 
+    background-color: white;
+      .list-title {
+        font-weight: bold;
+        font-size: 1.3rem;
+        padding: 16px;
+        margin: 0;
+      }
+
+      .post-recipe-card {
+        width: 100%;
+        padding: 15px;
+        border-top: 1px solid #dee2e6;
+
+          .card-top {
+            display: flex;
+            justify-content: space-between;
+              & img {
+                height: 20px;
+                width: 20px;
+              }
+              .post-time {
+                color: #6c757d;
+                  a {
+                    color: #3b3f44;
+                    text-decoration: none;
+                      &:hover {
+                        text-decoration: underline #3b3f44;
+                      }
+                  }
+              }
+
+              // 編集・削除アイコン
+              .edit-and-delete {
+                display: flex;
+                align-items: center;
+                  a {
+                    margin-left: 20px;
+                    &.edit-btn {
+                    color: #3b3f44;
+                      &:hover {
+                        color: orange;
+                      }
+                    }
+                    &.delete-btn {
+                      cursor: pointer;
+                      color: #d85038;
+                    }
+                  }
+              }
+          }
+          .card-main {
+            display: flex;
+              .post-recipe-img {
+                margin-right: 30px;
+                  & img {
+                    width: 240px;
+                    height: 150px;
+                    object-fit: cover;
+                  }
+              }
+              .card-main-text {
+                display: flex;
+                flex-direction: column;
+                  .card-title {
+                    font-size: 1.3rem;
+                    margin-bottom: 1.75rem;
+                    a {
+                      color: #3b3f44;
+                      text-decoration: none;
+                        &:hover {
+                          text-decoration: underline #3b3f44;
+                        }
+                    }
+                  }
+                  .recipe-features {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 310px;
+                      .body-md {
+                        text-align: center;
+                        font-size: 0.8rem;
+                      }
+                      .meal-type-icon, .cook-time-icon, .meal-class-icon {
+                        text-align: center;
+                        background-color: gray; 
+                        width: 50px; 
+                        height: 50px; 
+                        border-radius: 5px; 
+                        margin: 3px auto 5px auto;
+                      }
+                  }
+              }
+          }
+          .card-bottom {
+            display: flex;
+            margin-top: 15px;
+              a.text-muted {
+                font-size: 0.8rem;
+                font-weight: bold;
+                  &:hover {
+                    text-decoration: underline #3b3f44;
+                  }
+              }
+          }
+      }
+  }
+}
+
+
+
+
+// モバイル対応
+@media screen and (max-width: 479px) {
+  .user-page {
+    display: flex;
+    flex-direction: column;
+
+      // ユーザー情報
+      .user-detail {
+        width: 100%;
+      }
+  }
+
+}

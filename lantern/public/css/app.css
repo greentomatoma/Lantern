@@ -17563,3 +17563,203 @@ a:hover {
   }
 }
 
+.user-page {
+  margin: 20px 150px;
+  display: flex;
+}
+
+.user-page .user-detail {
+  margin-right: 16px;
+  padding: 24px;
+  width: 360px;
+  height: 590px;
+  background-color: white;
+}
+
+.user-page .user-detail .user-detail-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-page .user-detail .avatar-image {
+  margin-bottom: 10px;
+}
+
+.user-page .user-detail .avatar-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.user-page .user-detail .user-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.user-page .user-detail .edit-profile {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.user-page .user-detail .edit-profile .edit-button {
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 30px;
+  padding: 10px 15px;
+  background-color: orange;
+}
+
+.user-page .user-detail .edit-profile .edit-button:hover {
+  color: white;
+  background-color: #ffd454;
+}
+
+.user-page .all-post-lists {
+  width: 700px;
+  background-color: white;
+}
+
+.user-page .all-post-lists .list-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 16px;
+  margin: 0;
+}
+
+.user-page .all-post-lists .post-recipe-card {
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid #dee2e6;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top img {
+  height: 20px;
+  width: 20px;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .post-time {
+  color: #6c757d;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .post-time a {
+  color: #3b3f44;
+  text-decoration: none;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .post-time a:hover {
+  -webkit-text-decoration: underline #3b3f44;
+          text-decoration: underline #3b3f44;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete {
+  display: flex;
+  align-items: center;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete a {
+  margin-left: 20px;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete a.edit-btn {
+  color: #3b3f44;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete a.edit-btn:hover {
+  color: orange;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete a.delete-btn {
+  cursor: pointer;
+  color: #d85038;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main {
+  display: flex;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .post-recipe-img {
+  margin-right: 30px;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .post-recipe-img img {
+  width: 240px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.75rem;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title a {
+  color: #3b3f44;
+  text-decoration: none;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title a:hover {
+  -webkit-text-decoration: underline #3b3f44;
+          text-decoration: underline #3b3f44;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features {
+  display: flex;
+  justify-content: space-between;
+  width: 310px;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .body-md {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .meal-type-icon,
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .cook-time-icon,
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .meal-class-icon {
+  text-align: center;
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 3px auto 5px auto;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-bottom {
+  display: flex;
+  margin-top: 15px;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-bottom a.text-muted {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.user-page .all-post-lists .post-recipe-card .card-bottom a.text-muted:hover {
+  -webkit-text-decoration: underline #3b3f44;
+          text-decoration: underline #3b3f44;
+}
+
+@media screen and (max-width: 479px) {
+  .user-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-page .user-detail {
+    width: 100%;
+  }
+}
+
