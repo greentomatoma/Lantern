@@ -17165,7 +17165,8 @@ a:hover {
   width: 700px;
 }
 
-.container h1.post-recipe {
+.container h1.post-recipe,
+.container .edit-recipe {
   padding: 16px 0;
   font-size: 1.5rem;
   font-weight: bold;
@@ -17173,55 +17174,71 @@ a:hover {
   border-bottom: 1px solid #dee2e6;
 }
 
-.container .post-recipe-form {
+.container .post-recipe-form,
+.container .edit-recipe-form {
   padding: 48px 48px 16px 48px;
 }
 
-.container .post-recipe-form .cooking-image-form {
+.container .post-recipe-form .cooking-image-form,
+.container .edit-recipe-form .cooking-image-form {
   display: flex;
   flex-direction: column;
   margin: 25px 0;
   font-weight: bold;
 }
 
-.container .post-recipe-form .form-group label {
+.container .post-recipe-form .form-group label,
+.container .edit-recipe-form .form-group label {
   margin: 0;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.container .post-recipe-form .cook-title {
+.container .post-recipe-form .cook-title,
+.container .edit-recipe-form .cook-title {
   border-radius: 5px;
 }
 
-.container .post-recipe-form .cook-title label {
+.container .post-recipe-form .cook-title label,
+.container .edit-recipe-form .cook-title label {
   margin-bottom: 5px;
 }
 
-.container .post-recipe-form .form-md-area {
+.container .post-recipe-form .form-md-area,
+.container .edit-recipe-form .form-md-area {
   display: flex;
   justify-content: space-between;
 }
 
-.container .post-recipe-form .form-md-area .md-area {
+.container .post-recipe-form .form-md-area .md-area,
+.container .edit-recipe-form .form-md-area .md-area {
   border-radius: 5px;
 }
 
 .container .post-recipe-form .ingredients .form-control,
 .container .post-recipe-form .description .form-control,
-.container .post-recipe-form .comment .form-control {
+.container .post-recipe-form .comment .form-control,
+.container .edit-recipe-form .ingredients .form-control,
+.container .edit-recipe-form .description .form-control,
+.container .edit-recipe-form .comment .form-control {
   border-radius: 5px;
   height: 100px;
   width: 100%;
   resize: none;
 }
 
-.container .post-recipe-form .post-button {
+.container .post-recipe-form .post-button,
+.container .post-recipe-form .edit-button,
+.container .edit-recipe-form .post-button,
+.container .edit-recipe-form .edit-button {
   margin-top: 48px;
   text-align: center;
 }
 
-.container .post-recipe-form .post-button button.btn {
+.container .post-recipe-form .post-button button.btn,
+.container .post-recipe-form .edit-button button.btn,
+.container .edit-recipe-form .post-button button.btn,
+.container .edit-recipe-form .edit-button button.btn {
   font-weight: bold;
   color: white;
   text-align: center;
@@ -17230,9 +17247,19 @@ a:hover {
   width: 70%;
 }
 
-.container .post-recipe-form .post-button button.btn:hover {
+.container .post-recipe-form .post-button button.btn:hover,
+.container .post-recipe-form .edit-button button.btn:hover,
+.container .edit-recipe-form .post-button button.btn:hover,
+.container .edit-recipe-form .edit-button button.btn:hover {
   color: white;
   background-color: #ffd454;
+}
+
+.container .post-recipe-form .post-button button.btn:focus,
+.container .post-recipe-form .edit-button button.btn:focus,
+.container .edit-recipe-form .post-button button.btn:focus,
+.container .edit-recipe-form .edit-button button.btn:focus {
+  box-shadow: none;
 }
 
 @media screen and (max-width: 479px) {
