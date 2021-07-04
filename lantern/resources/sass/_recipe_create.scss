@@ -7,7 +7,7 @@
       width: 700px;
     }
 
-    h1.post-recipe {
+    h1.post-recipe, .edit-recipe {
       padding: 16px 0;
       font-size: 1.5rem;
       font-weight: bold;
@@ -16,7 +16,7 @@
     }
 
     // レシピ入力欄
-    .post-recipe-form {
+    .post-recipe-form, .edit-recipe-form {
       padding: 48px 48px 16px 48px;
 
         .cooking-image-form {
@@ -57,8 +57,8 @@
             }
         }
 
-        // 投稿ボタン
-        .post-button {
+        // 投稿/更新ボタン
+        .post-button, .edit-button {
           margin-top: 48px;
           text-align: center;
 
@@ -73,6 +73,9 @@
                   &:hover {
                     color: white;
                     background-color: #ffd454;
+                  }
+                  &:focus {
+                    box-shadow: none;
                   }
             }
         }
