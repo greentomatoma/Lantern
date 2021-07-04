@@ -1,18 +1,95 @@
-.ingredients, .description, .comment {
-  .form-control {
-    border-radius: 6px;
-    height: 100px;
-    width: 100%;
-    resize: none;
-  }
+.container {
+    display: flex;
+    justify-content: center;
+
+    .card {
+      margin-top: 10px;
+      width: 700px;
+    }
+
+    h1.post-recipe {
+      padding: 16px 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      border-bottom: 1px solid #dee2e6
+    }
+
+    // レシピ入力欄
+    .post-recipe-form {
+      padding: 48px 48px 16px 48px;
+
+        .cooking-image-form {
+          display: flex;
+          flex-direction: column;
+          margin: 25px 0;
+          font-weight: bold;
+        }
+    
+        // 各入力項目のタイトル
+        .form-group label {
+          margin: 0;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+    
+        .cook-title {
+          border-radius: 5px;
+              label {
+                margin-bottom: 5px;
+              }
+        }
+    
+        .form-md-area {
+          display: flex;
+          justify-content: space-between;
+              .md-area {
+                border-radius: 5px;
+              }
+        }
+    
+        .ingredients, .description, .comment {
+            .form-control {
+              border-radius: 5px;
+              height: 100px;
+              width: 100%;
+              resize: none;
+            }
+        }
+
+        // 投稿ボタン
+        .post-button {
+          margin-top: 48px;
+          text-align: center;
+
+            button.btn {
+              font-weight: bold;
+              color: white;
+              text-align: center;
+              background-color:  orange;
+              border-radius: 30px;
+              width: 70%;
+
+                  &:hover {
+                    color: white;
+                    background-color: #ffd454;
+                  }
+            }
+        }
+    }
+
 }
-.cook_time {
-  .form-control {
-    text-align: center;
-    width: 30%;
+
+
+  // モバイル対応
+  @media screen and (max-width: 479px) {
+    .container {
+      .post-recipe-form {
+        padding: 16px;
+      }
+      .form-md-area {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
-  .minute {
-    margin: 0;
-    text-align: center;
-  }
-}

@@ -17155,23 +17155,95 @@ a:hover {
   text-decoration: none;
 }
 
-.ingredients .form-control,
-.description .form-control,
-.comment .form-control {
-  border-radius: 6px;
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container .card {
+  margin-top: 10px;
+  width: 700px;
+}
+
+.container h1.post-recipe {
+  padding: 16px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.container .post-recipe-form {
+  padding: 48px 48px 16px 48px;
+}
+
+.container .post-recipe-form .cooking-image-form {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0;
+  font-weight: bold;
+}
+
+.container .post-recipe-form .form-group label {
+  margin: 0;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.container .post-recipe-form .cook-title {
+  border-radius: 5px;
+}
+
+.container .post-recipe-form .cook-title label {
+  margin-bottom: 5px;
+}
+
+.container .post-recipe-form .form-md-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .post-recipe-form .form-md-area .md-area {
+  border-radius: 5px;
+}
+
+.container .post-recipe-form .ingredients .form-control,
+.container .post-recipe-form .description .form-control,
+.container .post-recipe-form .comment .form-control {
+  border-radius: 5px;
   height: 100px;
   width: 100%;
   resize: none;
 }
 
-.cook_time .form-control {
+.container .post-recipe-form .post-button {
+  margin-top: 48px;
   text-align: center;
-  width: 30%;
 }
 
-.cook_time .minute {
-  margin: 0;
+.container .post-recipe-form .post-button button.btn {
+  font-weight: bold;
+  color: white;
   text-align: center;
+  background-color: orange;
+  border-radius: 30px;
+  width: 70%;
+}
+
+.container .post-recipe-form .post-button button.btn:hover {
+  color: white;
+  background-color: #ffd454;
+}
+
+@media screen and (max-width: 479px) {
+  .container .post-recipe-form {
+    padding: 16px;
+  }
+
+  .container .form-md-area {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .search {
