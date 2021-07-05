@@ -6,17 +6,6 @@
 
 @section('content')
 
-
-{{-- 検索窓 --}}
-<!-- <div class="search">
-  <form class="form-inline" method="GET" action="{{ route('search.index')}}">
-    <input class="form-control pl-4" type="search" name="keyword" placeholder="キーワード検索" />
-    <button type="submit" class="btn btn-outline-dark">
-      <i class="fas fa-search"></i>
-    </button>
-  </form>
-</div> -->
-
 <div class="recipe-container">
   <div class="recipe">
     <div class="recipe-cards row">
