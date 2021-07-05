@@ -17,29 +17,29 @@
 
   <form method="POST" action="{{ route('users.update', ['user' => $user]) }}" enctype="multipart/form-data">
       @csrf
-      <div class="all-post-lists mt-4" style="width: 800px; height: 430px; background-color: white; margin: auto; padding: 24px;">
+      <div class="profile">
   
           {{-- アバター画像 --}}
-            <div class="avatar-form image-picker text-center">
+            <div class="avatar-form image-picker">
               <input type="file" name="avatar_img_file" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
-              <label for="avatar" class="d-inline-block">
+              <label for="avatar" class="avatar_image">
                 @if (!empty($user->avatar_img_file))
-                  <img src="/storage/avatars/{{$user->avatar_img_file}}" class="rounded-circle" style="object-fit: cover; width: 100px; height: 100px;">
+                  <img src="/storage/avatars/{{$user->avatar_img_file}}" class="rounded-circle">
                 @else
-                  <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 100px; height: 100px;">
+                  <img src="/images/avatar-default.svg" class="rounded-circle">
                 @endif
               </label>
             </div>
       
           {{-- ニックネーム --}}
-          <div class="form-group">
+          <div class="nickname form-group">
               <label for="name">ニックネーム</label>
-              <input id="name" type="text" class="form-control pt-8 pr-16 pb-8 pl-16" name="name" value="{{ $user->name ?? old('name') }}" required autocomplete="name" autofocus placeholder="ニックネームを入力">
+              <input id="name" type="text" class="nickname form-control" name="name" value="{{ $user->name ?? old('name') }}" required autocomplete="name">
           </div>
   
   
-        <div class="form-group" style="margin-top: 24px;">
-          <button type="submit" class="btn btn-warning mt-2">
+        <div class="edit-button">
+          <button type="submit" class="btn mt-2">
             プロフィールを変更
           </button>
         </div>

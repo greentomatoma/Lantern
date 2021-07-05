@@ -17862,3 +17862,75 @@ a:hover {
   }
 }
 
+.container .profile {
+  margin-top: 24px;
+  width: 800px;
+  background-color: white;
+  padding: 24px;
+}
+
+.container .avatar-form {
+  text-align: center;
+}
+
+.container .avatar-form .avatar_image {
+  cursor: pointer;
+}
+
+.container .avatar-form .avatar_image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.container .nickname {
+  margin: 20px auto;
+  display: table;
+}
+
+.container .nickname label {
+  margin-left: 0.3rem;
+  font-weight: bold;
+}
+
+.container .nickname .form-control {
+  padding: 10px 10px 10px 20px;
+  height: calc(1.6em + 0.75rem + 10px);
+  border-radius: 30px;
+  margin: auto;
+}
+
+.container .edit-button {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.container .edit-button button.btn {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  background-color: orange;
+  border-radius: 30px;
+  width: 35%;
+}
+
+.container .edit-button button.btn:hover {
+  color: white;
+  background-color: #ffd454;
+}
+
+.container .edit-button button.btn:focus {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 479px) {
+  .container .profile {
+    width: 400px;
+  }
+
+  .container .edit-button button.btn {
+    width: 45%;
+  }
+}
+
