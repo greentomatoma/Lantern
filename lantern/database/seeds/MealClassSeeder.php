@@ -14,23 +14,28 @@ class MealClassSeeder extends Seeder
     {
         factory(MealClass::class)->create([
             'id' => 1,
-            'name' => '容易にかめる',
+            'name' => '指定なし',
             'sort_no' => 1,
         ]);
         factory(MealClass::class)->create([
             'id' => 2,
-            'name' => '歯ぐきでつぶせる',
+            'name' => '容易にかめる',
             'sort_no' => 2,
         ]);
         factory(MealClass::class)->create([
             'id' => 3,
-            'name' => '舌でつぶせる',
+            'name' => '歯ぐきでつぶせる',
             'sort_no' => 3,
         ]);
         factory(MealClass::class)->create([
             'id' => 4,
-            'name' => 'かまなくてよい',
+            'name' => '舌でつぶせる',
             'sort_no' => 4,
+        ]);
+        factory(MealClass::class)->create([
+            'id' => 5,
+            'name' => 'かまなくてよい',
+            'sort_no' => 5,
         ]);
     }
 }
