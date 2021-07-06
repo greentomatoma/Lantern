@@ -2,7 +2,7 @@
 <div class="post-recipe-card">
     <div class="card-top">
         <p class="post-time">
-          <a href="#">
+          <a href="{{ route('users.show', ['name' => $recipe->user->name] )}}">
           @if(!empty($user->avatar_file_name))
             <img src="/storage/avatars/{{ $user->avatar_file_name}}" class="rounded-circle">
           @else

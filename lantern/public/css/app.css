@@ -17273,18 +17273,6 @@ a:hover {
   }
 }
 
-.search {
-  text-align: center;
-}
-
-.search .form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #a1cbef;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
-}
-
 .recipe-container {
   margin: 0 50px;
 }
@@ -17641,6 +17629,30 @@ a:hover {
   background-color: #ffc107;
 }
 
+.navbar .search {
+  margin-left: 50px;
+}
+
+.navbar .search .search-form {
+  position: relative;
+  margin: 0;
+}
+
+.navbar .search .search-form span {
+  position: absolute;
+  color: #6c757d;
+  top: 11px;
+  left: 13px;
+}
+
+.navbar .search input.input-form {
+  width: 400px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 40px;
+}
+
 .navbar .navbar-nav .dropdown-item.active,
 .navbar .navbar-nav .navbar .dropdown-item:active {
   color: #fff;
@@ -17659,6 +17671,10 @@ a:hover {
   .navbar {
     width: 100%;
     display: flex;
+  }
+
+  .navbar input.input-form {
+    width: 230px;
   }
 }
 
@@ -18081,5 +18097,14 @@ a:hover {
 .container .all-post-lists .post-recipe-card .card-bottom a.text-muted:hover {
   -webkit-text-decoration: underline #3b3f44;
           text-decoration: underline #3b3f44;
+}
+
+.container .list-title {
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+.container span {
+  font-weight: bold;
 }
 

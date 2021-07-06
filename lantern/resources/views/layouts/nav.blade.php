@@ -3,9 +3,14 @@
       <a class="navbar-brand" href="{{ url('/') }}">
           {{ config('app.name', 'Laravel') }}
       </a>
-      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-          <span class="navbar-toggler-icon"></span>
-      </button> -->
+
+      {{-- 検索窓 --}}
+        <div class="search">
+            <form class="search-form" method="GET" action="{{ route('search.index')}}">
+                <span class="fas fa-search"></span>
+                <input class="input-form" type="search" name="keyword" placeholder="食材名・料理名・調理時間 など" />
+            </form>
+        </div>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Right Side Of Navbar -->
@@ -30,7 +35,6 @@
                       @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
                       @endif
-                        <span class="caret">{{ Auth::user()->name }}</span>
                       </a>
 
 
