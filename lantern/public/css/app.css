@@ -18099,3 +18099,12 @@ a:hover {
           text-decoration: underline #3b3f44;
 }
 
+.container .list-title {
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+.container span {
+  font-weight: bold;
+}
+
