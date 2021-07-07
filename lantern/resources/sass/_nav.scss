@@ -1,29 +1,6 @@
 .navbar {
   background-color: $yellow;
 
-  // 検索窓
-  .search {
-    margin-left: 50px;
-
-      .search-form {
-        position: relative;
-        margin: 0;
-        span {
-          position: absolute;
-          color: #6c757d;
-          top: 11px;
-          left: 13px;
-        }
-      }
-      input.input-form {
-        width: 400px;
-        height: 35px;
-        border: none;
-        border-radius: 5px;
-        padding-left: 40px;
-      }
-  }
-
   .navbar-nav {
     .dropdown-item.active, .navbar .dropdown-item:active {
         color: #fff;
@@ -35,17 +12,92 @@
         text-decoration: none;
         background-color: #ffeebd;
     }
+    .nav-item, .nav-item.dropdown {
+      margin-left: 30px;
+        .nav-link {
+          text-align: center;
+          font-size: 13px;
+          font-weight: lighter;
+          padding: 0;
+        }
+        div {
+          margin-top: 3px;
+        }
+        i {
+          font-size: 25px;
+        }
+        #navbarDropdown {
+          margin-top: 4px;
+          img {
+            object-fit: cover;
+            width: 2.2rem;
+            height: 2.2rem;
+          }
+        }
+    }
   }
 }
 
+// 検索窓
+.search {
+  margin-left: 50px;
 
-@media all and (max-width: 767px) {
-    .navbar {
-      width: 100%;
-      display: flex;
-
-      input.input-form {
-        width: 230px;
+    .search-form {
+      position: relative;
+      margin: 0;
+      span {
+        position: absolute;
+        color: #6c757d;
+        top: 11px;
+        left: 13px;
       }
     }
+    input.input-form {
+      width: 400px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      padding-left: 40px;
+    }
+}
+
+
+// モバイル対応
+@media all and (max-width: 479px) {
+  .navbar {
+    width: 100%;
+    display: flex;
+
+    .navbar-nav {
+
+      .nav-item, .nav-item.dropdown  {
+        margin-top: 3px;
+
+        .nav-link {
+            text-align: center;
+            font-size: 10px;
+            font-weight: lighter;
+          }
+          i {
+            font-size: 20px;
+          }
+          #navbarDropdown {
+            margin-top: 0px;
+            img {
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+      }
+    }
+  }
+
+  .search {
+    margin-left: 10px;
+
+    input.input-form {
+      width: 230px;
+      font-size: 0.7rem;
+    }
+  }
 }
