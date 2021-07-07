@@ -17331,14 +17331,16 @@ a:hover {
 .recipe-card .card-body div .meal-type-icon,
 .recipe-card .card-body .cook-time-icon,
 .recipe-card .card-body .meal-class-icon {
-  background-color: gray;
   width: 32px;
   height: 32px;
   border-radius: 5px;
   margin: 3px auto 5px auto;
 }
 
-.recipe-card .card-body p {
+.recipe-card .card-body p.meal-type,
+.recipe-card .card-body .cook-time,
+.recipe-card .card-body .meal-class {
+  font-size: 12px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -17914,10 +17916,8 @@ a:hover {
 .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .cook-time-icon,
 .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .meal-class-icon {
   text-align: center;
-  background-color: gray;
   width: 50px;
   height: 50px;
-  border-radius: 5px;
   margin: 3px auto 5px auto;
 }
 
@@ -18146,10 +18146,8 @@ a:hover {
 .container .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .cook-time-icon,
 .container .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .meal-class-icon {
   text-align: center;
-  background-color: gray;
   width: 50px;
   height: 50px;
-  border-radius: 5px;
   margin: 3px auto 5px auto;
 }
 

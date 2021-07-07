@@ -77,12 +77,24 @@
               <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">{{ $recipe->title }}</a>
           </h3>
           <div class="recipe-features">
-              <div class="body-md meal-type ">
-                <div class="meal-type-icon"></div>
+              <div class="body-md meal-type">
+                　@if($recipe->mealType->id == 1)
+                    <img class="meal-type-icon" src="/images/icons/staple_food.svg" alt="主食アイコン">
+                  @elseif($recipe->mealType->id == 2)
+                    <img class="meal-type-icon" src="/images/icons/main_dish.svg" alt="主菜アイコン">
+                  @elseif($recipe->mealType->id == 3)
+                    <img class="meal-type-icon" src="/images/icons/side_dish.svg" alt="副菜アイコン">
+                  @elseif($recipe->mealType->id == 4)
+                    <img class="meal-type-icon" src="/images/icons/soup.svg" alt="汁物アイコン">
+                  @elseif($recipe->mealType->id == 5)
+                    <img class="meal-type-icon" src="/images/icons/dessert.svg" alt="デザートアイコン">
+                  @else
+                    <img class="meal-type-icon" src="/images/icons/other_dished.svg" alt="その他アイコン">
+                  @endif
                 <p class="meal-type">{{ $recipe->mealType->name }}</p>
               </div>
               <div class="body-md cook-time ">
-                <div class="cook-time-icon"></div>
+                <img class="cook-time-icon" src="/images/icons/time.svg" alt="調理時間アイコン">
                 <p class="cook-time">{{ $recipe->cook_time }}分</p>
               </div>
               <div class="body-md meal-class ">

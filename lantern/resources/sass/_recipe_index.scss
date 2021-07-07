@@ -49,14 +49,14 @@
       }
 
       div .meal-type-icon, .cook-time-icon, .meal-class-icon {
-        background-color: gray; 
         width: 32px; 
         height: 32px; 
         border-radius: 5px; 
         margin: 3px auto 5px auto;
       }
 
-      p {
+      p.meal-type, .cook-time, .meal-class {
+        font-size: 12px;
         margin-top: 0;
         margin-bottom: 0;
       }
