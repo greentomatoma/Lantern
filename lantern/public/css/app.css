@@ -17483,6 +17483,12 @@ a:hover {
   margin-bottom: 20px;
 }
 
+.recipe-detail .recipe-detail-top .top-right .top-right-category ul .meal-type-icon,
+.recipe-detail .recipe-detail-top .top-right .top-right-category ul .cook-time-icon .meal-class-icon {
+  width: 64px;
+  height: 64px;
+}
+
 .recipe-detail .ingredients-list {
   display: flex;
   flex-direction: column;
