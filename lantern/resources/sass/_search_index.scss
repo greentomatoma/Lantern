@@ -1,10 +1,175 @@
-.container {
+.list-title p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0;
+    span.count {
+      color: orange;
+      font-size: 1.5rem;
+    }
+    span.items {
+      font-size: 1.2rem;
+    }
+}
 
-  .list-title {
-    padding: 15px;
-    font-size: 1.2rem;
-  }
-  span {
-    font-weight: bold;
+
+// 投稿レシピ一覧
+.all-post-lists {
+  width: 700px; 
+  background-color: white;
+    .list-title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      padding: 16px;
+      margin: 0;
+        i.title {
+          color: orange;
+          margin-right: 10px;
+        }
+    }
+
+    .post-recipe-card {
+      width: 100%;
+      padding: 15px;
+      border-top: 1px solid #dee2e6;
+
+        .card-top {
+          display: flex;
+          justify-content: space-between;
+            & img {
+              height: 20px;
+              width: 20px;
+            }
+            .post-time {
+              color: #6c757d;
+                a {
+                  color: #3b3f44;
+                  text-decoration: none;
+                    &:hover {
+                      text-decoration: underline #3b3f44;
+                    }
+                }
+            }
+
+            // 編集・削除アイコン
+            .edit-and-delete {
+              display: flex;
+              align-items: center;
+              margin-bottom: 16px;
+                a {
+                  margin-left: 20px;
+                  &.edit-btn {
+                  color: #3b3f44;
+                    &:hover {
+                      color: orange;
+                    }
+                  }
+                  &.delete-btn {
+                    cursor: pointer;
+                    color: #d85038;
+                  }
+                }
+            }
+        }
+        .card-main {
+          display: flex;
+            .post-recipe-img {
+              margin-right: 30px;
+                & img {
+                  width: 240px;
+                  height: 150px;
+                  object-fit: cover;
+                }
+            }
+            .card-main-text {
+              display: flex;
+              flex-direction: column;
+                .card-title {
+                  font-size: 1.3rem;
+                  margin-bottom: 1.7rem;
+                  a {
+                    color: #3b3f44;
+                    text-decoration: none;
+                      &:hover {
+                        text-decoration: underline #3b3f44;
+                      }
+                  }
+                }
+                .recipe-features {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 310px;
+                  margin: auto;
+                    .body-md {
+                      text-align: center;
+                      font-size: 0.8rem;
+                    }
+                    .meal-type-icon, .cook-time-icon, .meal-class-icon {
+                      text-align: center;
+                      width: 50px; 
+                      height: 50px; 
+                      margin: 3px auto 5px auto;
+                    }
+                }
+            }
+        }
+        .card-bottom {
+          display: flex;
+          margin-top: 15px;
+            a.text-muted {
+              font-size: 0.8rem;
+              font-weight: bold;
+                &:hover {
+                  text-decoration: underline #3b3f44;
+                }
+            }
+        }
+    }
+}
+
+
+// モバイル対応
+@media screen and (max-width: 479px) {
+  // 投稿レシピ一覧
+  .all-post-lists {
+    width: 360px; 
+      .post-recipe-card {
+        .card-top {
+          display: flex;
+            .edit-and-delete {
+              align-items: normal;
+            }
+        }
+        .card-main {
+          display: flex;
+          flex-direction: column;
+            .post-recipe-img {
+              margin: 0;
+              text-align: center;
+            }
+            .card-main-text {
+              display: flex;
+              flex-direction: column;
+              margin-top: 15px;
+                .card-title {
+                  margin-bottom: 1.0rem;
+                }
+                .recipe-features {
+                  display: flex;
+                  justify-content: space-between;
+                  width: 310px;
+                    .body-md {
+                      text-align: center;
+                      font-size: 0.8rem;
+                    }
+                    .meal-type-icon, .cook-time-icon, .meal-class-icon {
+                      text-align: center;
+                      width: 50px; 
+                      height: 50px; 
+                      margin: 3px auto 5px auto;
+                    }
+                }
+            }
+        }
+      }
   }
 }

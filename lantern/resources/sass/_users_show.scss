@@ -199,6 +199,9 @@
                   display: flex;
                   flex-direction: column;
                   margin-top: 15px;
+                    .card-title {
+                      margin-bottom: 1.0rem;
+                    }
                     .recipe-features {
                       display: flex;
                       justify-content: space-between;
