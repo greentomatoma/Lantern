@@ -19,7 +19,8 @@ class RecipesController extends Controller
 {
     public function index()
     {
-        $recipes = Recipe::all()->sortByDesc('created_at');
+        $recipes = Recipe::all()->sortByDesc('created_at')
+        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
 
         return view('recipes.index', ['recipes' => $recipes]);
     }

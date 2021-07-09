@@ -40,7 +40,9 @@ class SearchController extends Controller
             }
         }
 
-        $recipes = $query->get()->sortByDesc('created_at');
+        $recipes = $query->get()->sortByDesc('created_at')
+        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
+
         $searchCount = $query->get()->count();
 
         return view('search.index', [

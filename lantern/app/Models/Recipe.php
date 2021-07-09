@@ -48,12 +48,12 @@ class Recipe extends Model
         return $this->belongsToMany('App\Models\Tag')->withTimestamps();
     }
 
-    public function mealType()
+    public function mealType(): BelongsTo
     {
         return $this->belongsTo(MealType::class, 'meal_type_id');
     }
 
-    public function mealClass()
+    public function mealClass(): BelongsTo
     {
         return $this->belongsTo(MealClass::class, 'meal_class_id');
     }

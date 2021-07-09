@@ -13,7 +13,9 @@ class UserController extends Controller
     public function show(string $name)
     {
         $user = User::where('name', $name)->first();
-        $recipes = $user->recipes->sortByDesc('created_at');
+
+        $recipes = $user->recipes->sortByDesc('created_at')
+        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
 
         return view('users.show', [
             'user' => $user,
@@ -64,7 +66,9 @@ class UserController extends Controller
     public function note(string $name)
     {
         $user = User::where('name', $name)->first();
-        $recipes = $user->note->sortByDesc('created_at');
+
+        $recipes = $user->note->sortByDesc('created_at')
+        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
 
         return view('users.note', [
             'user' => $user,
