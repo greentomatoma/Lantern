@@ -17814,6 +17814,11 @@ a:hover {
   margin: 0;
 }
 
+.user-page .all-post-lists .list-title i.title {
+  color: orange;
+  margin-right: 10px;
+}
+
 .user-page .all-post-lists .post-recipe-card {
   width: 100%;
   padding: 15px;
@@ -17847,6 +17852,7 @@ a:hover {
 .user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete {
   display: flex;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete a {
@@ -17940,10 +17946,61 @@ a:hover {
   .user-page {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 20px;
   }
 
   .user-page .user-detail {
-    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+  }
+
+  .user-page .all-post-lists {
+    width: 360px;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-top {
+    display: flex;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-top .edit-and-delete {
+    align-items: normal;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-main .post-recipe-img {
+    margin: 0;
+    text-align: center;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features {
+    display: flex;
+    justify-content: space-between;
+    width: 310px;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .body-md {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .meal-type-icon,
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .cook-time-icon,
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .recipe-features .meal-class-icon {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin: 3px auto 5px auto;
   }
 }
 

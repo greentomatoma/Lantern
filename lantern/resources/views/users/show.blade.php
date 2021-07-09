@@ -38,7 +38,7 @@
 
   {{-- 投稿レシピ一覧 --}}
   <div class="all-post-lists">
-    <h2 class="list-title">投稿レシピ一覧</h2>
+    <h2 class="list-title"><i class="fas fa-clipboard title"></i>投稿レシピ一覧</h2>
 
     @foreach($recipes as $recipe)
 
