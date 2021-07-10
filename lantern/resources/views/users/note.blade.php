@@ -12,15 +12,14 @@
     <div class="note-header">
       <h2 class="list-title"><i class="fas fa-bookmark title"></i>ストックレシピ一覧</h2>
 
-      <stock-recipes
+      <async-search
       :initial-stock-recipes = '@json($recipes)'
       :user = '@json($user)'
       >
-      </stock-recipes>
-  
+      </async-search>
     </div>
 
-    {{-- ストックレシピ一覧 --}}
+    <!-- {{-- ストックレシピ一覧 --}}
     @if(!empty($recipes))
       @foreach($recipes as $recipe)
         <div class="post-recipe-card">
@@ -65,7 +64,7 @@
                   </h3>
                   <div class="recipe-features">
                       <div class="body-md meal-type">
-                        　@if($recipe->mealType->id == 1)
+                          @if($recipe->mealType->id == 1)
                             <img class="meal-type-icon" src="/images/icons/staple_food.svg" alt="主食アイコン">
                           @elseif($recipe->mealType->id == 2)
                             <img class="meal-type-icon" src="/images/icons/main_dish.svg" alt="主菜アイコン">
@@ -113,7 +112,7 @@
       @endforeach
     @else
       ストックしているレシピはありません。
-    @endif
+    @endif -->
 
   </div>
 

@@ -2,7 +2,7 @@ import './bootstrap'
 import Vue from 'vue'
 import RecipeStock from './components/RecipeStock'
 import RecipeTags from './components/RecipeTags'
-import StockRecipes from './components/StockRecipes'
+import AsyncSearch from './components/AsyncSearch'
 
 
 new Vue({
@@ -10,7 +10,7 @@ new Vue({
   components: {
     RecipeStock,
     RecipeTags,
-    StockRecipes,
+    AsyncSearch,
   }
 })
 
