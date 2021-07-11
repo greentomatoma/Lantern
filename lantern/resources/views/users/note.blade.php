@@ -13,8 +13,7 @@
       <h2 class="list-title"><i class="fas fa-bookmark title"></i>ストックレシピ一覧</h2>
 
       <async-search
-      :initial-stock-recipes = '@json($recipes)'
-      :user = '@json($user)'
+      :stock-recipes = '@json($recipes)'
       >
       </async-search>
 

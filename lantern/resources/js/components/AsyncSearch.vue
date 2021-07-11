@@ -5,7 +5,7 @@
         <header class="card-top">
           <p class="post-time">
             <a :href="`http://localhost/users/${recipe.user.name}`">
-              <img v-if="user.avatar_file_name" src="/storage/avatars/user.avatar_file_name" class="rounded-circle">
+              <img v-if="recipe.user.avatar_file_name" :src="`/storage/avatars/${recipe.user.avatar_file_name}`" class="rounded-circle">
               <img src="/images/avatar-default.svg" class="rounded-circle">
             {{ recipe.user.name }}さん
             </a> 
@@ -16,7 +16,7 @@
         <main class="card-main">
           <a :href="`http://localhost/recipes/${recipe.id}`">
               <div class="post-recipe-img">
-                <img v-if="recipe.cooking_img_file" src="/storage/avatars/user.avatar_file_name" class="rounded-circle">
+                <img v-if="recipe.cooking_img_file" :src="`/storage/recipes/${recipe.ooking_img_file}`" class="rounded-circle">
                 <img v-else src="/images/default-recipe-image.png" class="card-img-top">
               </div>
           </a>
@@ -68,12 +68,9 @@ export default {
     RecipeStock: RecipeStock,
   },
   props: {
-    initialStockRecipes: {
+    StockRecipes: {
       type: Array,
       default: [],
-    },
-    user: {
-
     },
   },
   filters: {
@@ -87,17 +84,20 @@ export default {
   data() {
     return {
       keyword: '',
-      stockRecipes: this.initialStockRecipes,
+      stockRecipes: this.StockRecipes,
     }
   },
   computed: {
+    // フォームに入力された文字に該当するデータの表示
     filterRecipes() {
       let filtered = [];
       for (let i in this.stockRecipes) {
           let recipe = this.stockRecipes[i];
-          if (recipe.title.indexOf(this.keyword) !== -1 ||
-          recipe.meal_type.name.indexOf(this.keyword) !== -1 ||
-          recipe.meal_class.name.indexOf(this.keyword) !== -1) {
+          if (
+            recipe.title.indexOf(this.keyword) !== -1 ||
+            recipe.meal_type.name.indexOf(this.keyword) !== -1 ||
+            recipe.meal_class.name.indexOf(this.keyword) !== -1
+            ){
               filtered.push(recipe);
           }
         }

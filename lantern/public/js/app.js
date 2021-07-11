@@ -2003,11 +2003,10 @@ __webpack_require__.r(__webpack_exports__);
     RecipeStock: _RecipeStock__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
-    initialStockRecipes: {
+    StockRecipes: {
       type: Array,
       "default": []
-    },
-    user: {}
+    }
   },
   filters: {
     createdDate: function createdDate(date) {
@@ -2020,10 +2019,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       keyword: '',
-      stockRecipes: this.initialStockRecipes
+      stockRecipes: this.StockRecipes
     };
   },
   computed: {
+    // フォームに入力された文字に該当するデータの表示
     filterRecipes: function filterRecipes() {
       var filtered = [];
 
@@ -60957,10 +60957,13 @@ var render = function() {
                   attrs: { href: "http://localhost/users/" + recipe.user.name }
                 },
                 [
-                  _vm.user.avatar_file_name
+                  recipe.user.avatar_file_name
                     ? _c("img", {
                         staticClass: "rounded-circle",
-                        attrs: { src: "/storage/avatars/user.avatar_file_name" }
+                        attrs: {
+                          src:
+                            "/storage/avatars/" + recipe.user.avatar_file_name
+                        }
                       })
                     : _vm._e(),
                   _vm._v(" "),
@@ -60992,7 +60995,9 @@ var render = function() {
                   recipe.cooking_img_file
                     ? _c("img", {
                         staticClass: "rounded-circle",
-                        attrs: { src: "/storage/avatars/user.avatar_file_name" }
+                        attrs: {
+                          src: "/storage/recipes/" + recipe.ooking_img_file
+                        }
                       })
                     : _c("img", {
                         staticClass: "card-img-top",
