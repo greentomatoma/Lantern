@@ -1996,10 +1996,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -60984,14 +60980,7 @@ var render = function() {
                   _vm._s(_vm._f("createdDate")(recipe.created_at)) +
                   "に投稿\n        "
               )
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "recipe-stock mb-1" },
-              [_c("recipe-stock")],
-              1
-            )
+            ])
           ]),
           _vm._v(" "),
           _c("main", { staticClass: "card-main" }, [

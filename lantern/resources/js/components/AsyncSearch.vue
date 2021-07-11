@@ -12,10 +12,6 @@
             が{{ recipe.created_at | createdDate }}に投稿
           </p>
 
-          <div class="recipe-stock mb-1">
-            <recipe-stock></recipe-stock>
-          </div>
-
         </header>
         <main class="card-main">
           <a :href="`http://localhost/recipes/${recipe.id}`">
@@ -107,6 +103,6 @@ export default {
         }
       return filtered.slice().reverse();
     },
-  }
+  },
 }
 </script>
