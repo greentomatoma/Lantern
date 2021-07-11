@@ -10,10 +10,10 @@
 
 
 @section('content')
-<div class="container d-flex justify-content-center mt-3">
+<div class="container">
     <div class="card border-light">
-        <div class="card-body">
-            <div class="card-title border-bottom">ログイン</div>
+        <div class="card-body border-light">
+            <div class="card-title">ログイン</div>
 
             @include('layouts/error_card_list')
 
@@ -22,12 +22,12 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="email">メールアドレス</label>
+                        <label class="form-label" for="email">メールアドレス</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレスを入力">
                     </div>
 
                     <div class="form-group">
-                        <label for="password">パスワード</label>
+                        <label class="form-label" for="password">パスワード</label>
                         <input id="password" type="password" class="form-control" name="password" required placeholder="パスワードを入力">
                     </div>
 
@@ -38,7 +38,7 @@
                         </button>
                     </div>
 
-                    <div class="text-center mt-5">
+                    <div class="form-text mt-5">
                         アカウントをお持ちでない方は<a href="{{ route('register') }}">こちら</a>
                     </div>
                 </form>
