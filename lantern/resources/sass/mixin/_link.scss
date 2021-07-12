@@ -1,0 +1,43 @@
+// レシピのタグ
+@mixin _tag {
+  display: flex;
+  margin-top: 15px;
+    a {
+      font-size: 0.8rem;
+      color: #6c757d;
+      font-weight: bold;
+        &:hover {
+          text-decoration: underline #3b3f44;
+        }
+    }
+}
+
+// 投稿ユーザーのリンク
+@mixin _user {
+  font-size: 15px;
+  a {
+    color: #3b3f44;
+    text-decoration: none;
+      &:hover {
+        text-decoration: underline #3b3f44;
+      }
+  }
+  img {
+    object-fit: cover;
+    width: 25px;
+    height: 25px;
+  }
+}
+
+// レシピタイトルのリンク
+@mixin _title {
+  font-size: 1.3rem;
+  margin-bottom: 1.75rem;
+  a {
+    color: #3b3f44;
+    text-decoration: none;
+      &:hover {
+        text-decoration: underline #3b3f44;
+      }
+  }
+}

@@ -113,15 +113,7 @@
             }
         }
         .card-bottom {
-          display: flex;
-          margin-top: 15px;
-            a.text-muted {
-              font-size: 0.8rem;
-              font-weight: bold;
-                &:hover {
-                  text-decoration: underline #3b3f44;
-                }
-            }
+          @include _tag;
         }
     }
 }

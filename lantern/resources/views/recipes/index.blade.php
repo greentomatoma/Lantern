@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="recipe-container">
-  <div class="recipe">
+  <div class="recipes">
     <div class="recipe-cards row">
       @foreach($recipes as $recipe)
         <div class="recipe-card shadow-sm-4 col-md-3 col-sm-6 col-xs-12">
@@ -35,9 +35,11 @@
                 </recipe-stock>
               </div>
               @endif
+            {{-- //保存機能 --}}
+            
           </div>
 
-          <div class="bd-placeholder-img card-img-top">
+          <div class="card-img-top">
             <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
               @if(!empty($recipe->cooking_img_file))
                 <img class="card-img-top" src="/storage/recipes/{{ $recipe->cooking_img_file }}">
@@ -48,9 +50,9 @@
           </div>
 
           <div class="card-body">
-            <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
-                <h1 class="recipe-title">{{ $recipe->title }}</h1>
-            </a>
+            <h1 class="recipe-title">
+                <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">{{ $recipe->title }}</a>
+            </h1>
 
             <div class="card-body-md">
                 <div class="body-md meal-type">
