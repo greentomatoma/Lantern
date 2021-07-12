@@ -1,31 +1,36 @@
-.list-title p {
-  font-size: 1.3rem;
+// ノート内の検索窓
+.search_input {
+  width: 680px;
+  height: 40px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+
+.list-title {
   font-weight: bold;
+  font-size: 1.3rem;
+  padding: 16px;
   margin: 0;
-    span.count {
+    i.title {
+      color: orange;
+      margin-right: 10px;
+    }
+    .count {
       color: orange;
       font-size: 1.5rem;
     }
-    span.items {
+    .items {
       font-size: 1.2rem;
     }
 }
 
 
-// 投稿レシピ一覧
+// レシピ一覧
 .all-post-lists {
   width: 700px; 
   background-color: white;
-    .list-title {
-      font-weight: bold;
-      font-size: 1.3rem;
-      padding: 16px;
-      margin: 0;
-        i.title {
-          color: orange;
-          margin-right: 10px;
-        }
-    }
 
     .post-recipe-card {
       width: 100%;
@@ -35,19 +40,12 @@
         .card-top {
           display: flex;
           justify-content: space-between;
+            .post-time {
+              @include _user;
+            }
             & img {
               height: 20px;
               width: 20px;
-            }
-            .post-time {
-              color: #6c757d;
-                a {
-                  color: #3b3f44;
-                  text-decoration: none;
-                    &:hover {
-                      text-decoration: underline #3b3f44;
-                    }
-                }
             }
 
             // 編集・削除アイコン
@@ -84,15 +82,7 @@
               display: flex;
               flex-direction: column;
                 .card-title {
-                  font-size: 1.3rem;
-                  margin-bottom: 1.7rem;
-                  a {
-                    color: #3b3f44;
-                    text-decoration: none;
-                      &:hover {
-                        text-decoration: underline #3b3f44;
-                      }
-                  }
+                  @include _title;
                 }
                 .recipe-features {
                   display: flex;
@@ -121,7 +111,12 @@
 
 // モバイル対応
 @media screen and (max-width: 479px) {
-  // 投稿レシピ一覧
+  // ノート内の検索窓
+  .search_input {
+    width: 100%;
+  }
+
+  // レシピ一覧
   .all-post-lists {
     width: 360px; 
       .post-recipe-card {

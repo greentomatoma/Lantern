@@ -42,7 +42,7 @@
 
     @foreach($recipes as $recipe)
 
-      @include('users/card')
+      @include('partial/card')
       
     @endforeach
   </div>

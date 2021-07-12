@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" class="search_note" v-model="keyword" placeholder="ノート内を検索">
+    <input type="text" class="search_input" v-model="keyword" placeholder="ノート内を検索">
       <div class="post-recipe-card" v-for="recipe in filterRecipes" :key="recipe.id">
         <header class="card-top">
           <p class="post-time">

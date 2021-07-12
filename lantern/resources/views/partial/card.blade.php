@@ -1,4 +1,6 @@
+{{-- ユーザー詳細ページの投稿一覧で使用 --}}
 {{-- 投稿レシピ１件分 --}}
+
 <div class="post-recipe-card">
     <div class="card-top">
         <p class="post-time">
@@ -78,7 +80,7 @@
           </h3>
           <div class="recipe-features">
               <div class="body-md meal-type">
-                　@if($recipe->mealType->id == 1)
+                  @if($recipe->mealType->id == 1)
                     <img class="meal-type-icon" src="/images/icons/staple_food.svg" alt="主食アイコン">
                   @elseif($recipe->mealType->id == 2)
                     <img class="meal-type-icon" src="/images/icons/main_dish.svg" alt="主菜アイコン">
