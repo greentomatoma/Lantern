@@ -10,11 +10,11 @@
 @section('content')
 <div class="container">
     <div class="card border-light">
-          <h1 class="post-recipe">レシピ投稿</h1>
+          <h1 class="card-title">レシピ投稿</h1>
 
             @include('layouts/error_card_list')
 
-            <form method="POST" action="{{ route('recipes.store') }}" class="post-recipe-form" enctype="multipart/form-data">
+            <form class="recipe-form" method="POST" action="{{ route('recipes.store') }}" enctype="multipart/form-data">
 
                 @include('recipes/form')
 

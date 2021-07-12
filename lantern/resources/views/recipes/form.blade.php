@@ -9,31 +9,31 @@
 </div>
 
 {{-- 料理画像 --}}
-<div class="cooking-image-form">
+<div class="form-image">
     <label for="cooking_img_file">料理画像</label>
     <input type="file" name="cooking_img_file" class="d-none" accept="image/png,image/jpeg,image/gif" id="cooking_img_file" />
     <label for="cooking_img_file" class="image" role="button">
-        <img src="/images/default-recipe-image.png" style="object-fit: cover; width: 300px; height: 200px;">
+        <img src="/images/default-recipe-image.png">
     </label>
 </div>
 
 {{-- 料理名 --}}
-<div class="cook-title form-group">
+<div class="form-group">
     <label for="title">料理名</label>
-    <input id="title" type="text" class="cook-title form-control" name="title" value="{{ $recipe->title ?? old('title') }}" required autocomplete="title" autofocus>
+    <input id="title" type="text" class="form-control" name="title" value="{{ $recipe->title ?? old('title') }}" required autocomplete="title" autofocus>
 </div>
 
 
 <div class="form-md-area">
     {{-- 調理時間 --}}
-    <div class="cook-time form-group">
+    <div class="form-group">
         <label for="cook_time">調理時間（分）</label>
           <input id="cook_time" type="text" class="md-area form-control" name="cook_time" value="{{ $recipe->cook_time ?? old('cook_time') }}" required autocomplete="cook_time">
     </div>
     
     
     {{-- 料理の種類 --}}
-    <div class="meal-type form-group">
+    <div class="form-group">
         <label for="meal_type_id">料理の種類</label>
         <select name="meal_type_id" class="md-area form-control">
             @foreach($meal_types as $meal_type)
@@ -46,7 +46,7 @@
     
     
     {{-- 料理の区分 --}}
-    <div class="meal-class form-group">
+    <div class="form-group">
         <label for="meal_class_id">料理の区分</label>
         <select name="meal_class_id" class="md-area form-control">
             @foreach($meal_classes as $meal_class)

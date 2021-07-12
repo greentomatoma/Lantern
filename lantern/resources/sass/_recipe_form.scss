@@ -7,7 +7,7 @@
       width: 700px;
     }
 
-    h1.post-recipe, .edit-recipe {
+    .card-title {
       padding: 16px 0;
       font-size: 1.5rem;
       font-weight: bold;
@@ -16,14 +16,20 @@
     }
 
     // レシピ入力欄
-    .post-recipe-form, .edit-recipe-form {
+    .recipe-form {
       padding: 48px 48px 16px 48px;
 
-        .cooking-image-form {
+        // 料理画像投稿欄
+        .form-image {
           display: flex;
           flex-direction: column;
           margin: 25px 0;
           font-weight: bold;
+          img {
+            object-fit: cover;
+            width: 300px;
+            height: 200px;
+          }
         }
     
         // 各入力項目のタイトル
@@ -33,13 +39,7 @@
           margin-bottom: 5px;
         }
     
-        .cook-title {
-          border-radius: 5px;
-              label {
-                margin-bottom: 5px;
-              }
-        }
-    
+        // 調理時間・料理の種類・料理の区分
         .form-md-area {
           display: flex;
           justify-content: space-between;
@@ -48,6 +48,7 @@
               }
         }
     
+        // 材料・作り方・コメント記入欄
         .ingredients, .description, .comment {
             .form-control {
               border-radius: 5px;
@@ -61,22 +62,8 @@
         .post-button, .edit-button {
           margin-top: 48px;
           text-align: center;
-
-            button.btn {
-              font-weight: bold;
-              color: white;
-              text-align: center;
-              background-color:  orange;
-              border-radius: 30px;
-              width: 70%;
-
-                  &:hover {
-                    color: white;
-                    background-color: #ffd454;
-                  }
-                  &:focus {
-                    box-shadow: none;
-                  }
+            .btn {
+              @include _btn;
             }
         }
     }

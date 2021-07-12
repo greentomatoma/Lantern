@@ -10,11 +10,11 @@
 @section('content')
 <div class="container">
     <div class="card border-light">
-          <h1 class="edit-recipe">{{ $recipe->title }}</h1>
+          <h1 class="card-title">{{ $recipe->title }}</h1>
 
             @include('layouts/error_card_list')
 
-            <form method="POST" action="{{ route('recipes.update', ['recipe' => $recipe]) }}" class="edit-recipe-form" enctype="multipart/form-data">
+            <form class="recipe-form" method="POST" action="{{ route('recipes.update', ['recipe' => $recipe]) }}" enctype="multipart/form-data">
             @method('PATCH')
 
                 @include('recipes/form')
