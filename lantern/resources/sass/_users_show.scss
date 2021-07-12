@@ -34,15 +34,7 @@
         margin-top: 50px;
         text-align: center;
         .edit-button {
-            color: white;
-            font-size: 0.8rem;
-            border-radius: 30px;
-            padding: 10px 15px;
-            background-color:  orange;
-              &:hover {
-                color: white;
-                background-color: #ffd454;
-              }
+            @include _btn;
           }
       }
   }

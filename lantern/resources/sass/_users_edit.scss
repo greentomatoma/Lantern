@@ -41,20 +41,8 @@
     text-align: center;
 
       button.btn {
-        font-weight: bold;
-        color: white;
-        text-align: center;
-        background-color:  orange;
-        border-radius: 30px;
+        @include _btn;
         width: 35%;
-
-            &:hover {
-              color: white;
-              background-color: #ffd454;
-            }
-            &:focus {
-              box-shadow: none;
-            }
       }
   }
 }

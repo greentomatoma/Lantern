@@ -1,0 +1,13 @@
+@mixin _btn {
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    padding: 10px 15px;
+    background-color:  orange;
+    width: 35%;
+      &:hover {
+        color: white;
+        background-color: #ffd454;
+      }
+}
