@@ -4,13 +4,9 @@
   padding: 24px;
   
     .post-user {
+      @include _user;
       margin: 10px 0 0 35px;
       justify-content: center;
-      & a {
-        font-size: 1.2rem;
-        color: #6c757d;
-        font-weight: lighter;
-      }
       & img {
         object-fit: cover;
         width: 30px;
@@ -24,10 +20,6 @@
       font-size: 2rem;
       font-weight: bold;
       margin-left: 30px;
-        div.title {
-          margin: 0;
-          text-align: center;
-        }
 
         .recipe-stock {
           margin: 0 10px 5px 0;
@@ -50,6 +42,8 @@
 
     .card-text {
       margin-left: 30px;
+      @include _tag;
+
       .text-muted {
         font-weight: lighter;
         font-size: 1rem
