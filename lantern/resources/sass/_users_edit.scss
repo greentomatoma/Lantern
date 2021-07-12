@@ -5,6 +5,9 @@
     width: 800px;
     background-color: white;
     padding: 24px;
+    @include sp {
+      width: 400px;
+    }
   }
 
   // アバター画像
@@ -43,24 +46,9 @@
       button.btn {
         @include _btn;
         width: 35%;
-      }
-  }
-}
-
-
-
-  // モバイル対応
-  @media screen and (max-width: 479px) {
-    .container {
-
-      .profile {
-        width: 400px;
-      }
-  
-      .edit-button {
-        button.btn {
+        @include md {
           width: 45%;
         }
       }
-    }
   }
+}

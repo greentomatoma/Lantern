@@ -15,12 +15,19 @@ $fa-font-path: "../webfonts";
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
 
-// register
-@import 'register';
+//base
+@import './base/base';
+
+//mixin
+@import './mixin/btn';
+@import './mixin/link';
+
+// auth
+@import 'auth';
 
 
 // recipe
-@import 'recipe_create';
+@import 'recipe_form';
 @import 'recipe_index';
 @import 'recipe_show';
 
@@ -30,7 +37,8 @@ $fa-font-path: "../webfonts";
 // user
 @import 'users_show';
 @import 'users_edit';
-@import 'users_note';
+// @import 'users_note';
 
 //search
-@import 'search_index';
+@import 'card';
+

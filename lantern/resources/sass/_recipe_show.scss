@@ -2,11 +2,26 @@
   background-color: white;
   margin: 10px 100px;
   padding: 24px;
+  @include sp {
+    max-width: 100%;
+    margin: 10px;
+    padding: 10px;
+  }
+  @include md {
+    max-width: 100%;
+  }
   
     .post-user {
       @include _user;
       margin: 10px 0 0 35px;
       justify-content: center;
+      @include sp {
+        margin: 10px 0;
+        text-align: left;
+      @include md {
+        margin: 10px 0 0 33px;
+      }
+      }
       & img {
         object-fit: cover;
         width: 30px;
@@ -20,11 +35,23 @@
       font-size: 2rem;
       font-weight: bold;
       margin-left: 30px;
+      @include sp {
+        font-size: 1.4rem;
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+      }
+      @include md {
+        font-size: 1.5rem;
+      }
 
         .recipe-stock {
           margin: 0 10px 5px 0;
           text-align: center;
           font-size: 1rem;
+          @include sp {
+            margin: -6px 10px 5px 0;
+          }
             & p {
               margin-bottom: 0;
               color: orange;
@@ -35,7 +62,10 @@
               font-size: 0.7rem;
             }
             & i {
-              font-size: 2rem
+              font-size: 2rem;
+              @include sp {
+                font-size: 1.5rem;
+              }
             }
         }
     }
@@ -54,20 +84,35 @@
       display: flex;
       justify-content: space-around;
       margin-bottom: 25px;
+      @include sp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       .recipe-image {
           margin: 50px 0 0 0;
+          @include sp {
+            margin: 30px 0 0 0;
+          }
         }
       .top-right {
   
         .top-right-category {
           margin-top: 20px;
+          @include sp {
+            margin-top: 40px;
+          }
   
           ul {
             display: flex;
             align-items: center;
             justify-content: space-around;
             text-align: center;
+            @include sp {
+              padding: 0;
+              justify-content: space-around;
+            }
   
               li {
                 display: flex;
@@ -89,11 +134,17 @@
       flex-direction: column;
       width: 370px;
       margin-left: 60px;
+      @include md {
+        margin: 10px 0 0 4px;
+      }
     }
 
     .description-list, .comment {
       margin: 25px 0 0 30px;
       border-top: 1px solid #dee2e6;
+      @include md {
+        margin: 10px 0 0 4px;
+      }
     }
 
     .ingredients-text, .description-text, .comment-text  {
@@ -104,6 +155,9 @@
     .item-title {
       font-size: 1.2rem;
       font-weight: bold;
+      @include sp {
+        margin-bottom: 8px;
+      }
         span {
           color:orange;
         }
@@ -114,100 +168,14 @@
 .top-page-button {
   max-width: 10%;
   margin: 30px auto;
+  @include sp {
+    max-width: 33%;
+  }
+  @include md {
+    max-width: 30%;
+  }
 
   .top-button {
       @include _btn;
   }
 }
-
-
-  @media screen and (max-width: 768px) {
-    .recipe-detail {
-      max-width: 100%;
-      margin: 10px 50px;
-      padding: 24px;
-
-      .recipe-title {
-        display: flex;
-        font-size: 1.5rem;
-        font-weight: bold;
-          .post-user {
-            margin: 10px 0 0 50px;
-          }
-          & a {
-            font-size: 20px;
-            color: #6c757d;
-            font-weight: lighter;
-          }
-          & img {
-            object-fit: cover;
-            width: 30px;
-            height: 30px;
-          }
-      }
-    }
-    .top-page-button {
-      max-width: 13%;
-    }
-  }
-
-
-  // モバイル対応
-  @media screen and (max-width: 479px) {
-
-    .recipe-detail {
-      max-width: 100%;
-      margin: 10px;
-      padding: 10px;
-
-      .recipe-title {
-        font-size: 1.4rem;
-        display: flex;
-        flex-direction: row;
-        margin-top: 0;
-            .post-user {
-              margin: 10px 0;
-              text-align: left;
-            }
-
-            .recipe-stock {
-              margin: -6px 10px 5px 0;
-                & i {
-                  font-size: 1.5rem;
-                }
-            }
-        }
-
-        .recipe-detail-top {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-    
-            .recipe-image {
-              margin: 30px 0 0 0;
-            }
-            .top-right {
-              .top-right-category {
-                margin-top: 40px;
-        
-                ul {
-                  padding: 0;
-                  justify-content: space-around;
-                }
-              }
-            }
-        }
-
-        .ingredients-list, .description-list, .comment {
-          margin: 10px 0 0 4px;
-          height: auto;
-        }
-
-        .item-title {
-          margin-bottom: 8px;
-        }
-    }
-    .top-page-button {
-      max-width: 33%;
-  }
-  }

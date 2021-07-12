@@ -60934,7 +60934,7 @@ var render = function() {
             expression: "keyword"
           }
         ],
-        staticClass: "search_note",
+        staticClass: "search_input",
         attrs: { type: "text", placeholder: "ノート内を検索" },
         domProps: { value: _vm.keyword },
         on: {

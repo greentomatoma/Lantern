@@ -43,6 +43,10 @@
         .form-md-area {
           display: flex;
           justify-content: space-between;
+          @include sp {
+            display: flex;
+            flex-direction: column;
+          }
               .md-area {
                 border-radius: 5px;
               }
@@ -69,17 +73,3 @@
     }
 
 }
-
-
-  // モバイル対応
-  @media screen and (max-width: 479px) {
-    .container {
-      .post-recipe-form {
-        padding: 16px;
-      }
-      .form-md-area {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }

@@ -1,5 +1,9 @@
 .navbar {
   background-color: $yellow;
+  @include sp {
+    width: 100%;
+    display: flex;
+  }
 
   .navbar-nav {
     .dropdown-item.active, .navbar .dropdown-item:active {
@@ -14,24 +18,39 @@
     }
     .nav-item, .nav-item.dropdown {
       margin-left: 30px;
+      margin-top: 3px;
+
         .nav-link {
           text-align: center;
           font-size: 13px;
           font-weight: lighter;
           padding: 0;
+          @include sp {
+            font-size: 10px;
+          }
         }
-        div {
+        .nav-text {
           margin-top: 3px;
         }
         i {
           font-size: 25px;
+          @include sp {
+            font-size: 20px;
+          }
         }
         #navbarDropdown {
           margin-top: 4px;
+          @include sp {
+            margin-top: 0px;
+          }
           img {
             object-fit: cover;
             width: 2.2rem;
             height: 2.2rem;
+            @include sp {
+              width: 2rem;
+              height: 2rem;
+            }
           }
         }
     }
@@ -41,6 +60,9 @@
 // 検索窓
 .search {
   margin-left: 50px;
+  @include sp {
+    margin: 10px 0 0 35px;
+  }
 
     .search-form {
       position: relative;
@@ -52,52 +74,14 @@
         left: 13px;
       }
     }
-    input.input-form {
+    .input-form {
       width: 400px;
       height: 35px;
-      border: none;
+      border: 1px solid #dee2e6;
       border-radius: 5px;
       padding-left: 40px;
-    }
-}
-
-
-// モバイル対応
-@media all and (max-width: 479px) {
-  .navbar {
-    width: 100%;
-    display: flex;
-
-    .navbar-nav {
-
-      .nav-item, .nav-item.dropdown  {
-        margin-top: 3px;
-
-        .nav-link {
-            text-align: center;
-            font-size: 10px;
-            font-weight: lighter;
-          }
-          i {
-            font-size: 20px;
-          }
-          #navbarDropdown {
-            margin-top: 0px;
-            img {
-              width: 2rem;
-              height: 2rem;
-            }
-          }
+      @include sp {
+        width: 355px;
       }
     }
-  }
-
-  .search {
-    margin-left: 10px;
-
-    input.input-form {
-      width: 230px;
-      font-size: 0.7rem;
-    }
-  }
 }

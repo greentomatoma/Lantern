@@ -9,7 +9,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('recipes.create') }}" >
                     <i class="fas fa-edit"></i>
-                    <div>レシピを書く</div>
+                    <div class="nav-text">レシピを書く</div>
                 </a>
             </li>
               @guest
