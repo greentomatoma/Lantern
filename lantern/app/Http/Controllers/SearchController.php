@@ -17,18 +17,6 @@ class SearchController extends Controller
         
         $keywords = preg_split('/[\p{Z}\p{Cc}]++/u', $keyword, -1, PREG_SPLIT_NO_EMPTY);
 
-        // foreach ($keywords as $keyword) {
-        //     if(!empty($keyword)) {
-        //         $query->where('title', 'like', "%$keyword%")
-        //               ->orWhere('cook_time', 'like', "%$keyword%")
-        //               ->orWhere('ingredients', 'like', "%$keyword%");
-        //         // return $recipes = $query->get()->sortByDesc('created_at');
-        //     } else  {
-        //         // 検索欄に何も記入せず、検索した場合
-        //         // return $recipes = Recipe::all()->sortByDesc('created_at');
-        //     }
-        // }
-
         if(!empty($keywords)) {
             foreach ($keywords as $keyword) {
                 $query->where('title', 'like', "%$keyword%")

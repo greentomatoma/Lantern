@@ -5,26 +5,25 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RecipeRequest;
 use App\Models\MealClass;
 use App\Models\MealType;
-use Illuminate\Http\Request;
 use App\Models\Recipe;
 use App\Models\Tag;
-use Illuminate\Http\File;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image;
-use phpDocumentor\Reflection\DocBlock\Tag as DocBlockTag;
+
 
 class RecipesController extends Controller
 {
-    public function index()
-    {
-        $recipes = Recipe::all()->sortByDesc('created_at')
-        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
 
-        return view('recipes.index', ['recipes' => $recipes]);
+    public function __construct(Recipe $recipe)
+    {
+        $this->recipe = $recipe;
     }
 
+    
+    public function index()
+    {
+        return view('recipes.index', ['recipes' => $this->recipe->getOllRecipes()]);
+    }
     
     public function create()
     {
@@ -71,39 +70,6 @@ class RecipesController extends Controller
 
         return redirect()->route('recipes.index');
     }
-
-
-    /**
-     * レシピ画像をリサイズして保存
-     * 
-     * @param UploadFile $file アップロードされたレシピ画像
-     * @return string レシピ画像
-     */
-
-    // private function saveRecipeImage(UploadedFile $file): string
-    // {
-    //     $tempPath = $this->makeTempPath();
-
-    //     Image::make($file)->fit(300, 200)->save($tempPath);
-
-    //     $filePath = Storage::disk('public')
-    //         ->putFile('recipes', new File($tempPath));
-
-    //     return basename($filePath);
-    // }
-
-
-       /**
-      * 一時的なファイルを生成してパスを返す
-      *
-      * @return string ファイルパス
-      */
-    //   private function makeTempPath(): string
-    //   {
-    //       $tmp_fp = tmpfile();
-    //       $meta   = stream_get_meta_data($tmp_fp);
-    //       return $meta["uri"];
-    //   }
 
 
       public function show(Recipe $recipe)

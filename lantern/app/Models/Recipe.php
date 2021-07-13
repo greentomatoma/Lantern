@@ -20,6 +20,16 @@ class Recipe extends Model
         'meal_class_id',
     ];
 
+    /**
+     * 全てのレシピ情報を取得
+     * @return Object
+     */
+    public function getOllRecipes()
+    {
+        return $this->all()->sortByDesc('created_at')
+        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo('App\User');
