@@ -73466,7 +73466,7 @@ new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   }
 });
 document.addEventListener('DOMContentLoaded', function () {
-  var inputGet = document.querySelector('.image-picker input');
+  var inputGet = document.querySelector('.form-image input');
 
   if (!inputGet) {
     return false;
@@ -73478,7 +73478,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     reader.onload = function (e) {
       // 画像読み込み後の処理
-      input.closest('.image-picker').querySelector('img').src = e.target.result;
+      input.closest('.form-image').querySelector('img').src = e.target.result;
     };
 
     reader.readAsDataURL(input.files[0]);

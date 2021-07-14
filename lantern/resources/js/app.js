@@ -17,7 +17,7 @@ new Vue({
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  const inputGet = document.querySelector('.image-picker input');
+  const inputGet = document.querySelector('.form-image input');
 
   if(!inputGet) { return false; }
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const reader = new FileReader();
     reader.onload = (e) => {
       // 画像読み込み後の処理
-      input.closest('.image-picker').querySelector('img').src = e.target.result
+      input.closest('.form-image').querySelector('img').src = e.target.result
     };
     reader.readAsDataURL(input.files[0]);
   });
