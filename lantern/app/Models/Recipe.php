@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 
 class Recipe extends Model
 {
@@ -19,6 +20,7 @@ class Recipe extends Model
         'meal_type_id',
         'meal_class_id',
     ];
+
 
     /**
      * 全てのレシピ情報を取得
@@ -40,7 +42,49 @@ class Recipe extends Model
         return $this->belongsToMany('App\User', 'stocks')->withTimestamps();
     }
 
-    //  レシピを保存済みか判定
+
+    /**
+     * 料理画像の保存処理
+     * @param \App\Http\Requests\RecipeRequest $request
+              \App\Models\Recipe $recipe
+     * @return bool
+     */
+    public function storeRecipeImage($request, $recipe)
+    {
+        $recipe_image = $request->file('cooking_img_file');
+
+        if($recipe_image) {
+            $path = Storage::disk('public')->putFile('recipes', $recipe_image);
+            $recipeFileName = basename($path);
+            $recipe->cooking_img_file = $recipeFileName;
+        } else {
+            $path = null;
+        }
+
+        return $recipe->save();
+    }
+
+
+    /**
+     * タグ情報の保存処理
+     * @param \App\Http\Requests\RecipeRequest $request
+              \App\Models\Recipe $recipe
+     * @return bool
+     */
+    public function storeTags($request, $recipe)
+    {
+        $request->tags->each(function($tagName) use ($recipe) {
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            $recipe->tags()->attach($tag);
+        });
+    }
+
+
+    /**
+     * レシピを保存済みか判定
+     * @param $user
+     * @return bool
+     */
     public function isStockedBy(?User $user): bool
     {
         return $user

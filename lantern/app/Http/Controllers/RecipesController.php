@@ -19,11 +19,12 @@ class RecipesController extends Controller
         $this->recipe = $recipe;
     }
 
-    
+
     public function index()
     {
         return view('recipes.index', ['recipes' => $this->recipe->getOllRecipes()]);
     }
+    
     
     public function create()
     {
@@ -47,26 +48,11 @@ class RecipesController extends Controller
         $recipe->fill($request->all());
         $recipe->user_id = $request->user()->id;
 
-        $recipe_image = $request->file('cooking_img_file');
+        // 料理画像保存処理
+        $this->recipe->storeRecipeImage($request, $recipe);
 
-        // 画像保存処理
-        if($recipe_image) {
-            // $recipeImagePath = $recipe_image->store('public/recipes');
-            $path = Storage::disk('public')->putFile('recipes', $recipe_image);
-
-            $recipeFileName = basename($path);
-            // $fileName = $this->saveRecipeImage($request->file('cooking_img_file'));
-            $recipe->cooking_img_file = $recipeFileName;
-        } else {
-            $path = null;
-        }
-        
-        $recipe->save();
-
-        $request->tags->each(function($tagName) use ($recipe) {
-            $tag = Tag::firstOrCreate(['name' => $tagName]);
-            $recipe->tags()->attach($tag);
-        });
+        // タグ情報保存処理
+        $this->recipe->storeTags($request, $recipe);
 
         return redirect()->route('recipes.index');
     }
@@ -90,7 +76,6 @@ class RecipesController extends Controller
 
           $meal_types = MealType::orderBy('sort_no')->get();
           $meal_classes = MealClass::orderBy('sort_no')->get();
-            //  dd($recipe);
 
           return view('recipes.edit', [
               'recipe' => $recipe,
@@ -107,10 +92,7 @@ class RecipesController extends Controller
         $recipe->fill($request->all())->save();
         
         $recipe->tags()->detach();
-        $request->tags->each(function($tagName) use ($recipe) {
-            $tag = Tag::firstOrCreate(['name' => $tagName]);
-            $recipe->tags()->attach($tag);
-        });
+        $this->recipe->storeTags($request, $recipe);
 
         return redirect()->route('recipes.index');
     }
