@@ -28,17 +28,10 @@ class RecipesController extends Controller
     
     public function create()
     {
-        $allTagNames = Tag::all()->map(function($tag) {
-            return ['text' => $tag->name]; 
-        });
-
-        $meal_types = MealType::orderBy('sort_no')->get();
-        $meal_classes = MealClass::orderBy('sort_no')->get();
-
         return view('recipes.create', [
-            'allTagNames' => $allTagNames,
-            'meal_types' => $meal_types,
-            'meal_classes' => $meal_classes,
+            'allTagNames' => $this->recipe->allTagNames(),
+            'meal_types' => $this->recipe->getMealType(),
+            'meal_classes' => $this->recipe->getMealClass(),
         ]);
     }
 
@@ -48,8 +41,10 @@ class RecipesController extends Controller
         $recipe->fill($request->all());
         $recipe->user_id = $request->user()->id;
 
+        // 画像ファイル情報を取得
+        $recipe_image = $request->file('cooking_img_file');
         // 料理画像保存処理
-        $this->recipe->storeRecipeImage($request, $recipe);
+        $this->recipe->storeRecipeImage($recipe_image, $recipe);
 
         // タグ情報保存処理
         $this->recipe->storeTags($request, $recipe);
@@ -66,23 +61,12 @@ class RecipesController extends Controller
 
       public function edit(Recipe $recipe)
       {
-          $tagNames = $recipe->tags->map(function($tag) {
-            return ['text' => $tag->name];
-          });
-
-          $allTagNames = Tag::all()->map(function($tag) {
-            return ['text' => $tag->name]; 
-          });
-
-          $meal_types = MealType::orderBy('sort_no')->get();
-          $meal_classes = MealClass::orderBy('sort_no')->get();
-
           return view('recipes.edit', [
               'recipe' => $recipe,
-              'tagNames' => $tagNames,
-              'allTagNames' => $allTagNames,
-              'meal_types' => $meal_types,
-              'meal_classes' => $meal_classes,
+              'tagNames' => $this->recipe->tagNames($recipe),
+              'allTagNames' => $this->recipe->allTagNames(),
+              'meal_types' => $this->recipe->getMealType(),
+              'meal_classes' => $this->recipe->getMealClass(),
               ]);
     }
 
@@ -93,6 +77,16 @@ class RecipesController extends Controller
         
         $recipe->tags()->detach();
         $this->recipe->storeTags($request, $recipe);
+        
+        // 画像ファイル情報を取得
+        $recipe_image = $request->file('cooking_img_file');
+        if($request->hasFile('cooking_img_file')) {
+            // 変更前の画像を削除
+            Storage::delete('/public/recipes/' . $recipe->cooking_img_file);
+            $path = Storage::disk('public')->putFile('recipes', $recipe_image);
+            $recipeFileName = basename($path);
+            $recipe->cooking_img_file = $recipeFileName;
+        }
 
         return redirect()->route('recipes.index');
     }
@@ -100,17 +94,11 @@ class RecipesController extends Controller
 
     public function destroy(Recipe $recipe)
     {
-        $delRecipeId = Recipe::find($recipe->id);
-        // storage/app/public/imagesから画像ファイルを削除
-        $delPath = '/public/recipes/' . $delRecipeId->cooking_img_file;
-        if(Storage::exists($delPath)) {
-            Storage::delete($delPath);
-        }
-        // $delRecipeImage = $delRecipeId->cooking_img_file;
-        $recipe->delete();
+        $this->recipe->deleteRecipeImage($recipe);
         return redirect()->route('recipes.index');
     }
 
+    
     public function stock(Recipe $recipe)
     {
         $user_id = Auth::id();

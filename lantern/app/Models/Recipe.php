@@ -45,14 +45,12 @@ class Recipe extends Model
 
     /**
      * 料理画像の保存処理
-     * @param \App\Http\Requests\RecipeRequest $request
-              \App\Models\Recipe $recipe
+     * @param $recipe_image
+     * @param \App\Models\Recipe $recipe
      * @return bool
      */
-    public function storeRecipeImage($request, $recipe)
+    public function storeRecipeImage($recipe_image, $recipe)
     {
-        $recipe_image = $request->file('cooking_img_file');
-
         if($recipe_image) {
             $path = Storage::disk('public')->putFile('recipes', $recipe_image);
             $recipeFileName = basename($path);
@@ -66,6 +64,51 @@ class Recipe extends Model
 
 
     /**
+     * 料理画像の削除処理
+     * @param $recipe
+     * @return bool
+     */
+    public function deleteRecipeImage($recipe)
+    {
+        $delRecipeId = $this->find($recipe->id);
+        // storage/app/public/imagesから画像ファイルを削除
+        $delPath = '/public/recipes/' . $delRecipeId->cooking_img_file;
+        if(Storage::exists($delPath)) {
+            Storage::delete($delPath);
+        }
+        return $recipe->delete();
+    }
+
+
+    /**
+     * 登録済みのタグ情報を取得
+     * 編集・更新画面で使用
+     * @param $recipe
+     * @return Object
+     */
+    public function tagNames($recipe)
+    {
+        $recipe->tags->map(function($tag) {
+            return ['text' => $tag->name];
+        });
+    }
+
+
+    /**
+     * 登録済みの全てのタグ情報を取得
+     * 自動補完で使用
+     * @param $tag
+     * @return Object
+     */
+    public function allTagNames()
+    {
+         Tag::all()->map(function($tag) {
+            return ['text' => $tag->name];
+        });
+    }
+
+
+    /**
      * タグ情報の保存処理
      * @param \App\Http\Requests\RecipeRequest $request
               \App\Models\Recipe $recipe
@@ -74,9 +117,30 @@ class Recipe extends Model
     public function storeTags($request, $recipe)
     {
         $request->tags->each(function($tagName) use ($recipe) {
+            // テーブルに同一のタグが存在するか確認
             $tag = Tag::firstOrCreate(['name' => $tagName]);
             $recipe->tags()->attach($tag);
         });
+    }
+
+    
+    /**
+     * 料理の種類の情報取得
+     * @return Collection
+     */
+    public function getMealType()
+    {
+        return MealType::orderBy('sort_no')->get();
+    }
+
+
+    /**
+     * 料理の区分の情報取得
+     * @return Collection
+     */
+    public function getMealClass()
+    {
+        return MealClass::orderBy('sort_no')->get();
     }
 
 
@@ -92,10 +156,16 @@ class Recipe extends Model
         : false;
     }
 
+
+    /**
+     * そのレシピが保存された数をカウント
+     * @return int
+     */
     public function getCountStocksAttribute(): int
     {
         return $this->stocks->count();
     }
+
 
     public function tags(): BelongsToMany
     {

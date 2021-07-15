@@ -11,9 +11,13 @@
 {{-- 料理画像 --}}
 <div class="form-image">
     <label for="cooking_img_file">料理画像</label>
-    <input type="file" name="cooking_img_file" class="d-none" accept="image/png,image/jpeg,image/gif" id="cooking_img_file" />
+    <input class="d-none" type="file" name="cooking_img_file" value="{{ $recipe->cooking_img_file ?? old('cooking_img_file')}}" accept="image/png,image/jpeg,image/gif" id="cooking_img_file" />
     <label for="cooking_img_file" class="image" role="button">
-        <img src="/images/default-recipe-image.png">
+    @if(!empty($recipe->cooking_img_file))
+        <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top">
+    @else
+        <img src="/images/default-recipe-image.png" class="card-img-top">
+    @endif
     </label>
 </div>
 
