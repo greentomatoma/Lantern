@@ -73,20 +73,21 @@ class RecipesController extends Controller
 
     public function update(RecipeRequest $request, Recipe $recipe)
     {
-        $recipe->fill($request->all())->save();
+        $recipe->fill($request->all());
         
         $recipe->tags()->detach();
         $this->recipe->storeTags($request, $recipe);
+
+        $editRecipeId = $recipe->find($recipe->id);
         
-        // 画像ファイル情報を取得
-        $recipe_image = $request->file('cooking_img_file');
         if($request->hasFile('cooking_img_file')) {
-            // 変更前の画像を削除
-            Storage::delete('/public/recipes/' . $recipe->cooking_img_file);
-            $path = Storage::disk('public')->putFile('recipes', $recipe_image);
-            $recipeFileName = basename($path);
-            $recipe->cooking_img_file = $recipeFileName;
+            $this->recipe->deleteRecipeImage($editRecipeId);
+            $path = $request->file('cooking_img_file')->store('public/recipes');
+            $recipe->cooking_img_file = basename($path);
+            $recipe->save();
         }
+
+        $recipe->save();
 
         return redirect()->route('recipes.index');
     }
@@ -94,7 +95,10 @@ class RecipesController extends Controller
 
     public function destroy(Recipe $recipe)
     {
-        $this->recipe->deleteRecipeImage($recipe);
+        $delRecipeId = $recipe->find($recipe->id);
+        $this->recipe->deleteRecipeImage($delRecipeId);
+
+        $recipe->delete();
         return redirect()->route('recipes.index');
     }
 

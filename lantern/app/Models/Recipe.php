@@ -44,7 +44,7 @@ class Recipe extends Model
 
 
     /**
-     * 料理画像の保存処理
+     * 画像の保存処理
      * @param $recipe_image
      * @param \App\Models\Recipe $recipe
      * @return bool
@@ -63,20 +63,35 @@ class Recipe extends Model
     }
 
 
+    // /**
+    //  * 料理画像の更新処理
+    //  * @param \App\Http\Requests\RecipeRequest $request
+    //  * @param \App\Models\Recipe $recipe
+    //  * @return bool
+    //  */
+    // public function updateRecipeImage($request, $recipe)
+    // {
+    //     if($request->hasFile('cooking_img_file')) {
+    //         $this->recipe->deleteRecipeImage($delRecipeId);
+    //         $path = $request->file('cooking_img_file')->store('public/recipes');
+    //         $recipe->cooking_img_file = basename($path);
+    //         $recipe->save();
+    //     }
+    // }
+
+
     /**
      * 料理画像の削除処理
      * @param $recipe
      * @return bool
      */
-    public function deleteRecipeImage($recipe)
+    public function deleteRecipeImage($delRecipeId)
     {
-        $delRecipeId = $this->find($recipe->id);
         // storage/app/public/imagesから画像ファイルを削除
         $delPath = '/public/recipes/' . $delRecipeId->cooking_img_file;
         if(Storage::exists($delPath)) {
             Storage::delete($delPath);
         }
-        return $recipe->delete();
     }
 
 

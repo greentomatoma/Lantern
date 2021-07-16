@@ -29,7 +29,7 @@ class RecipeRequest extends FormRequest
             'ingredients' => ['required', 'string', 'max: 500'],
             'description' => ['required', 'string', 'max: 1000'],
             'comment' => ['nullable', 'string', 'max: 1000'],
-            'cooking_img_file' => ['file', 'image'],
+            'cooking_img_file' => ['nullable', 'file', 'image'],
             'tags' => ['json', 'regex:/^(?!.*\s).+$/u', 'regex:/^(?!.*\/).*$/u'],
             'meal_type_id' => ['required', 'integer'],
             'meal_class_id' => ['nullable', 'integer'],

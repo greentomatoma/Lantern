@@ -80,7 +80,7 @@
                   @elseif($recipe->mealType->id == 5)
                     <img class="meal-type-icon" src="../images/icons/dessert.svg" alt="デザートアイコン">
                   @else
-                    <img class="meal-type-icon" src="../images/icons/other_dished.svg" alt="その他アイコン">
+                    <img class="meal-type-icon" src="../images/icons/other_dishes.svg" alt="その他アイコン">
                   @endif
               </div>
               <span class="for-people">{{ $recipe->mealType->name }}</span>
