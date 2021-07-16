@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\User;
 use Illuminate\Support\Facades\Storage;
 
+
 class Recipe extends Model
 {
     protected $fillable = [
@@ -63,21 +64,23 @@ class Recipe extends Model
     }
 
 
-    // /**
-    //  * 料理画像の更新処理
-    //  * @param \App\Http\Requests\RecipeRequest $request
-    //  * @param \App\Models\Recipe $recipe
-    //  * @return bool
-    //  */
-    // public function updateRecipeImage($request, $recipe)
-    // {
-    //     if($request->hasFile('cooking_img_file')) {
-    //         $this->recipe->deleteRecipeImage($delRecipeId);
-    //         $path = $request->file('cooking_img_file')->store('public/recipes');
-    //         $recipe->cooking_img_file = basename($path);
-    //         $recipe->save();
-    //     }
-    // }
+    /**
+     * 料理画像の更新処理
+     * @param \App\Http\Requests\RecipeRequest $request
+     * @param \App\Models\Recipe $recipe
+     * @return bool
+     */
+    public function updateRecipeImage($request, $recipe)
+    {
+        $editRecipeId = $recipe->find($recipe->id);
+        
+        if($request->hasFile('cooking_img_file')) {
+            $this->deleteRecipeImage($editRecipeId);
+            $path = $request->file('cooking_img_file')->store('public/recipes');
+            $recipe->cooking_img_file = basename($path);
+            $recipe->save();
+        }
+    }
 
 
     /**

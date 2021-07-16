@@ -78,14 +78,8 @@ class RecipesController extends Controller
         $recipe->tags()->detach();
         $this->recipe->storeTags($request, $recipe);
 
-        $editRecipeId = $recipe->find($recipe->id);
-        
-        if($request->hasFile('cooking_img_file')) {
-            $this->recipe->deleteRecipeImage($editRecipeId);
-            $path = $request->file('cooking_img_file')->store('public/recipes');
-            $recipe->cooking_img_file = basename($path);
-            $recipe->save();
-        }
+        // 料理画像更新処理
+        $this->recipe->updateRecipeImage($request, $recipe);
 
         $recipe->save();
 
