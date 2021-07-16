@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -40,7 +40,48 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+
+    /**
+     * アバター画像の保存処理
+     * @param \Illuminate\Http\UploadedFile $avatar_img_file
+     * @param \Illuminate\Contracts\Auth\Authenticatable $user
+     * @return String
+     */
+    public function updateAvatarImage($request, $user)
+    {
+        $AvatarId = $user->find($user->id);
+
+        if($request->hasFile('avatar_img_file')) {
+            $this->deleteAvatarImage($AvatarId);
+            $path = $request->file('avatar_img_file')->store('public/avatars');
+            $avatarFileName = basename($path);
+            $user->avatar_img_file = $avatarFileName;
+        } else {
+            $path = null;
+        }
+    }
+
+
+    /**
+     * アバター画像の削除処理
+     * @param $AvatarId
+     * @return bool
+     */
+    public function deleteAvatarImage($AvatarId)
+    {
+        // storage/app/public/avatarsから画像ファイルを削除
+        $delPath = '/public/avatars/' . $AvatarId->avatar_img_file;
+        if(Storage::exists($delPath)) {
+            Storage::delete($delPath);
+        }
+    }
+
+
+    /**
+     * レシピを保存済みか判定
+     * @param $user
+     * @return bool
+     */
     public function isStockedBy(?User $user): bool
     {
         return $user 

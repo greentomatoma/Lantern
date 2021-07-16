@@ -20,7 +20,7 @@
       <div class="profile">
   
           {{-- アバター画像 --}}
-            <div class="avatar-form image-picker">
+            <div class="form-image image-picker">
               <input type="file" name="avatar_img_file" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
               <label for="avatar" class="avatar_image">
                 @if (!empty($user->avatar_img_file))

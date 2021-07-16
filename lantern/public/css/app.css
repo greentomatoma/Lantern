@@ -18064,15 +18064,15 @@ a:hover {
   }
 }
 
-.container .avatar-form {
+.container .form-image {
   text-align: center;
 }
 
-.container .avatar-form .avatar_image {
+.container .form-image .avatar_image {
   cursor: pointer;
 }
 
-.container .avatar-form .avatar_image img {
+.container .form-image .avatar_image img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100px;

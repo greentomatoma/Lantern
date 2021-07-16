@@ -45,7 +45,7 @@ class Recipe extends Model
 
 
     /**
-     * 画像の保存処理
+     * 料理画像の保存処理
      * @param $recipe_image
      * @param \App\Models\Recipe $recipe
      * @return bool

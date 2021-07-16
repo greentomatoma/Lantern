@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
     public function show(string $name)
     {
         $user = User::where('name', $name)->first();
@@ -36,21 +42,9 @@ class UserController extends Controller
         $user = Auth::user();
 
         $user->name = $request->input('name');
-
-        $avatar_img_file = $request->file('avatar_img_file');
-
-
+        
         // 画像保存処理
-        if($avatar_img_file) {
-            // $recipeImagePath = $recipe_image->store('public/recipes');
-            $path = Storage::disk('public')->putFile('avatars', $avatar_img_file);
-
-            $avatarFileName = basename($path);
-            // $fileName = $this->saveRecipeImage($request->file('cooking_img_file'));
-            $user->avatar_img_file = $avatarFileName;
-        } else {
-            $path = null;
-        }
+        $this->user->updateAvatarImage($request, $user);
         
         $user->save();
 
