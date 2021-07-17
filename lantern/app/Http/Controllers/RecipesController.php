@@ -22,7 +22,7 @@ class RecipesController extends Controller
 
     public function index()
     {
-        return view('recipes.index', ['recipes' => $this->recipe->getOllRecipes()]);
+        return view('recipes.index', ['recipes' => $this->recipe->getAllRecipes()]);
     }
     
     

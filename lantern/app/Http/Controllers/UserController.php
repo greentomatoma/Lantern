@@ -18,21 +18,19 @@ class UserController extends Controller
 
     public function show(string $name)
     {
-        $user = User::where('name', $name)->first();
-
-        $recipes = $user->recipes->sortByDesc('created_at')
-        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
+        // ユーザー情報を取得
+        $user = $this->user->getUser($name);
 
         return view('users.show', [
             'user' => $user,
-            'recipes' => $recipes,
+            'recipes' => $this->user->getAllRecipes($user),
         ]);
     }
 
 
     public function edit(string $name, User $user)
     {
-        $user = User::where('name', $name)->first();
+        $user = $this->user->getUser($name);
         return view('users.edit', ['user' => $user]);
     }
 
@@ -59,14 +57,11 @@ class UserController extends Controller
 
     public function note(string $name)
     {
-        $user = User::where('name', $name)->first();
-
-        $recipes = $user->note->sortByDesc('created_at')
-        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
+        $user = $this->user->getUser($name);
 
         return view('users.note', [
             'user' => $user,
-            'recipes' => $recipes,
+            'recipes' => $this->user->getAllStockedRecipes($user),
         ]);
     }
 }

@@ -42,6 +42,28 @@ class User extends Authenticatable
 
 
     /**
+     * 該当するユーザーネームを取得
+     * @param string $name
+     * @return String
+     */
+    public function getUser($name)
+    {
+        return $this->where('name', $name)->first();
+    }
+
+
+    /**
+     * そのユーザーが投稿した全てのレシピ情報を取得
+     * @return Object
+     */
+    public function getAllRecipes($user)
+    {
+        return $user->recipes->sortByDesc('created_at')
+        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
+    }
+
+
+    /**
      * アバター画像の保存処理
      * @param \Illuminate\Http\UploadedFile $avatar_img_file
      * @param \Illuminate\Contracts\Auth\Authenticatable $user
@@ -74,6 +96,18 @@ class User extends Authenticatable
         if(Storage::exists($delPath)) {
             Storage::delete($delPath);
         }
+    }
+
+
+    /**
+     * そのユーザーが保存した全てのレシピ情報を取得
+     * @param $user
+     * @return Object
+     */
+    public function getAllStockedRecipes($user)
+    {
+        return $user->note->sortByDesc('created_at')
+        ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
     }
 
 

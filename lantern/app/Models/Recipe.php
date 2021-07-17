@@ -27,7 +27,7 @@ class Recipe extends Model
      * 全てのレシピ情報を取得
      * @return Object
      */
-    public function getOllRecipes()
+    public function getAllRecipes()
     {
         return $this->all()->sortByDesc('created_at')
         ->load('user', 'stocks', 'tags', 'mealType', 'mealClass');
@@ -75,7 +75,9 @@ class Recipe extends Model
         $editRecipeId = $recipe->find($recipe->id);
         
         if($request->hasFile('cooking_img_file')) {
+            // 元の画像データを削除
             $this->deleteRecipeImage($editRecipeId);
+            // 変更後の画像データ取得
             $path = $request->file('cooking_img_file')->store('public/recipes');
             $recipe->cooking_img_file = basename($path);
             $recipe->save();
