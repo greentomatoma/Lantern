@@ -5,7 +5,7 @@
         :initial-tags='@json($tagNames ?? [])'
         :autocomplete-items='@json($allTagNames ?? [])'
     >
-    </recipe-tags>
+</recipe-tags>
 </div>
 
 {{-- 料理画像 --}}

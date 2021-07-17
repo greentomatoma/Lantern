@@ -108,7 +108,7 @@ class Recipe extends Model
      */
     public function tagNames($recipe)
     {
-        $recipe->tags->map(function($tag) {
+        return $recipe->tags->map(function($tag) {
             return ['text' => $tag->name];
         });
     }
@@ -122,7 +122,7 @@ class Recipe extends Model
      */
     public function allTagNames()
     {
-         Tag::all()->map(function($tag) {
+         return Tag::all()->map(function($tag) {
             return ['text' => $tag->name];
         });
     }
