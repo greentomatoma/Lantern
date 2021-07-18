@@ -60957,20 +60957,17 @@ var render = function() {
                   attrs: { href: "http://localhost/users/" + recipe.user.name }
                 },
                 [
-                  recipe.user.avatar_file_name
+                  recipe.user.avatar_img_file
                     ? _c("img", {
                         staticClass: "rounded-circle",
                         attrs: {
-                          src:
-                            "/storage/avatars/" + recipe.user.avatar_file_name
+                          src: "/storage/avatars/" + recipe.user.avatar_img_file
                         }
                       })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _c("img", {
-                    staticClass: "rounded-circle",
-                    attrs: { src: "/images/avatar-default.svg" }
-                  }),
+                    : _c("img", {
+                        staticClass: "rounded-circle",
+                        attrs: { src: "/images/avatar-default.svg" }
+                      }),
                   _vm._v(
                     "\n          " +
                       _vm._s(recipe.user.name) +
@@ -60996,7 +60993,7 @@ var render = function() {
                     ? _c("img", {
                         staticClass: "rounded-circle",
                         attrs: {
-                          src: "/storage/recipes/" + recipe.ooking_img_file
+                          src: "/storage/recipes/" + recipe.cooking_img_file
                         }
                       })
                     : _c("img", {

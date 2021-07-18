@@ -24,11 +24,11 @@
                   {{-- ログイン済み --}}
                   <li class="nav-item dropdown">
                       <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                      @if(!empty($user->avatar_file_name))
-                        <img src="/storage/avatars/{{ $user->avatar_file_name}}" class="rounded-circle">
-                      @else
-                        <img src="/images/avatar-default.svg" class="rounded-circle">
-                      @endif
+                        @if (!empty(Auth::user()->avatar_img_file))
+                          <img src="/storage/avatars/{{ Auth::user()->avatar_img_file }}" class="rounded-circle">
+                        @else
+                          <img src="/images/avatar-default.svg" class="rounded-circle">
+                        @endif
                       </a>
 
                       {{-- ドロップダウンメニュー --}}

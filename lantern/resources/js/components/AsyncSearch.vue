@@ -5,8 +5,8 @@
         <header class="card-top">
           <p class="post-time">
             <a :href="`http://localhost/users/${recipe.user.name}`">
-              <img v-if="recipe.user.avatar_file_name" :src="`/storage/avatars/${recipe.user.avatar_file_name}`" class="rounded-circle">
-              <img src="/images/avatar-default.svg" class="rounded-circle">
+              <img v-if="recipe.user.avatar_img_file" :src="`/storage/avatars/${recipe.user.avatar_img_file}`" class="rounded-circle">
+              <img v-else src="/images/avatar-default.svg" class="rounded-circle">
             {{ recipe.user.name }}さん
             </a> 
             が{{ recipe.created_at | createdDate }}に投稿
@@ -16,7 +16,7 @@
         <main class="card-main">
           <a :href="`http://localhost/recipes/${recipe.id}`">
               <div class="post-recipe-img">
-                <img v-if="recipe.cooking_img_file" :src="`/storage/recipes/${recipe.ooking_img_file}`" class="rounded-circle">
+                <img v-if="recipe.cooking_img_file" :src="`/storage/recipes/${recipe.cooking_img_file}`" class="rounded-circle">
                 <img v-else src="/images/default-recipe-image.png" class="card-img-top">
               </div>
           </a>

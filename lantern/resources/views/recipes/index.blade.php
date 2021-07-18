@@ -14,8 +14,8 @@
           <div class="card-top">
             <div class="recipe-post-user">
               <a href="{{ route('users.show', ['name' => $recipe->user->name]) }}">
-                @if(!empty($user->avatar_file_name))
-                  <img src="/storage/avatars/{{ $user->avatar_file_name}}" class="rounded-circle">
+                @if (!empty($recipe->user->avatar_img_file))
+                  <img src="/storage/avatars/{{$recipe->user->avatar_img_file}}" class="rounded-circle">
                 @else
                   <img src="/images/avatar-default.svg" class="rounded-circle">
                 @endif
