@@ -15,7 +15,6 @@ $factory->define(Recipe::class, function (Faker $faker) {
         'ingredients' => $faker->text(500),
         'description' => $faker->text(1000),
         'comment' => $faker->text(1000),
-        'cooking_img_file' => $faker->image('storage/app/recipes'),
         'user_id' => function() {
             return factory(User::class);
         },
