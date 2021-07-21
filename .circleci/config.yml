@@ -21,6 +21,4 @@ jobs:
       - run:
           command: npm run dev
           working_directory: ./lantern
-      - run:
-          name: php test
-          command: vendor/bin/phpunit --configuration=./lantern/phpunit.xml
+      - run: php ./lantern/vendor/bin/phpunit --configuration=./lantern/phpunit.xml
