@@ -5,12 +5,12 @@ jobs:
       - image: circleci/php:7.3-node-browsers
     steps:
       - checkout
+      - run: sudo composer self-update --1
       - run:
-          command: composer install -n --prefer-dist
-          working_directory: ~/lantern
-      - run: composer install -n --prefer-dist
+        name: Install PHP libraries
+        command: composer install -n --prefer-dist
       - run: npm ci
       - run: npm run dev
       - run:
-          name: php test
-          command: vendor/bin/phpunit
+        name: php test
+        command: vendor/bin/phpunit
