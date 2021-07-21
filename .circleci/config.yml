@@ -21,4 +21,4 @@ jobs:
       - run:
           command: npm run dev
           working_directory: ./lantern
-      - run: php ./lantern/vendor/bin/phpunit --configuration=./lantern/phpunit.xml
+      - run: php ./vendor/bin/phpunit --configuration=./lantern/phpunit.xml
