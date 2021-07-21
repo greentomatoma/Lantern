@@ -14,7 +14,7 @@ jobs:
       - save_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
           path:
-            -vendor
+            - vendor
       - run: npm ci
       - run: npm run dev
       - run:
