@@ -3,6 +3,19 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.3-node-browsers
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_DATABASE: lantern
+          MYSQL_USER: lantern_user
+          MYSQL_PASSWORD: lantern_pass
+    environment:
+      APP_ENV: testing
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: lantern
+      DB_USERNAME: lantern_user
+      DB_PASSWORD: lantern_pass
     steps:
       - checkout
       - run: sudo composer self-update --1
@@ -31,3 +44,10 @@ jobs:
       - run:
           command: npm run dev
           working_directory: ./lantern
+      - run:
+          name: get ready for mysql
+          command: |
+            sudo apt-get update
+            sudo apt-get install libpq-dev
+            sudo docker-php-ext-install pdo_mysql
+            dockerize -wait tcp://localhost:3306 -timeout 1m
