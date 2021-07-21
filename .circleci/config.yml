@@ -21,4 +21,7 @@ jobs:
       - run:
           command: npm run dev
           working_directory: ./lantern
-      - run: php ./vendor/bin/phpunit
+      - run:
+          name: PHP test
+          command: ./vendor/bin/phpunit
+          working_directory: lantern
