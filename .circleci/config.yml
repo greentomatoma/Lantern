@@ -23,4 +23,5 @@ jobs:
           working_directory: ./lantern
       - run:
           name: php test
-          command: php ./lantern/vendor/bin/phpunit
+          command: vendor/bin/phpunit
+          working_directory: ./lantern/tests
