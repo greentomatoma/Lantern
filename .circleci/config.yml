@@ -6,9 +6,18 @@ jobs:
     steps:
       - checkout
       - run: sudo composer self-update --1
-      - run: composer install -n --prefer-dist
-      - run: npm ci
-      - run: npm run dev
+      - restore_cache:
+          key: composer-v1-{{ checksum "lantern/composer.lock" }}
       - run:
-          name: php test
-          command: vendor/bin/phpunit
+          name: Install PHP libraries
+          command: composer install -n --prefer-dist --working-dir=./lantern
+      - save_cache:
+          key: composer-v1-{{ checksum "lantern/composer.lock" }}
+          paths:
+            - vendor
+      - run:
+          command: npm ci
+          working_directory: ./lantern
+      - run:
+          command: npm run dev
+          working_directory: ./lantern
