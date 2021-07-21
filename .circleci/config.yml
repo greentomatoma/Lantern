@@ -15,9 +15,19 @@ jobs:
           key: composer-v1-{{ checksum "lantern/composer.lock" }}
           paths:
             - vendor
+      - restore_cache: 
+          key: npm-v1-{{ checksum "lantern/package-lock.json" }}
       - run:
-          command: npm ci
+          name: npm ci
+          command: |
+            if [ ! -d node_modules ]; then
+              npm ci
+            fi 
           working_directory: ./lantern
+      - save_cache: 
+          key: npm-v1-{{ checksum "lantern/package-lock.json" }}
+          paths: 
+            - node_modules
       - run:
           command: npm run dev
           working_directory: ./lantern
