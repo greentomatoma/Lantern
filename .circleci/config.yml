@@ -13,7 +13,7 @@ jobs:
           command: composer install -n --prefer-dist
       - save_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
-          path:
+          paths:
             - vendor
       - run: npm ci
       - run: npm run dev
