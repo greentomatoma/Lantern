@@ -54,10 +54,8 @@ jobs:
       - run: 
           name: 
           command: php artisan migrate --env=testing
-          working_directory: ./lantern --configuration=./lantern/phpunit.xml
       - run: 
           command: php artisan db:seed
-          working_directory: ./lantern
       - run:
           name: PHP test
           command: vendor/phpunit/phpunit/phpunit tests/
