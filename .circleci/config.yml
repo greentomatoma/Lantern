@@ -52,10 +52,9 @@ jobs:
             sudo docker-php-ext-install pdo_mysql
             dockerize -wait tcp://localhost:3306 -timeout 1m
       - run: 
-          name: 
-          command: php artisan migrate --env=testing
-      - run: 
-          command: php artisan db:seed
+          name: Migration & Seeding
+          command: php artisan migrate --seed
+          working_directory: ./lantern
       - run:
           name: PHP test
           command: vendor/phpunit/phpunit/phpunit tests/
