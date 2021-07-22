@@ -51,8 +51,6 @@ jobs:
             sudo apt-get install libpq-dev
             sudo docker-php-ext-install pdo_mysql
             dockerize -wait tcp://localhost:3306 -timeout 1m
-
-      # run seeding
       - run: 
           name: 
           command: php artisan migrate --env=testing
@@ -60,7 +58,6 @@ jobs:
       - run: 
           command: php artisan db:seed
           working_directory: ./lantern
-
       -run:
           name: PHP test
           command: vendor/phpunit/phpunit/phpunit tests/
