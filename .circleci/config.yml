@@ -55,7 +55,3 @@ jobs:
           name: Migration & Seeding
           command: php artisan migrate --seed --env=testing
           working_directory: ./lantern
-      - run:
-          name: PHP test
-          command: vendor/bin/phpunit
-          working_directory: ./lantern
