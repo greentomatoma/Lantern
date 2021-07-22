@@ -57,5 +57,5 @@ jobs:
           working_directory: ./lantern
       - run:
           name: PHP test
-          command: vendor/phpunit/phpunit/phpunit tests/
+          command: vendor/bin/phpunit
           working_directory: ./lantern
