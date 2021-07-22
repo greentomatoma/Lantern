@@ -11,7 +11,7 @@ jobs:
     environment:
       APP_ENV: testing
       DB_CONNECTION: mysql
-      DB_HOST: db
+      DB_HOST: 127.0.0.1
       DB_PORT: 3306
       DB_DATABASE: lantern
       DB_USERNAME: lantern_user
@@ -53,7 +53,7 @@ jobs:
             dockerize -wait tcp://localhost:3306 -timeout 1m
       - run: 
           name: Migration & Seeding
-          command: php artisan migrate --seed
+          command: php artisan migrate --seed --env=testing
           working_directory: ./lantern
       - run:
           name: PHP test
