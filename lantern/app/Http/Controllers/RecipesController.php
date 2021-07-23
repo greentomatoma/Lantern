@@ -29,8 +29,11 @@ class RecipesController extends Controller
     public function create()
     {
         return view('recipes.create', [
+            // 全てのタグ情報を取得
             'allTagNames' => $this->recipe->allTagNames(),
+            // 料理の種類
             'meal_types' => $this->recipe->getMealType(),
+            // 料理の区分
             'meal_classes' => $this->recipe->getMealClass(),
         ]);
     }
@@ -89,7 +92,9 @@ class RecipesController extends Controller
 
     public function destroy(Recipe $recipe)
     {
+        // 削除するレシピのID取得
         $delRecipeId = $recipe->find($recipe->id);
+        // 画像削除処理
         $this->recipe->deleteRecipeImage($delRecipeId);
 
         $recipe->delete();
@@ -97,6 +102,7 @@ class RecipesController extends Controller
     }
 
     
+    // レシピ保存機能
     public function stock(Recipe $recipe)
     {
         $user_id = Auth::id();
@@ -111,6 +117,7 @@ class RecipesController extends Controller
         ];
     }
 
+    // レシピ保存解除
     public function unstock(Recipe $recipe)
     {
         $user_id = Auth::id();
