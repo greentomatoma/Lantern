@@ -32,7 +32,7 @@ class RecipeRequest extends FormRequest
             'cooking_img_file' => ['nullable', 'file', 'image'],
             'tags' => ['json', 'regex:/^(?!.*\s).+$/u', 'regex:/^(?!.*\/).*$/u'],
             'meal_type_id' => ['required', 'integer'],
-            'meal_class_id' => ['nullable', 'integer'],
+            'meal_class_id' => ['required', 'integer'],
         ];
     }
 
