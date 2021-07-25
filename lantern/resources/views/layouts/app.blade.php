@@ -22,6 +22,7 @@
 <body>
     <div id="app">
         @yield('content')
+        @include('layouts/footer')
     </div>
 
     <!-- <script src="{{ mix('js/app.js') }}"></script> -->

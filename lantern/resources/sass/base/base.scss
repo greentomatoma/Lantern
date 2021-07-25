@@ -14,3 +14,10 @@ $md: 768px;
     @content;
   }
 }
+
+.container {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}

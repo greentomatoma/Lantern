@@ -1,5 +1,9 @@
 .recipe-container {
   margin: 0 50px;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
+  box-sizing: border-box;
 }
 
 .row {
