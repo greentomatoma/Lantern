@@ -80,11 +80,14 @@ jobs:
             if [ ! -d node_modules ]; then
               npm ci
             fi
+          working_directory: ./lantern
       - save_cache:
           key: npm-v1-{{ checksum "lantern/package-lock.json" }}
           paths:
             - node_modules
-      - run: npm run prod
+      - run:
+          command: npm run prod
+          working_directory: ./lantern
       - run:
           name: archive artifacts
           command: zip -ryq lantern.zip .
