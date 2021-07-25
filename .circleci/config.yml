@@ -65,7 +65,9 @@ jobs:
       - run: sudo composer self-update --1
       - restore_cache:
           key: composer-no-dev-v1-{{ checksum "lantern/composer.lock" }}
-      - run: composer install -n --no-dev --prefer-dist
+      - run: 
+          command: composer install -n --no-dev --prefer-dist
+          working_directory: ./lantern
       - save_cache:
           key: composer-no-dev-v1-{{ checksum "lantern/composer.lock" }}
           paths:
