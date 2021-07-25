@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/webapp/Lantern/lantern
+permissions:
+  - object: /home/webapp/Lantern/lantern
+  owner: webapp
+  group: webapp
+hooks:
+  AfterInstall:
+    - location: ./scripts/after_install.sh
+    timeout: 60
+    runas: webapp
