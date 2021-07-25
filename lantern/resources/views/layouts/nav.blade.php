@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-light">
-  <div class="container">
+  <div class="nav-container">
       <a class="navbar-brand" href="{{ url('/') }}">
           {{ config('app.name', 'Laravel') }}
       </a>

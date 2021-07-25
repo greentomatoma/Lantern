@@ -1,8 +1,16 @@
 .navbar {
   background-color: $yellow;
+  display: block;
+  padding: 0.5rem 4.3rem;
   @include sp {
     width: 100%;
+    padding: 0.5rem 2.3rem;
+  }
+
+  .nav-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .navbar-nav {
