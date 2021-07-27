@@ -5,10 +5,10 @@ files:
     destination: /home/webapp/Lantern/lantern
 permissions:
   - object: /home/webapp/Lantern/lantern
-  owner: webapp
-  group: webapp
+    owner: webapp
+    group: webapp
 hooks:
   AfterInstall:
     - location: ./Lantern/scripts/after_install.sh
-    timeout: 60
-    runas: webapp
+      timeout: 60
+      runas: webapp
