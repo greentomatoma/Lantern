@@ -59,9 +59,12 @@ class UserController extends Controller
     {
         $user = $this->user->getUser($name);
 
+        $url = $_SERVER['HTTP_HOST'];
+        
         return view('users.note', [
             'user' => $user,
             'recipes' => $this->user->getAllStockedRecipes($user),
+            'url' => $url
         ]);
     }
 }

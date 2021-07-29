@@ -2006,7 +2006,8 @@ __webpack_require__.r(__webpack_exports__);
     StockRecipes: {
       type: Array,
       "default": []
-    }
+    },
+    httpHost: {}
   },
   filters: {
     createdDate: function createdDate(date) {
@@ -60954,7 +60955,14 @@ var render = function() {
               _c(
                 "a",
                 {
-                  attrs: { href: "http://localhost/users/" + recipe.user.name }
+                  attrs: {
+                    href:
+                      "http://" +
+                      _vm.httpHost +
+                      "/users/" +
+                      "" +
+                      recipe.user.name
+                  }
                 },
                 [
                   recipe.user.avatar_img_file
@@ -60986,7 +60994,11 @@ var render = function() {
           _c("main", { staticClass: "card-main" }, [
             _c(
               "a",
-              { attrs: { href: "http://localhost/recipes/" + recipe.id } },
+              {
+                attrs: {
+                  href: "http://" + _vm.httpHost + "/recipes/" + "" + recipe.id
+                }
+              },
               [
                 _c("div", { staticClass: "post-recipe-img" }, [
                   recipe.cooking_img_file
@@ -61008,7 +61020,12 @@ var render = function() {
               _c("h3", { staticClass: "card-title" }, [
                 _c(
                   "a",
-                  { attrs: { href: "http://localhost/recipes/" + recipe.id } },
+                  {
+                    attrs: {
+                      href:
+                        "http://" + _vm.httpHost + "/recipes/" + "" + recipe.id
+                    }
+                  },
                   [_vm._v(_vm._s(recipe.title))]
                 )
               ]),
@@ -61104,7 +61121,10 @@ var render = function() {
                     {
                       key: tag.id,
                       staticClass: "text-muted",
-                      attrs: { href: "http://localhost/tags/" + tag.name }
+                      attrs: {
+                        href:
+                          "http://" + _vm.httpHost + "/tags/" + "" + tag.name
+                      }
                     },
                     [
                       _vm._v(
