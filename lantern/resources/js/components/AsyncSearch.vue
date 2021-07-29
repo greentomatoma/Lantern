@@ -4,7 +4,7 @@
       <div class="post-recipe-card" v-for="recipe in filterRecipes" :key="recipe.id">
         <header class="card-top">
           <p class="post-time">
-            <a :href="`http://localhost/users/${recipe.user.name}`">
+            <a :href=" 'http://' + httpHost + '/users/' + `${recipe.user.name}` ">
               <img v-if="recipe.user.avatar_img_file" :src="`/storage/avatars/${recipe.user.avatar_img_file}`" class="rounded-circle">
               <img v-else src="/images/avatar-default.svg" class="rounded-circle">
             {{ recipe.user.name }}さん
@@ -14,7 +14,7 @@
 
         </header>
         <main class="card-main">
-          <a :href="`http://localhost/recipes/${recipe.id}`">
+          <a :href=" 'http://' + httpHost + '/recipes/' + `${recipe.id}` ">
               <div class="post-recipe-img">
                 <img v-if="recipe.cooking_img_file" :src="`/storage/recipes/${recipe.cooking_img_file}`" class="rounded-circle">
                 <img v-else src="/images/default-recipe-image.png" class="card-img-top">
@@ -22,7 +22,7 @@
           </a>
           <div class="card-main-text">
             <h3 class="card-title">
-                <a :href="`http://localhost/recipes/${recipe.id}`">{{ recipe.title }}</a>
+                <a :href=" 'http://' + httpHost + '/recipes/' + `${recipe.id}` ">{{ recipe.title }}</a>
             </h3>
             <div class="recipe-features">
               <div class="body-md meal-type">
@@ -48,7 +48,7 @@
         <div class="card-bottom">
             <div class="tag">
               <div class="card-text line-height">
-                <a class="text-muted"  v-for="tag in recipe.tags" :key="tag.id" :href="`http://localhost/tags/${tag.name}`">
+                <a class="text-muted"  v-for="tag in recipe.tags" :key="tag.id" :href="'http://' + httpHost + '/tags/' + `${tag.name}`">
                   {{ tag.name | hashtag }}
                 </a>
               </div>
@@ -72,6 +72,8 @@ export default {
       type: Array,
       default: [],
     },
+    httpHost: {
+    }
   },
   filters: {
     createdDate: function (date) {
