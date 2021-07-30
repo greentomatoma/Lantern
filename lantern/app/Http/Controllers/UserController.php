@@ -59,7 +59,14 @@ class UserController extends Controller
     {
         $user = $this->user->getUser($name);
 
-        $url = $_SERVER['HTTP_HOST'];
+        $url = "";
+        // $url = $_SERVER['SERVER_ADDR'];
+
+        if($_SERVER['HTTP_HOST'] == 'localhost') {
+            $url = $_SERVER['HTTP_HOST'];
+        } else {
+            $url = $_SERVER['HTTP_HOST'];
+        }
         
         return view('users.note', [
             'user' => $user,

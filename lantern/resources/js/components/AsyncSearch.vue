@@ -73,6 +73,8 @@ export default {
       default: [],
     },
     httpHost: {
+      type: String,
+      default: "localhost"
     }
   },
   filters: {
