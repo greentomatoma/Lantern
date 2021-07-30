@@ -2007,7 +2007,10 @@ __webpack_require__.r(__webpack_exports__);
       type: Array,
       "default": []
     },
-    httpHost: {}
+    httpHost: {
+      type: String,
+      "default": "localhost"
+    }
   },
   filters: {
     createdDate: function createdDate(date) {
