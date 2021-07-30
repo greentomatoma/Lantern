@@ -74,7 +74,6 @@ export default {
     },
     httpHost: {
       type: String,
-      default: "localhost"
     }
   },
   filters: {

@@ -61,9 +61,9 @@ class UserController extends Controller
 
         $url = "";
         // $url = $_SERVER['SERVER_ADDR'];
-        if($_SERVER['HTTP_HOST'] == 'localhost') {
+        if($_SERVER['HTTP_HOST'] == '13.115.34.128') {
             $url = $_SERVER['HTTP_HOST'];
-        } elseif($_SERVER['HTTP_HOST'] == '13.115.34.128') {
+        } elseif($_SERVER['HTTP_HOST'] == 'localhost') {
             $url = $_SERVER['HTTP_HOST'];
         }
         
