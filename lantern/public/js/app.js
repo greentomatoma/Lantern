@@ -2008,7 +2008,8 @@ __webpack_require__.r(__webpack_exports__);
       "default": []
     },
     httpHost: {
-      type: String
+      type: String,
+      "default": ""
     }
   },
   filters: {
