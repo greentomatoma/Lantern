@@ -72,11 +72,11 @@ class UserController extends Controller
         // }
 
         if (strpos(gethostname(), 'ap-northeast-1.compute.internal') === true) {
-            $url = '13.115.34.128';
-        } else {
             $url = 'localhost';
+        } else {
+            $url = '13.115.34.128';
         }
-        // dd(php_uname('n'));
+        
         return view('users.note', [
             'user' => $user,
             'recipes' => $this->user->getAllStockedRecipes($user),
