@@ -3,6 +3,6 @@
 
 set -eux
 
-cd ~/Lantern/lantern-ssh-deploy
+cd ~/Lantern/lantern/lantern
 php artisan migrate --force
 php artisan config:cache
