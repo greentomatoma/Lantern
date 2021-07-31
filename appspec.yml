@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/webapp/Lantern/lantern/lantern/lantern
+    destination: /home/webapp/Lantern/lantern-ssh-deploy
 permissions:
-  - object: /home/webapp/Lantern/lantern/lantern/lantern/lantern
+  - object: /home/webapp/Lantern/lantern-ssh-deploy
     owner: webapp
     group: webapp
 hooks:
   AfterInstall:
-    - location: /home/webapp/Lantern/lantern/lantern/scripts/after_install.sh
+    - location: ./scripts/after_install.sh
       timeout: 60
       runas: webapp
