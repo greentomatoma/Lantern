@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/webapp/Lantern/lantern-ssh-deploy
+    destination: /home/webapp/Lantern/lantern/lantern
 permissions:
-  - object: /home/webapp/Lantern/lantern-ssh-deploy
+  - object: /home/webapp/Lantern/lantern/lantern
     owner: webapp
     group: webapp
 hooks:
