@@ -62,11 +62,21 @@ class UserController extends Controller
         $url = "";
         $hostname = php_uname("n");
 
-        if($hostname == 'd9a6ea0a5c20') {
-            $url = 'localhost';
-        } elseif($hostname == '13.115.34.128') {
-            $url = '13.115.34.128';
+        switch(true) {
+            case($hostname === 'd9a6ea0a5c20'):
+                $url = 'localhost';
+                break;
+            case($hostname === '13.115.34.128'):
+                $url = '13.115.34.128';
+                break;
         }
+        dd($url);
+        // if($hostname === 'd9a6ea0a5c20') {
+        //     $url = 'localhost';
+        // } elseif($hostname === '13.115.34.128') {
+        //     $url = '13.115.34.128';
+        // }
+
         // if($_SERVER['HTTP_HOST'] === 'localhost') {
         //     $url = $_SERVER['HTTP_HOST'];
         // } else {
