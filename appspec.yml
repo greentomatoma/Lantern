@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /home/webapp/Lantern/lantern/lantern
 permissions:
-  - object: /home/webapp/Lantern/lantern/lantern
+  - object: /home/webapp/Lantern/lantern/lantern/lantern
     owner: webapp
     group: webapp
 hooks:
