@@ -59,7 +59,7 @@ class UserController extends Controller
     {
         $user = $this->user->getUser($name);
 
-        $url = "";
+        // $url = "";
         // $hostname = php_uname("n");
 
         // switch(true) {
@@ -71,16 +71,16 @@ class UserController extends Controller
         //         break;
         // }
 
-        if (strpos(gethostname(), 'ap-northeast-1.compute.internal') === true) {
-            $url = 'localhost';
-        } else {
-            $url = '13.115.34.128';
-        }
-        
+        // if (strpos(gethostname(), 'ap-northeast-1.compute.internal') === true) {
+        //     $url = 'localhost';
+        // } else {
+        //     $url = '13.115.34.128';
+        // }
+
         return view('users.note', [
             'user' => $user,
             'recipes' => $this->user->getAllStockedRecipes($user),
-            'url' => $url
+            // 'url' => $url
         ]);
     }
 }
