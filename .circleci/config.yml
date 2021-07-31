@@ -36,14 +36,14 @@ jobs:
             if [ ! -d node_modules ]; then
               npm ci
             fi 
-          working_directory: ./lantern-ssh-deploy
+          working_directory: ./Lantern/lantern-ssh-deploy
       - save_cache: 
           key: npm-v1-{{ checksum "lantern-ssh-deploy/package-lock.json" }}
           paths: 
             - node_modules
       - run:
           command: npm run dev
-          working_directory: ./lantern-ssh-deploy
+          working_directory: ./Lantern/lantern-ssh-deploy
       - run:
           name: get ready for mysql
           command: |
@@ -54,7 +54,7 @@ jobs:
       - run: 
           name: Migration & Seeding
           command: php artisan migrate --seed --env=testing
-          working_directory: ./lantern-ssh-deploy
+          working_directory: ./Lantern/lantern-ssh-deploy
   deploy:
     docker:
       - image: circleci/php:7.3-node-browsers
@@ -67,7 +67,7 @@ jobs:
           key: composer-no-dev-v1-{{ checksum "lantern-ssh-deploy/composer.lock" }}
       - run: 
           command: composer install -n --no-dev --prefer-dist
-          working_directory: ./lantern-ssh-deploy
+          working_directory: ./Lantern/lantern-ssh-deploy
       - save_cache:
           key: composer-no-dev-v1-{{ checksum "lantern-ssh-deploy/composer.lock" }}
           paths:
@@ -80,14 +80,14 @@ jobs:
             if [ ! -d node_modules ]; then
               npm ci
             fi
-          working_directory: ./lantern-ssh-deploy
+          working_directory: ./Lantern/lantern-ssh-deploy
       - save_cache:
           key: npm-v1-{{ checksum "lantern-ssh-deploy/package-lock.json" }}
           paths:
             - node_modules
       - run:
           command: npm run prod
-          working_directory: ./lantern-ssh-deploy
+          working_directory: ./Lantern/lantern-ssh-deploy
       - run:
           name: archive artifacts
           command: zip -ryq lantern.zip .
