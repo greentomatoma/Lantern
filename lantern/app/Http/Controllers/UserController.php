@@ -60,30 +60,22 @@ class UserController extends Controller
         $user = $this->user->getUser($name);
 
         $url = "";
-        $hostname = php_uname("n");
+        // $hostname = php_uname("n");
 
-        switch(true) {
-            case($hostname === 'd9a6ea0a5c20'):
-                $url = 'localhost';
-                break;
-            case($hostname === '13.115.34.128'):
-                $url = '13.115.34.128';
-                break;
+        // switch(true) {
+        //     case($hostname === 'd9a6ea0a5c20'):
+        //         $url = 'localhost';
+        //         break;
+        //     case($hostname === '13.115.34.128'):
+        //         $url = '13.115.34.128';
+        //         break;
+        // }
+
+        if (strpos(gethostname(), 'ap-northeast-1.compute.internal') === true) {
+            $url = '13.115.34.128';
+        } else {
+            $url = 'localhost';
         }
-        dd($url);
-        // if($hostname === 'd9a6ea0a5c20') {
-        //     $url = 'localhost';
-        // } elseif($hostname === '13.115.34.128') {
-        //     $url = '13.115.34.128';
-        // }
-
-        // if($_SERVER['HTTP_HOST'] === 'localhost') {
-        //     $url = $_SERVER['HTTP_HOST'];
-        // } else {
-        //     $url = $_SERVER['SERVER_NAME'];
-        // }
-        // $url = $_SERVER['SERVER_NAME'];
-        // dd($url);
         // dd(php_uname('n'));
         return view('users.note', [
             'user' => $user,
