@@ -20,28 +20,30 @@ jobs:
       - checkout
       - run: sudo composer self-update --1
       - restore_cache:
-          key: composer-v1-{{ checksum "composer.lock" }}
+          key: composer-v1-{{ checksum "lantern/composer.lock" }}
       - run:
           name: Install PHP libraries
           command: composer install -n --prefer-dist --working-dir=./lantern
       - save_cache:
-          key: composer-v1-{{ checksum "composer.lock" }}
+          key: composer-v1-{{ checksum "lantern/composer.lock" }}
           paths:
             - vendor
       - restore_cache: 
-          key: npm-v1-{{ checksum "package-lock.json" }}
+          key: npm-v1-{{ checksum "lantern/package-lock.json" }}
       - run:
           name: npm ci
           command: |
             if [ ! -d node_modules ]; then
               npm ci
             fi 
+          working_directory: ./lantern
       - save_cache: 
-          key: npm-v1-{{ checksum "package-lock.json" }}
+          key: npm-v1-{{ checksum "lantern/package-lock.json" }}
           paths: 
             - node_modules
       - run:
           command: npm run dev
+          working_directory: ./lantern
       - run:
           name: get ready for mysql
           command: |
@@ -62,27 +64,30 @@ jobs:
       - checkout
       - run: sudo composer self-update --1
       - restore_cache:
-          key: composer-no-dev-v1-{{ checksum "composer.lock" }}
+          key: composer-no-dev-v1-{{ checksum "lantern/composer.lock" }}
       - run: 
           command: composer install -n --no-dev --prefer-dist
+          working_directory: ./lantern
       - save_cache:
-          key: composer-no-dev-v1-{{ checksum "composer.lock" }}
+          key: composer-no-dev-v1-{{ checksum "lantern/composer.lock" }}
           paths:
             - vendor
       - restore_cache:
-          key: npm-v1-{{ checksum "package-lock.json" }}
+          key: npm-v1-{{ checksum "lantern/package-lock.json" }}
       - run:
           name: npm ci
           command: |
             if [ ! -d node_modules ]; then
               npm ci
             fi
+          working_directory: ./lantern
       - save_cache:
-          key: npm-v1-{{ checksum "package-lock.json" }}
+          key: npm-v1-{{ checksum "lantern/package-lock.json" }}
           paths:
             - node_modules
       - run:
           command: npm run prod
+          working_directory: ./lantern
       - run:
           name: archive artifacts
           command: zip -ryq lantern.zip .
