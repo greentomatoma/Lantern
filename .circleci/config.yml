@@ -54,7 +54,7 @@ jobs:
       - run: 
           name: Migration & Seeding
           command: php artisan migrate --seed --env=testing
-          working_directory: ./lantern
+          working_directory: lantern
   deploy:
     docker:
       - image: circleci/php:7.3-node-browsers
