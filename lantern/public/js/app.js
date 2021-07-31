@@ -2006,10 +2006,6 @@ __webpack_require__.r(__webpack_exports__);
     StockRecipes: {
       type: Array,
       "default": []
-    },
-    httpHost: {
-      type: String,
-      "default": ""
     }
   },
   filters: {
@@ -2023,7 +2019,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       keyword: '',
-      stockRecipes: this.StockRecipes
+      stockRecipes: this.StockRecipes,
+      httpHost: '13.115.34.128'
     };
   },
   computed: {

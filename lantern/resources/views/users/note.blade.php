@@ -14,7 +14,6 @@
 
       <async-search
       :stock-recipes = '@json($recipes)'
-      :http-host = '@json($url)'
       >
       </async-search>
 
