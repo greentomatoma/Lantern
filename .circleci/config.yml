@@ -20,16 +20,16 @@ jobs:
       - checkout
       - run: sudo composer self-update --1
       - restore_cache:
-          key: composer-v1-{{ checksum "Lantern/lantern-ssh-deploy/composer.lock" }}
+          key: composer-v1-{{ checksum "./Lantern/lantern-ssh-deploy/composer.lock" }}
       - run:
           name: Install PHP libraries
-          command: composer install -n --prefer-dist --working-dir=./lantern-ssh-deploy
+          command: composer install -n --prefer-dist --working-dir=./Lantern/lantern-ssh-deploy
       - save_cache:
-          key: composer-v1-{{ checksum "Lantern/lantern-ssh-deploy/composer.lock" }}
+          key: composer-v1-{{ checksum "./Lantern/lantern-ssh-deploy/composer.lock" }}
           paths:
             - vendor
       - restore_cache: 
-          key: npm-v1-{{ checksum "Lantern/lantern-ssh-deploy/package-lock.json" }}
+          key: npm-v1-{{ checksum "./Lantern/lantern-ssh-deploy/package-lock.json" }}
       - run:
           name: npm ci
           command: |
@@ -38,7 +38,7 @@ jobs:
             fi 
           working_directory: ./Lantern/lantern-ssh-deploy
       - save_cache: 
-          key: npm-v1-{{ checksum "Lantern/lantern-ssh-deploy/package-lock.json" }}
+          key: npm-v1-{{ checksum "./Lantern/lantern-ssh-deploy/package-lock.json" }}
           paths: 
             - node_modules
       - run:
@@ -64,16 +64,16 @@ jobs:
       - checkout
       - run: sudo composer self-update --1
       - restore_cache:
-          key: composer-no-dev-v1-{{ checksum "Lantern/lantern-ssh-deploy/composer.lock" }}
+          key: composer-no-dev-v1-{{ checksum "./Lantern/lantern-ssh-deploy/composer.lock" }}
       - run: 
           command: composer install -n --no-dev --prefer-dist
           working_directory: ./Lantern/lantern-ssh-deploy
       - save_cache:
-          key: composer-no-dev-v1-{{ checksum "Lantern/lantern-ssh-deploy/composer.lock" }}
+          key: composer-no-dev-v1-{{ checksum "./Lantern/lantern-ssh-deploy/composer.lock" }}
           paths:
             - vendor
       - restore_cache:
-          key: npm-v1-{{ checksum "Lantern/lantern-ssh-deploy/package-lock.json" }}
+          key: npm-v1-{{ checksum "./Lantern/lantern-ssh-deploy/package-lock.json" }}
       - run:
           name: npm ci
           command: |
@@ -82,7 +82,7 @@ jobs:
             fi
           working_directory: ./Lantern/lantern-ssh-deploy
       - save_cache:
-          key: npm-v1-{{ checksum "Lantern/lantern-ssh-deploy/package-lock.json" }}
+          key: npm-v1-{{ checksum "./Lantern/lantern-ssh-deploy/package-lock.json" }}
           paths:
             - node_modules
       - run:
