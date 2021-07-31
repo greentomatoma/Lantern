@@ -9,7 +9,7 @@
               <img v-else src="/images/avatar-default.svg" class="rounded-circle">
             {{ recipe.user.name }}さん
             </a> 
-            が{{ recipe.created_at | createdDate }}に投稿
+            が{{ recipe.created_at | createdDate }}に投稿しました。
           </p>
 
         </header>
