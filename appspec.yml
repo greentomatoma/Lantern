@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/webapp/Lantern/lantern
+    destination: /home/webapp/Lantern
 permissions:
-  - object: /home/webapp/Lantern/lantern
+  - object: /home/webapp/Lantern
     owner: webapp
     group: webapp
 hooks:
