@@ -76,7 +76,17 @@
                   <p class="cook-time">{{ $recipe->cook_time }}分</p>
                 </div>
                 <div class="body-md meal-class ">
-                  <div class="meal-class-icon"></div>
+                    @if($recipe->mealClass->id == 1)
+                      <img class="meal-class-icon" src="/images/icons/class_gray.svg" alt="指定なし">
+                    @elseif($recipe->mealClass->id == 2)
+                      <img class="meal-class-icon" src="/images/icons/class_purple.svg" alt="容易にかめる">
+                    @elseif($recipe->mealClass->id == 3)
+                      <img class="meal-class-icon" src="/images/icons/class_pink.svg" alt="歯ぐきでつぶせる">
+                    @elseif($recipe->mealClass->id == 4)
+                      <img class="meal-class-icon" src="/images/icons/class_orange.svg" alt="舌でつぶせる">
+                    @else($recipe->mealClass->id == 5)
+                      <img class="meal-class-icon" src="/images/icons/class_green.svg" alt="かまなくてよい">
+                    @endif
                   <p class="meal-class">{{ $recipe->mealClass->name }}</p>
                 </div>
             </div>

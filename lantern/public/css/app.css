@@ -17330,21 +17330,22 @@ a:hover {
   justify-content: space-around;
 }
 
-.recipe-card .card-body div .meal-type-icon,
+.recipe-card .card-body .meal-type-icon,
 .recipe-card .card-body .cook-time-icon,
 .recipe-card .card-body .meal-class-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 5px;
   margin: 3px auto 5px auto;
 }
 
-.recipe-card .card-body p.meal-type,
+.recipe-card .card-body .meal-type,
 .recipe-card .card-body .cook-time,
 .recipe-card .card-body .meal-class {
   font-size: 12px;
   margin-top: 0;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .recipe-card .card-body .card-tags {
