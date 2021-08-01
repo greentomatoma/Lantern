@@ -40,17 +40,18 @@
         justify-content: space-around;
       }
 
-      div .meal-type-icon, .cook-time-icon, .meal-class-icon {
-        width: 32px; 
-        height: 32px; 
+      .meal-type-icon, .cook-time-icon, .meal-class-icon {
+        width: 40px; 
+        height: 40px; 
         border-radius: 5px; 
         margin: 3px auto 5px auto;
       }
 
-      p.meal-type, .cook-time, .meal-class {
+      .meal-type, .cook-time, .meal-class {
         font-size: 12px;
         margin-top: 0;
         margin-bottom: 0;
+        text-align: center;
       }
 
       .card-tags {

@@ -39,7 +39,11 @@
                 <p class="cook-time">{{ recipe.cook_time }}分</p>
               </div>
               <div class="body-md meal-class ">
-                <div class="meal-class-icon"></div>
+                <img v-if="recipe.meal_class_id == 1" class="meal-class-icon" src="/images/icons/class_gray.svg" alt="指定なし">
+                <img v-else-if="recipe.meal_class_id == 2" class="meal-class-icon" src="/images/icons/class_purple.svg" alt="容易にかめる">
+                <img v-else-if="recipe.meal_class_id == 3" class="meal-class-icon" src="/images/icons/class_pink.svg" alt="歯ぐきでつぶせる">
+                <img v-else-if="recipe.meal_class_id == 4" class="meal-class-icon" src="/images/icons/class_orange.svg" alt="舌でつぶせる">
+                <img v-else class="meal-type-icon" src="/images/icons/class_green.svg" alt="かまなくてよい">
                 <p class="meal-class">{{ recipe.meal_class.name }}</p>
               </div>
             </div>

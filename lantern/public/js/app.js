@@ -1996,6 +1996,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -61100,7 +61104,45 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "body-md meal-class " }, [
-                  _c("div", { staticClass: "meal-class-icon" }),
+                  recipe.meal_class_id == 1
+                    ? _c("img", {
+                        staticClass: "meal-class-icon",
+                        attrs: {
+                          src: "/images/icons/class_gray.svg",
+                          alt: "指定なし"
+                        }
+                      })
+                    : recipe.meal_class_id == 2
+                    ? _c("img", {
+                        staticClass: "meal-class-icon",
+                        attrs: {
+                          src: "/images/icons/class_purple.svg",
+                          alt: "容易にかめる"
+                        }
+                      })
+                    : recipe.meal_class_id == 3
+                    ? _c("img", {
+                        staticClass: "meal-class-icon",
+                        attrs: {
+                          src: "/images/icons/class_pink.svg",
+                          alt: "歯ぐきでつぶせる"
+                        }
+                      })
+                    : recipe.meal_class_id == 4
+                    ? _c("img", {
+                        staticClass: "meal-class-icon",
+                        attrs: {
+                          src: "/images/icons/class_orange.svg",
+                          alt: "舌でつぶせる"
+                        }
+                      })
+                    : _c("img", {
+                        staticClass: "meal-type-icon",
+                        attrs: {
+                          src: "/images/icons/class_green.svg",
+                          alt: "かまなくてよい"
+                        }
+                      }),
                   _vm._v(" "),
                   _c("p", { staticClass: "meal-class" }, [
                     _vm._v(_vm._s(recipe.meal_class.name))
