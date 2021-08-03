@@ -35,6 +35,12 @@ class Search extends Model
                     ->orWhere('ingredients', 'like', "%$keyword%")
                     ->orWhereHas('tags', function($query) use ($keyword) {
                         $query->where('name', 'like', "%$keyword%" );
+                    })
+                    ->orWhereHas('mealType', function($query) use ($keyword) {
+                        $query->where('name', 'like', "%$keyword%" );
+                    })
+                    ->orWhereHas('mealClass', function($query) use ($keyword) {
+                        $query->where('name', 'like', "%$keyword%" );
                     });
             }
         }
