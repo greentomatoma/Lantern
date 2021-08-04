@@ -76,6 +76,10 @@ export default {
       type: Array,
       default: [],
     },
+    url: {
+      type: String,
+      default: "",
+    }
   },
   filters: {
     createdDate: function (date) {
@@ -89,7 +93,7 @@ export default {
     return {
       keyword: '',
       stockRecipes: this.StockRecipes,
-      httpHost: '13.115.34.128',
+      httpHost: this.url,
     }
   },
   computed: {
