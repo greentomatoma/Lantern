@@ -2,7 +2,7 @@
   <div class="stock-btn mt-2">
     <button
       type="button"
-      class="btn shadow-none p-2"
+      class="shadow-none p-2"
       :class="buttonColor"
       @click="clickStock"
     >

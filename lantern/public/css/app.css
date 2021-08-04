@@ -17417,7 +17417,18 @@ a:hover {
   }
 }
 
-.stock-btn .btn:hover {
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.stock-btn button:hover {
   color: orange;
   text-decoration: none;
 }
