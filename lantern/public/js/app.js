@@ -2010,6 +2010,10 @@ __webpack_require__.r(__webpack_exports__);
     StockRecipes: {
       type: Array,
       "default": []
+    },
+    url: {
+      type: String,
+      "default": ""
     }
   },
   filters: {
@@ -2024,7 +2028,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       keyword: '',
       stockRecipes: this.StockRecipes,
-      httpHost: '13.115.34.128'
+      httpHost: this.url
     };
   },
   computed: {

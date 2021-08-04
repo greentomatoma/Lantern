@@ -46,6 +46,7 @@
       button.btn {
         @include _btn;
         width: 35%;
+        box-shadow: none;
         @include md {
           width: 45%;
         }

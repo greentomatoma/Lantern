@@ -17113,6 +17113,15 @@ readers do not read off random characters that represent icons */
   margin: auto;
 }
 
+@media screen and (max-width: 479px) {
+  .form-area {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
 .form-area .form-group {
   margin-bottom: 30px;
   margin: 20px auto 30px auto;
@@ -17138,18 +17147,41 @@ readers do not read off random characters that represent icons */
   text-align: center;
 }
 
-.btn-warning {
-  color: #212529;
-  background-color: #ffc107;
-  border-color: #ffc107;
+.btn-warning,
+.btn {
   max-width: 50%;
   margin: 0 auto;
+  box-shadow: none;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
   border-radius: 30px;
+  padding: 10px 15px;
+  background-color: orange;
+  width: 35%;
 }
 
-.btn-warning:hover {
+.btn-warning:hover,
+.btn:hover {
+  color: white;
   background-color: #ffd454;
-  border-color: white;
+}
+
+@media screen and (max-width: 479px) {
+  .btn-warning,
+  .btn {
+    width: 45%;
+  }
+}
+
+.btn-warning .btn-warning,
+.btn .btn-warning {
+  border-color: none;
+}
+
+.btn-warning .btn-warning:hover,
+.btn .btn-warning:hover {
+  border-color: none;
 }
 
 input:-webkit-autofill {
@@ -17249,6 +17281,7 @@ a:hover {
   padding: 10px 15px;
   background-color: orange;
   width: 35%;
+  box-shadow: none;
 }
 
 .container .recipe-form .post-button .btn:hover,
@@ -18192,6 +18225,7 @@ a:hover {
   background-color: orange;
   width: 35%;
   width: 35%;
+  box-shadow: none;
 }
 
 .container .edit-button button.btn:hover {

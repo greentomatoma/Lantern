@@ -68,6 +68,7 @@
           text-align: center;
             .btn {
               @include _btn;
+              box-shadow: none;
             }
         }
     }
