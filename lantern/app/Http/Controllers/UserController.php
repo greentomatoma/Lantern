@@ -59,17 +59,9 @@ class UserController extends Controller
     {
         $user = $this->user->getUser($name);
 
-        $url = "";
+        // ホスト名を取得
         $hostname = php_uname("n");
-
-        switch(true) {
-            case($hostname === 'd9a6ea0a5c20'):
-                $url = 'localhost';
-                break;
-            case($hostname === '13.115.34.128'):
-                $url = '13.115.34.128';
-                break;
-        }
+        $url = $this->user->getUrl($hostname);
 
         return view('users.note', [
             'user' => $user,

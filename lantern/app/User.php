@@ -123,6 +123,27 @@ class User extends Authenticatable
             : false;
     }
 
+    /**
+     * ホスト名を取得
+     * @param $url
+     * @return String
+     */
+    public function getUrl($hostname)
+    {
+        $url = "";
+
+        switch(true) {
+            case($hostname === 'd9a6ea0a5c20'):
+                $url = 'localhost';
+                break;
+            case($hostname === '13.115.34.128'):
+                $url = '13.115.34.128';
+                break;
+        }
+
+        return $url;
+    }
+
 
     public function recipes(): HasMany
     {
