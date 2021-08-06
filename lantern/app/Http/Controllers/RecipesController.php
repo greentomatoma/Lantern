@@ -52,7 +52,7 @@ class RecipesController extends Controller
         // タグ情報保存処理
         $this->recipe->storeTags($request, $recipe);
 
-        return redirect()->route('recipes.index');
+        return redirect()->route('recipes.index')->with('message', 'レシピを投稿しました。');
     }
 
 
@@ -86,7 +86,7 @@ class RecipesController extends Controller
 
         $recipe->save();
 
-        return redirect()->route('recipes.index');
+        return redirect()->route('recipes.index')->with('message', 'レシピを変更しました。');
     }
 
 

@@ -51,7 +51,7 @@ class UserController extends Controller
                 'name' => $user->name,
                 'avatar_img_file' => $user->avatar_img_file,
                 ])
-            ->with('status', 'プロフィールを変更しました');
+            ->with('message', 'プロフィールを変更しました');
     }
 
 

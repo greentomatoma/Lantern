@@ -18,6 +18,12 @@
 </head>
 <body>
     <div id="app">
+        @if(session('message'))
+            <div class="alert alert-success" role="alert">
+            {{ session('message') }}
+            </div>
+        @endif
+        
         @yield('content')
         @include('layouts/footer')
     </div>

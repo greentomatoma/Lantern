@@ -7,14 +7,6 @@
 @section('content')
 
 <div class="container">
-<div>
-  @if(session('status'))
-    <div class="alert alert-success" role="alert">
-      {{ session('status') }}
-    </div>
-  @endif
-</div>
-
   <form method="POST" action="{{ route('users.update', ['user' => $user]) }}" enctype="multipart/form-data">
       @csrf
       <div class="profile">

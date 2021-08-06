@@ -21,3 +21,26 @@ $md: 768px;
   padding-bottom: 120px;
   box-sizing: border-box;
 }
+
+.alert {
+  max-width: 50%;
+  margin: 0 auto;
+  animation-name: fadeOut;
+  animation-duration: 4s; 
+  animation-fill-mode: forwards;
+  
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}

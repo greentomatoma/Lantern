@@ -17093,6 +17093,51 @@ readers do not read off random characters that represent icons */
   box-sizing: border-box;
 }
 
+.alert {
+  max-width: 50%;
+  margin: 0 auto;
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
 .card {
   width: 500px;
 }
