@@ -53,7 +53,7 @@ class Recipe extends Model
     public function storeRecipeImage($recipe_image, $recipe)
     {
         if($recipe_image) {
-            $path = Storage::disk('public')->putFile('recipes', $recipe_image);
+            $path = Storage::disk('s3')->putFile('recipes', $recipe_image, 'public');
             $recipeFileName = basename($path);
             $recipe->cooking_img_file = $recipeFileName;
         } else {
@@ -78,7 +78,7 @@ class Recipe extends Model
             // 元の画像データを削除
             $this->deleteRecipeImage($editRecipeId);
             // 変更後の画像データ取得
-            $path = $request->file('cooking_img_file')->store('public/recipes');
+            $path = $request->file('cooking_img_file')->store('recipes');
             $recipe->cooking_img_file = basename($path);
             $recipe->save();
         }
@@ -93,9 +93,9 @@ class Recipe extends Model
     public function deleteRecipeImage($delRecipeId)
     {
         // storage/app/public/imagesから画像ファイルを削除
-        $delPath = '/public/recipes/' . $delRecipeId->cooking_img_file;
-        if(Storage::exists($delPath)) {
-            Storage::delete($delPath);
+        $delPath = 'recipes/' . $delRecipeId->cooking_img_file;
+        if(Storage::disk('s3')->exists($delPath)) {
+            Storage::disk('s3')->delete($delPath);
         }
     }
 
