@@ -64,7 +64,25 @@ class User extends Authenticatable
 
 
     /**
-     * アバター画像の保存処理
+     * 料理画像の保存処理
+     * @param $avatar_image
+     * @param \App\Models\User $user
+     * @return bool
+     */
+    public function storeAvatarImage($avatar_image, $user)
+    {
+        if($avatar_image) {
+            $path = Storage::disk('s3')->putFile('avatars', $avatar_image, 'public');
+            $avatarFileName = basename($path);
+            $user->avatar_img_file = $avatarFileName;
+        } else {
+            $path = null;
+        }
+    }
+
+
+    /**
+     * アバター画像の更新処理
      * @param \Illuminate\Http\UploadedFile $avatar_img_file
      * @param \Illuminate\Contracts\Auth\Authenticatable $user
      * @return String
@@ -75,7 +93,7 @@ class User extends Authenticatable
 
         if($request->hasFile('avatar_img_file')) {
             $this->deleteAvatarImage($AvatarId);
-            $path = $request->file('avatar_img_file')->store('public/avatars');
+            $path = $request->file('avatar_img_file')->store('avatars');
             $avatarFileName = basename($path);
             $user->avatar_img_file = $avatarFileName;
         } else {
@@ -92,7 +110,7 @@ class User extends Authenticatable
     public function deleteAvatarImage($AvatarId)
     {
         // storage/app/public/avatarsから画像ファイルを削除
-        $delPath = '/public/avatars/' . $AvatarId->avatar_img_file;
+        $delPath = 'avatars/' . $AvatarId->avatar_img_file;
         if(Storage::exists($delPath)) {
             Storage::delete($delPath);
         }

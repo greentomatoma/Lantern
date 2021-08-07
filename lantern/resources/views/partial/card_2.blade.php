@@ -6,7 +6,7 @@
         <p class="post-time">
           <a href="{{ route('users.show', ['name' => $recipe->user->name] )}}">
           @if (!empty($recipe->user->avatar_img_file))
-            <img src="/storage/avatars/{{$recipe->user->avatar_img_file}}" class="rounded-circle">
+            <img src="{{ Storage::disk('s3')->url("avatars/{$recipe->user->avatar_img_file}") }}" class="rounded-circle">
           @else
             <img src="/images/avatar-default.svg" class="rounded-circle">
           @endif
@@ -20,7 +20,7 @@
         <a href="{{ route('recipes.show', ['recipe' => $recipe]) }}">
             <div class="post-recipe-img">
                 @if(!empty($recipe->cooking_img_file))
-                  <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top">
+                  <img src="{{ Storage::disk('s3')->url("recipes/{$recipe->cooking_img_file}") }}" class="card-img-top">
                 @else
                   <img src="/images/default-recipe-image.png" class="card-img-top">
                 @endif

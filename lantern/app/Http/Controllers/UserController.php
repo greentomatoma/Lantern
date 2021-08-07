@@ -40,9 +40,17 @@ class UserController extends Controller
         $user = Auth::user();
 
         $user->name = $request->input('name');
+
+        // アバター画像のファイル情報を取得
+        $avatar_image = $request->file('avatar_img_file');
         
-        // 画像保存処理
-        $this->user->updateAvatarImage($request, $user);
+        if(!empty($user->avatar_img_file)) {
+            // 画像保存処理
+            $this->user->storeAvatarImage($avatar_image, $user);
+        }else{
+            // 画像更新処理
+            $this->user->updateAvatarImage($request, $user);
+        }
         
         $user->save();
 
