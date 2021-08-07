@@ -14,7 +14,7 @@
           <div class="avatar-form image-picker">
             <div class="avatar-image">
               @if (!empty($user->avatar_img_file))
-                <img src="/storage/avatars/{{$user->avatar_img_file}}" class="rounded-circle">
+                <img src="{{ Storage::disk('s3')->url("avatars/{$user->avatar_img_file}") }}" class="rounded-circle">
               @else
                 <img src="/images/avatar-default.svg" class="rounded-circle">
               @endif

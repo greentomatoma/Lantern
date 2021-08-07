@@ -14,8 +14,8 @@
     <div class="post-user">
       <a href="{{ route('users.show', ['name' => $recipe->user->name]) }}">
         by. 
-        @if(!empty($user->avatar_file_name))
-          <img src="/storage/avatars/{{ $user->avatar_file_name}}" class="rounded-circle">
+        @if(!empty($recipe->user->avatar_img_file))
+          <img src="{{ Storage::disk('s3')->url("avatars/{$recipe->user->avatar_img_file}") }}" class="rounded-circle">
         @else
           <img src="/images/avatar-default.svg" class="rounded-circle">
         @endif
@@ -59,7 +59,7 @@
 
       <div class="recipe-image">
         @if(!empty($recipe->cooking_img_file))
-          <img src="/storage/recipes/{{ $recipe->cooking_img_file }}" class="card-img-top">
+          <img src="{{ Storage::disk('s3')->url("recipes/{$recipe->cooking_img_file}") }}" class="card-img-top">
         @else
           <img src="/images/default-recipe-image.png" class="card-img-top">
         @endif
