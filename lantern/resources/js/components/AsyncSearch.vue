@@ -5,7 +5,7 @@
         <header class="card-top">
           <p class="post-time">
             <a :href=" 'http://' + httpHost + '/users/' + `${recipe.user.name}` ">
-              <img v-if="recipe.user.avatar_img_file" :src="`/storage/avatars/${recipe.user.avatar_img_file}`" class="rounded-circle">
+              <img v-if="recipe.user.avatar_img_file" :src="s3Avatar + `${recipe.user.avatar_img_file}`" class="rounded-circle">
               <img v-else src="/images/avatar-default.svg" class="rounded-circle">
             {{ recipe.user.name }}さん
             </a> 
@@ -16,7 +16,7 @@
         <main class="card-main">
           <a :href=" 'http://' + httpHost + '/recipes/' + `${recipe.id}` ">
               <div class="post-recipe-img">
-                <img v-if="recipe.cooking_img_file" :src="`/storage/recipes/${recipe.cooking_img_file}`" class="rounded-circle">
+                <img v-if="recipe.cooking_img_file" :src="s3Recipe + `${recipe.cooking_img_file}`">
                 <img v-else src="/images/default-recipe-image.png" class="card-img-top">
               </div>
           </a>
@@ -79,6 +79,14 @@ export default {
     url: {
       type: String,
       default: "",
+    },
+    s3Avatar: {
+      type: String,
+      default: "",
+    },
+    s3Recipe: {
+      type: String,
+      default: "",
     }
   },
   filters: {
@@ -94,6 +102,8 @@ export default {
       keyword: '',
       stockRecipes: this.StockRecipes,
       httpHost: this.url,
+      s3Avatar: this.s3Avatar,
+      s3Recipe: this.s3Recipe,
     }
   },
   computed: {

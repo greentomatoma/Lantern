@@ -15,6 +15,8 @@
       <async-search
       :stock-recipes = '@json($recipes)'
       :url = '@json($url)'
+      :s3-avatar = '@json($s3_avatar)'
+      :s3-recipe = '@json($s3_recipe)'
       >
       </async-search>
 

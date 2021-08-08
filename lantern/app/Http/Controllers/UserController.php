@@ -71,10 +71,15 @@ class UserController extends Controller
         $hostname = php_uname("n");
         $url = $this->user->getUrl($hostname);
 
+        $s3_avatar = Storage::disk('s3')->url("avatars/");
+        $s3_recipe = Storage::disk('s3')->url("recipes/");
+
         return view('users.note', [
             'user' => $user,
             'recipes' => $this->user->getAllStockedRecipes($user),
-            'url' => $url
+            'url' => $url,
+            's3_avatar' => $s3_avatar,
+            's3_recipe' => $s3_recipe,
         ]);
     }
 }

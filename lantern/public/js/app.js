@@ -2014,6 +2014,14 @@ __webpack_require__.r(__webpack_exports__);
     url: {
       type: String,
       "default": ""
+    },
+    s3Avatar: {
+      type: String,
+      "default": ""
+    },
+    s3Recipe: {
+      type: String,
+      "default": ""
     }
   },
   filters: {
@@ -2028,7 +2036,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       keyword: '',
       stockRecipes: this.StockRecipes,
-      httpHost: this.url
+      httpHost: this.url,
+      s3Avatar: this.s3Avatar,
+      s3Recipe: this.s3Recipe
     };
   },
   computed: {
@@ -60977,7 +60987,7 @@ var render = function() {
                     ? _c("img", {
                         staticClass: "rounded-circle",
                         attrs: {
-                          src: "/storage/avatars/" + recipe.user.avatar_img_file
+                          src: _vm.s3Avatar + "" + recipe.user.avatar_img_file
                         }
                       })
                     : _c("img", {
@@ -61011,9 +61021,8 @@ var render = function() {
                 _c("div", { staticClass: "post-recipe-img" }, [
                   recipe.cooking_img_file
                     ? _c("img", {
-                        staticClass: "rounded-circle",
                         attrs: {
-                          src: "/storage/recipes/" + recipe.cooking_img_file
+                          src: _vm.s3Recipe + "" + recipe.cooking_img_file
                         }
                       })
                     : _c("img", {
