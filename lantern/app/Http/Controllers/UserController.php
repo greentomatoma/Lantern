@@ -45,11 +45,11 @@ class UserController extends Controller
         $avatar_image = $request->file('avatar_img_file');
         
         if(!empty($user->avatar_img_file)) {
-            // 画像保存処理
-            $this->user->storeAvatarImage($avatar_image, $user);
-        }else{
             // 画像更新処理
             $this->user->updateAvatarImage($request, $user);
+        }else{
+            // 画像保存処理
+            $this->user->storeAvatarImage($avatar_image, $user);
         }
         
         $user->save();

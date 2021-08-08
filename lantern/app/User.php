@@ -93,7 +93,10 @@ class User extends Authenticatable
 
         if($request->hasFile('avatar_img_file')) {
             $this->deleteAvatarImage($AvatarId);
-            $path = $request->file('avatar_img_file')->store('avatars');
+            // 画像ファイル情報を取得
+            $avatar_image = $request->file('avatar_img_file');
+            // 変更後の画像データ取得
+            $path = Storage::disk('s3')->putFile('avatars', $avatar_image, 'public');
             $avatarFileName = basename($path);
             $user->avatar_img_file = $avatarFileName;
         } else {
@@ -111,8 +114,8 @@ class User extends Authenticatable
     {
         // storage/app/public/avatarsから画像ファイルを削除
         $delPath = 'avatars/' . $AvatarId->avatar_img_file;
-        if(Storage::exists($delPath)) {
-            Storage::delete($delPath);
+        if(Storage::disk('s3')->exists($delPath)) {
+            Storage::disk('s3')->delete($delPath);
         }
     }
 

@@ -16,7 +16,7 @@
               <input type="file" name="avatar_img_file" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
               <label for="avatar" class="avatar_image">
                 @if (!empty($user->avatar_img_file))
-                  <img src="{{ Storage::disk('s3')->url("avatars/{$recipe->user->avatar_img_file}") }}" class="rounded-circle">
+                  <img src="{{ Storage::disk('s3')->url("avatars/{$user->avatar_img_file}") }}" class="rounded-circle">
                 @else
                   <img src="/images/avatar-default.svg" class="rounded-circle">
                 @endif
