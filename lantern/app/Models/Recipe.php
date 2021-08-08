@@ -77,8 +77,10 @@ class Recipe extends Model
         if($request->hasFile('cooking_img_file')) {
             // 元の画像データを削除
             $this->deleteRecipeImage($editRecipeId);
+            // 画像ファイル情報を取得
+            $recipe_image = $request->file('cooking_img_file');
             // 変更後の画像データ取得
-            $path = $request->file('cooking_img_file')->store('recipes');
+            $path = Storage::disk('s3')->putFile('recipes', $recipe_image, 'public');
             $recipe->cooking_img_file = basename($path);
             $recipe->save();
         }
