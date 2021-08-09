@@ -153,13 +153,10 @@ class User extends Authenticatable
     {
         $url = "";
 
-        switch(true) {
-            case($hostname === 'd9a6ea0a5c20'):
-                $url = 'localhost';
-                break;
-            case($hostname === '13.115.34.128'):
-                $url = '13.115.34.128';
-                break;
+        if($hostname === 'd9a6ea0a5c20') {
+            $url = 'localhost';
+        }else{
+            $url = '13.115.34.128';
         }
 
         return $url;
