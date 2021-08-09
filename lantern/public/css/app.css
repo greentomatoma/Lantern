@@ -17866,6 +17866,10 @@ button {
   }
 }
 
+.navbar .rounded-circle {
+  background-color: white;
+}
+
 .search {
   margin-left: 50px;
 }
