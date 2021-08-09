@@ -133,3 +133,20 @@
         }
     }
 }
+
+
+// modal
+// キャンセル
+.btn.btn-outline-grey {
+  background-color: #acacac;
+    &:hover {
+      opacity: 0.5;
+    }
+}
+// 削除
+.btn.btn-danger {
+  background-color: #cf3f3a;
+  &:hover {
+    opacity: 0.5;
+  }
+}

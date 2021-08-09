@@ -18518,3 +18518,19 @@ button {
           text-decoration: underline #3b3f44;
 }
 
+.btn.btn-outline-grey {
+  background-color: #acacac;
+}
+
+.btn.btn-outline-grey:hover {
+  opacity: 0.5;
+}
+
+.btn.btn-danger {
+  background-color: #cf3f3a;
+}
+
+.btn.btn-danger:hover {
+  opacity: 0.5;
+}
+
