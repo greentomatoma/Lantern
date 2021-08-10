@@ -37,6 +37,14 @@
           margin: 0;
           font-weight: bold;
           margin-bottom: 5px;
+          text-align: center;
+        }
+
+        // 必須ラベル
+        .badge {
+          background-color: $yellow;
+          margin-left: 0.5rem;
+          padding-top: 4.8px;
         }
     
         // 調理時間・料理の種類・料理の区分
