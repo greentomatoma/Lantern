@@ -95,8 +95,8 @@ nginx
 GitHub, GitHubDesktop
 
 ## テスト
-PHPUnit, CircleCI
-※現在実装途中
+PHPUnit, CircleCI<br>
+（※実装途中 2021.08.11現在）
 
 ## エディタ
 VSCode
