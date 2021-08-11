@@ -39,8 +39,11 @@ Lantern
 画面上部のナビバーでログイン・ログアウトができます。<br>
 <img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/128831988-e98cdb8b-aaea-4677-9138-27da2fa9ef8a.gif">
 
-## 投稿画面
-画面上部のナビバーで新規投稿ができます。<br>
+## 投稿
+画面上部のナビバーから新規投稿画面へ遷移できます。<br>
+必須項目の欄を埋めていれば投稿が可能です。<br>
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/128959569-7e2f0536-15f5-4437-b0cc-ba10c42804d1.gif">
+### 投稿画面
 <img width="50%" alt="スクリーンショット 2021-08-10 15 48 45" src="https://user-images.githubusercontent.com/80607137/128832260-428772a2-f247-49ca-b8f3-64aa839780db.png">
 
 ## 投稿詳細画面
