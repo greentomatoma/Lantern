@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand navbar-light">
   <div class="nav-container">
-      <a class="navbar-brand" href="{{ url('/') }}">
+      <a class="navbar-brand" href="{{ route('recipes.index') }}">
           {{ config('app.name', 'Laravel') }}
+      </a>
+      <a href="{{url('/')}}">
+          このアプリについて
       </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">

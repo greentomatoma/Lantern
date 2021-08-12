@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'RecipesController@index')->name('recipes.index');
+// トップページ
+Route::get('/', function () {
+  return view('top');
+});
 
+Route::get('/recipes', 'RecipesController@index')->name('recipes.index');
 Route::resource('/recipes', 'RecipesController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/recipes', 'RecipesController')->only(['show']);
 
