@@ -13,6 +13,13 @@
     align-items: center;
   }
 
+  .navbar-about {
+    color: white;
+      &:hover {
+        color: #805f0e;
+      }
+  }
+
   .navbar-nav {
     .dropdown-item.active, .navbar .dropdown-item:active {
         color: #fff;

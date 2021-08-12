@@ -3,7 +3,7 @@
       <a class="navbar-brand" href="{{ route('recipes.index') }}">
           {{ config('app.name', 'Laravel') }}
       </a>
-      <a href="{{url('/')}}">
+      <a class="navbar-about" href="{{url('/')}}">
           このアプリについて
       </a>
 
