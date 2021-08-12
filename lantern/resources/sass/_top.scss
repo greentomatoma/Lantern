@@ -1,0 +1,92 @@
+.top-container {
+  padding: 0 60px;
+}
+
+.t-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .t-main-title {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 75px;
+    margin-top: 10rem;
+    margin-left: 2rem;
+      .t-main-title-orange {
+        display: block;
+        color: orange;
+      }
+  }
+
+  .t-wrapper-right {
+    position: relative;
+    height: 800px;
+    width: 750px;
+    background-color: #ffdfb6;
+  }
+
+  a.t-button-text {
+    position: absolute;
+    color: white;
+    margin-left: 2.2rem;
+    margin-top: 3.5rem;
+    font-size: 1.3rem;
+    font-weight: lighter;
+      &:hover {
+        opacity: 0.5;
+      }
+  }
+
+  .t-button {
+    width: 220px;
+    height: 50px;
+    background-color:  orange;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 9px;
+  }
+
+}
+
+
+.t-main-content {
+
+  .t-main-about {
+    margin-top: 110px;
+
+    .t-main-about-text {
+      font-weight: bold;
+      color: orange;
+      
+    }
+  }
+
+  .t-items {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .t-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+      // ３つのできることの画像
+      img {
+        position: relative;
+        height: 430px;
+      }
+      .t-item-name {
+        position: absolute;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(39, 39, 39);
+      }
+      .t-item-text {
+        font-weight: bold;
+        font-size: 18px;
+      }
+  }
+}

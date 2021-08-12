@@ -17793,6 +17793,14 @@ button {
   align-items: center;
 }
 
+.navbar .navbar-about {
+  color: white;
+}
+
+.navbar .navbar-about:hover {
+  color: #805f0e;
+}
+
 .navbar .navbar-nav .dropdown-item.active,
 .navbar .navbar-nav .navbar .dropdown-item:active {
   color: #fff;
@@ -18539,5 +18547,95 @@ button {
 
 .btn.btn-danger:hover {
   opacity: 0.5;
+}
+
+.top-container {
+  padding: 0 60px;
+}
+
+.t-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.t-wrapper .t-main-title {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 75px;
+  margin-top: 10rem;
+  margin-left: 2rem;
+}
+
+.t-wrapper .t-main-title .t-main-title-orange {
+  display: block;
+  color: orange;
+}
+
+.t-wrapper .t-wrapper-right {
+  position: relative;
+  height: 800px;
+  width: 750px;
+  background-color: #ffdfb6;
+}
+
+.t-wrapper a.t-button-text {
+  position: absolute;
+  color: white;
+  margin-left: 2.2rem;
+  margin-top: 3.5rem;
+  font-size: 1.3rem;
+  font-weight: lighter;
+}
+
+.t-wrapper a.t-button-text:hover {
+  opacity: 0.5;
+}
+
+.t-wrapper .t-button {
+  width: 220px;
+  height: 50px;
+  background-color: orange;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 9px;
+}
+
+.t-main-content .t-main-about {
+  margin-top: 110px;
+}
+
+.t-main-content .t-main-about .t-main-about-text {
+  font-weight: bold;
+  color: orange;
+}
+
+.t-main-content .t-items {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.t-main-content .t-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.t-main-content .t-item img {
+  position: relative;
+  height: 430px;
+}
+
+.t-main-content .t-item .t-item-name {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  color: #272727;
+}
+
+.t-main-content .t-item .t-item-text {
+  font-weight: bold;
+  font-size: 18px;
 }
 
