@@ -1,4 +1,5 @@
 import './bootstrap'
+import './validate'
 import Vue from 'vue'
 import RecipeStock from './components/RecipeStock'
 import RecipeTags from './components/RecipeTags'

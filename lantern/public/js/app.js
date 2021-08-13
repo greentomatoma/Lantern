@@ -73519,22 +73519,25 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_RecipeStock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/RecipeStock */ "./resources/js/components/RecipeStock.vue");
-/* harmony import */ var _components_RecipeTags__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/RecipeTags */ "./resources/js/components/RecipeTags.vue");
-/* harmony import */ var _components_AsyncSearch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/AsyncSearch */ "./resources/js/components/AsyncSearch.vue");
+/* harmony import */ var _validate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./validate */ "./resources/js/validate.js");
+/* harmony import */ var _validate__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_validate__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_RecipeStock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/RecipeStock */ "./resources/js/components/RecipeStock.vue");
+/* harmony import */ var _components_RecipeTags__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/RecipeTags */ "./resources/js/components/RecipeTags.vue");
+/* harmony import */ var _components_AsyncSearch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AsyncSearch */ "./resources/js/components/AsyncSearch.vue");
 
 
 
 
 
-new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
+
+new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
   el: '#app',
   components: {
-    RecipeStock: _components_RecipeStock__WEBPACK_IMPORTED_MODULE_2__["default"],
-    RecipeTags: _components_RecipeTags__WEBPACK_IMPORTED_MODULE_3__["default"],
-    AsyncSearch: _components_AsyncSearch__WEBPACK_IMPORTED_MODULE_4__["default"]
+    RecipeStock: _components_RecipeStock__WEBPACK_IMPORTED_MODULE_3__["default"],
+    RecipeTags: _components_RecipeTags__WEBPACK_IMPORTED_MODULE_4__["default"],
+    AsyncSearch: _components_AsyncSearch__WEBPACK_IMPORTED_MODULE_5__["default"]
   }
 });
 document.addEventListener('DOMContentLoaded', function () {
@@ -73844,6 +73847,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecipeTags_vue_vue_type_template_id_7c1777f2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/validate.js":
+/*!**********************************!*\
+  !*** ./resources/js/validate.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('DOMContentLoaded', function () {
+  var input = document.querySelector('.validate-target');
+  var form = document.querySelector('.form-area');
+
+  if (!form) {
+    return;
+  }
+
+  input.addEventListener('input', function (event) {
+    var target = event.currentTarget;
+    var feedback = target.nextElementSibling;
+
+    if (!feedback.classList.contains('invalid-feedback')) {
+      return;
+    }
+
+    if (target.checkValidity()) {
+      target.classList.add('is-valid');
+      target.classList.remove('is-invalid');
+      feedback.textContent = '';
+    } else {
+      target.classList.add('is-invalid');
+      target.classList.remove('is-valid');
+
+      if (target.validity.tooShort) {
+        feedback.textContent = target.minLength + '文字以上で入力してください。現在の文字数は' + target.value.length + '文字です。';
+      }
+    }
+  });
+});
 
 /***/ }),
 

@@ -28,7 +28,8 @@
 
                     <div class="form-group">
                         <label class="form-label" for="password">パスワード</label>
-                        <input id="password" type="password" class="form-control" name="password" required placeholder="パスワードを入力">
+                        <input id="password" type="password" class="form-control validate-target" name="password" required minlength="8" placeholder="パスワードを入力">
+                        <div class="invalid-feedback"></div>
                     </div>
 
 

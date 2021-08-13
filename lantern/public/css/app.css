@@ -17173,7 +17173,8 @@ readers do not read off random characters that represent icons */
   width: 75%;
 }
 
-.form-area .form-group .form-label {
+.form-area .form-group .form-label,
+.form-area .form-group .invalid-feedback {
   margin-left: 20px;
 }
 
