@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
 
+
   .t-main-title {
     display: flex;
     flex-direction: column;
@@ -32,9 +33,35 @@
     margin-left: 2.2rem;
     margin-top: 3.5rem;
     font-size: 1.3rem;
-    font-weight: lighter;
+    font-weight: 600;
       &:hover {
         opacity: 0.5;
+      }
+  }
+
+  .t-wrapper-list {
+    position: absolute;
+    margin-top: 12rem;
+    list-style: none;
+      .t-list-item {
+        color: #3b3f44;
+        padding-top: 20px;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .t-list {
+        color: #3b3f44;
+          &:hover {
+            color: orange;
+          }
+      }
+
+      .t-list:before {
+        color: orange;
+        content: "■";
+        // width: 12px;
+        // height: 12px;
       }
   }
 
@@ -49,44 +76,91 @@
 
 }
 
+.concept-title, .about-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
 
-.t-main-content {
+.concept-title {
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
+}
 
-  .t-main-about {
-    margin-top: 110px;
+.concept-text1, .concept-text2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 30px;
+  line-height: 3.22222;
+}
 
-    .t-main-about-text {
-      font-weight: bold;
-      color: orange;
-      
-    }
-  }
+.text1-orange {
+  color: orange;
+}
 
-  .t-items {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-  }
+.t-main-about {
+  margin-top: 110px;
 
-  .t-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .t-main-about-text {
+    font-weight: bold;
+    color: orange;
     
-      // ３つのできることの画像
-      img {
-        position: relative;
-        height: 430px;
-      }
-      .t-item-name {
-        position: absolute;
-        font-size: 24px;
-        font-weight: bold;
-        color: rgb(39, 39, 39);
-      }
-      .t-item-text {
-        font-weight: bold;
-        font-size: 18px;
-      }
   }
+}
+
+.t-items {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.t-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #faf8f2;
+  width: 360px;
+  
+    // ３つのできることの画像
+    img {
+      position: relative;
+      height: 430px;
+    }
+    
+    // 「投稿」の画像サイズ変更
+    .img2 {
+      height: 400px;
+      margin-top: 30px;
+    }
+
+    .t-item-name {
+      position: absolute;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #3b3f44;
+      width: 100px;
+      margin-top: 13px;
+    }
+    
+    .name-1, .name-2, .name-3 {
+      font-size: 2rem;
+      position: absolute;
+      top: -13;
+      left: -130;
+      padding: 0px 16px;
+      color: #fff;
+      border-bottom: 3px solid orange;
+      border-radius: 0 0 10px 0;
+      background: orange;
+    }
+
+    .t-item-text {
+      font-weight: bold;
+      font-size: 18px;
+    }
 }

@@ -18586,11 +18586,37 @@ button {
   margin-left: 2.2rem;
   margin-top: 3.5rem;
   font-size: 1.3rem;
-  font-weight: lighter;
+  font-weight: 600;
 }
 
 .t-wrapper a.t-button-text:hover {
   opacity: 0.5;
+}
+
+.t-wrapper .t-wrapper-list {
+  position: absolute;
+  margin-top: 12rem;
+  list-style: none;
+}
+
+.t-wrapper .t-wrapper-list .t-list-item {
+  color: #3b3f44;
+  padding-top: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.t-wrapper .t-wrapper-list .t-list {
+  color: #3b3f44;
+}
+
+.t-wrapper .t-wrapper-list .t-list:hover {
+  color: orange;
+}
+
+.t-wrapper .t-wrapper-list .t-list:before {
+  color: orange;
+  content: "\25A0";
 }
 
 .t-wrapper .t-button {
@@ -18602,40 +18628,92 @@ button {
   padding-top: 9px;
 }
 
-.t-main-content .t-main-about {
+.concept-title,
+.about-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+
+.concept-title {
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
+}
+
+.concept-text1,
+.concept-text2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 30px;
+  line-height: 3.22222;
+}
+
+.text1-orange {
+  color: orange;
+}
+
+.t-main-about {
   margin-top: 110px;
 }
 
-.t-main-content .t-main-about .t-main-about-text {
+.t-main-about .t-main-about-text {
   font-weight: bold;
   color: orange;
 }
 
-.t-main-content .t-items {
-  margin-top: 50px;
+.t-items {
+  margin-top: 6rem;
   display: flex;
   justify-content: space-around;
 }
 
-.t-main-content .t-item {
+.t-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #faf8f2;
+  width: 360px;
 }
 
-.t-main-content .t-item img {
+.t-item img {
   position: relative;
   height: 430px;
 }
 
-.t-main-content .t-item .t-item-name {
-  position: absolute;
-  font-size: 24px;
-  font-weight: bold;
-  color: #272727;
+.t-item .img2 {
+  height: 400px;
+  margin-top: 30px;
 }
 
-.t-main-content .t-item .t-item-text {
+.t-item .t-item-name {
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #3b3f44;
+  width: 100px;
+  margin-top: 13px;
+}
+
+.t-item .name-1,
+.t-item .name-2,
+.t-item .name-3 {
+  font-size: 2rem;
+  position: absolute;
+  top: -13;
+  left: -130;
+  padding: 0px 16px;
+  color: #fff;
+  border-bottom: 3px solid orange;
+  border-radius: 0 0 10px 0;
+  background: orange;
+}
+
+.t-item .t-item-text {
   font-weight: bold;
   font-size: 18px;
 }
