@@ -6,6 +6,9 @@
       <a class="navbar-about" href="{{url('/')}}">
           このアプリについて
       </a>
+      <a class="navbar-about" href="{{url('/about_pack')}}">
+          パッククッキングとは
+      </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
