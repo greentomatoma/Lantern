@@ -20,6 +20,11 @@ Route::get('/', function () {
   return view('top');
 });
 
+// パッククッキングについて
+Route::get('/about_pack', function () {
+  return view('about_pack');
+});
+
 Route::get('/recipes', 'RecipesController@index')->name('recipes.index');
 Route::resource('/recipes', 'RecipesController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/recipes', 'RecipesController')->only(['show']);

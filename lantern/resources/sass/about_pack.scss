@@ -1,0 +1,65 @@
+.items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.m-about-pack {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.top-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.1rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+.top-text {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 30px;
+  line-height: 3.22222;
+}
+
+.main-title {
+  text-align: left;
+  font-weight: 600;
+  font-size: 2.1rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+
+.main-text {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 30px;
+  line-height: 3.2;
+}
+
+.item-title, .item-text {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 17px;
+  line-height: 2.2;
+}
+
+
+
+// 画像
+
+.img-item {
+  background-color: #ffdfb6;
+  width: 260px;
+  height: 200px;
+}
+
+.img-about-pack {
+  margin-top: 8rem;
+  background-color: #ffdfb6;
+  width: 380px;
+  height: 300px;
+}
