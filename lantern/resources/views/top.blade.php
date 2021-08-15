@@ -1,6 +1,8 @@
 @extends('layouts/app')
 
-<div id="top" class="top-container">
+@include('layouts/nav')
+
+<div id="main" class="top-container">
   <div class="t-wrapper">
     <div class="t-wrapper-left">
       <div class="h1 t-main-title">
@@ -34,13 +36,13 @@
     <div class="t-main-concept">
       <h2 id="item1" class="concept-title">コンセプト</h2>
       <div class="title-line"></div>
-      <p class="concept-text1">
+      <p class="concept-text">
         Lanternのコンセプトは、「<span class="text1-orange">アイデアの共有</span>」です。
         <br>
         ランタンは、小さな灯りですがみんなで共有することができます。
         <br>
       </p>
-      <p class="concept-text2">
+      <p class="concept-text">
         災害時、何をどうしたら良いのかわからない...
         <br>
         そんな状況の中でもみんなの灯りとなれるような場を作りたいという思いから
