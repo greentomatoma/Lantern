@@ -9,11 +9,6 @@
         アイデアを
         <span class="t-main-title-orange">共有しよう</span>
       </div>
-      <a class="t-button-text" href="{{ route('recipes.index') }}">
-        <div class="t-button">
-          レシピを見る
-        </div>
-      </a>
       <ul class="t-wrapper-list">
         <li class="t-list-item">
         <a class="t-list" href="#item1">

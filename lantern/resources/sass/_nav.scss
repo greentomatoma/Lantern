@@ -2,6 +2,7 @@
   background-color: $yellow;
   display: block;
   padding: 0.5rem 4.3rem;
+  height: 160px;
   @include sp {
     width: 100%;
     padding: 0.5rem 2.3rem;
@@ -10,40 +11,32 @@
   .nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-  }
+    width: 100%;
 
-  .navbar-about {
-    margin-right: 5px;
-    color: white;
-      &:hover {
-        color: #805f0e;
-      }
-  }
+    .nav-main-content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
-  .navbar-nav {
-    .dropdown-item.active, .navbar .dropdown-item:active {
-        color: #fff;
-        text-decoration: none;
-        background-color: #ffe366;
-    }
-    .dropdown-item:hover, .dropdown-item:focus {
-        color: #16181b;
-        text-decoration: none;
-        background-color: #ffeebd;
-    }
     .nav-item, .nav-item.dropdown {
       margin-left: 30px;
       margin-top: 3px;
 
+        // ログイン/新規登録ボタン
         .nav-link {
           text-align: center;
           font-size: 13px;
           font-weight: lighter;
           padding: 0;
+          color: white;
           @include sp {
             font-size: 10px;
           }
+            &:hover {
+              color: #805f0e;
+              transition: all .3s ease;
+            }
         }
         .nav-text {
           margin-top: 3px;
@@ -69,8 +62,56 @@
             }
           }
         }
+
+        .navbar-nav {
+          .dropdown-item.active, .navbar .dropdown-item:active {
+              color: #fff;
+              text-decoration: none;
+              background-color: #ffe366;
+          }
+          .dropdown-item:hover, .dropdown-item:focus {
+              color: #16181b;
+              text-decoration: none;
+              background-color: #ffeebd;
+          }
+        }
+    }
+    
+  }
+
+  .nav-top {
+    .nav-top-menu {
+      display: flex;
+      justify-content: flex-end;
     }
   }
+
+  .app-logo {
+    font-size: 2rem;
+    color: #3b3f44;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 30px;
+  }
+
+  .nav-list-item {
+    margin-right: 5rem;
+  }
+
+  .navbar-about {
+    margin-right: 5px;
+    color: white;
+      &:hover {
+        color: #805f0e;
+      }
+  }
+
+
 
   
   // アイコンの背景色
