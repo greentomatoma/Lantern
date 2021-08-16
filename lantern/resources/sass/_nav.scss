@@ -124,6 +124,8 @@
 // 検索窓
 .search {
   margin-left: 50px;
+  margin-top: 20px;
+
   @include sp {
     margin: 10px 0 0 35px;
   }

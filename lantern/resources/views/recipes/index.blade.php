@@ -3,6 +3,7 @@
 @section('title', 'レシピ一覧')
 
 @include('layouts/nav')
+@include('layouts/search_box')
 
 @section('content')
 
