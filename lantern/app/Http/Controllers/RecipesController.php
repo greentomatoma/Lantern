@@ -66,9 +66,13 @@ class RecipesController extends Controller
       {
           return view('recipes.edit', [
               'recipe' => $recipe,
+              // 登録済みのタグ情報を取得
               'tagNames' => $this->recipe->tagNames($recipe),
+              // 全てのタグ情報を取得
               'allTagNames' => $this->recipe->allTagNames(),
+              // 料理の種類の情報取得
               'meal_types' => $this->recipe->getMealType(),
+              // 料理の区分の情報取得
               'meal_classes' => $this->recipe->getMealClass(),
               ]);
     }
@@ -78,7 +82,9 @@ class RecipesController extends Controller
     {
         $recipe->fill($request->all());
         
+        // 一度そのレシピに紐づくタグ情報を削除
         $recipe->tags()->detach();
+        // タグ情報の保存処理
         $this->recipe->storeTags($request, $recipe);
 
         // 料理画像更新処理
