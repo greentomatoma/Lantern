@@ -44,11 +44,13 @@ class UserController extends Controller
         // アバター画像のファイル情報を取得
         $avatar_image = $request->file('avatar_img_file');
         
+
+        // ファイルデータがすでに存在していれば更新処理を行う
         if(!empty($user->avatar_img_file)) {
             // 画像更新処理
             $this->user->updateAvatarImage($request, $user);
         }else{
-            // 画像保存処理
+            // ファイルデータが存在していなければ画像保存処理を行う
             $this->user->storeAvatarImage($avatar_image, $user);
         }
         
@@ -71,6 +73,7 @@ class UserController extends Controller
         $hostname = php_uname("n");
         $url = $this->user->getUrl($hostname);
 
+        // S3に保存されている画像データのディレクトリパスを取得
         $s3_avatar = Storage::disk('s3')->url("avatars/");
         $s3_recipe = Storage::disk('s3')->url("recipes/");
 
