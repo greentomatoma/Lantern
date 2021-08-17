@@ -50,16 +50,38 @@
 
 
 // 画像
-
-.img-item {
-  background-color: #ffdfb6;
-  width: 260px;
-  height: 200px;
+.img-item img {
+  width: 100%;
 }
 
+.img-item-3 img {
+  margin-top: 9rem;
+  zoom: 0.5;
+}
+
+
+// 「パッククッキングとは」の横の画像
 .img-about-pack {
   margin-top: 8rem;
-  background-color: #ffdfb6;
+  background-color: #ffedba;
   width: 380px;
   height: 300px;
+}
+
+
+.item {
+  position: relative;
+  background-color: #ffedba;
+  margin: 10px;
+  border-radius: 7px;
+}
+
+
+.number {
+  position: absolute;
+  font-size: 2rem;
+  padding: 0px 16px;
+  color: #fff;
+  border-radius: 7px 0 10px 0;
+  background: orange;
 }

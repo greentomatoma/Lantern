@@ -35,27 +35,39 @@
       <h2 class="main-title">調理に必要な道具</h2>
       <div class="items">
         <div class="item">
-          <div class="img-item" src="#"></div>
+        <div class="img-item">
+          <img src="/images/about_cook/gas.png">
+        </div>
           <p class="item-title">カセットコンロ</p>
         </div>
         <div class="item">
-          <div class="img-item" src="#"></div>
+        <div class="img-item">
+        </div>
+        <div class="img-item">
+          <img src="/images/about_cook/pot.png">
+        </div>
           <p class="item-title">鍋（蓋付き）</p>
         </div>
         <div class="item">
-          <div class="img-item" src="#"></div>
+        <div class="img-item">
+          <img src="/images/about_cook/plate.png">
+        </div>
           <p class="item-title">お皿</p>
         </div>
         <div class="item">
-          <div class="img-item" src="#"></div>
+        <div class="img-item">
+          <img src="/images/about_cook/plastic_bag.png">
+        </div>
           <p class="item-title">高密度ポリエチレン袋（ポリ袋）</p>
         </div>
       </div>
       <h2 class="main-title">調理方法</h2>
       <div class="items">
         <div class="item box-1">
-          <span class="name-1">01</span>
-          <div class="img-item" src="#"></div>
+          <span class="number">01</span>
+          <div class="img-item">
+            <img src="/images/about_cook/step_1.png">
+          </div>
           <p class="item-text">
             ポリ袋に食材と調味料を入れて、混ぜ合わせる。
             <br>
@@ -63,15 +75,19 @@
           </p>
         </div>
         <div class="item box-2">
-          <span class="name-2">02</span>
-          <div class="img-item" src="#"></div>
+          <span class="number">02</span>
+          <div class="img-item">
+            <img src="/images/about_cook/step_2.png">
+          </div>
           <p class="item-text">
             鍋に火をかけ、沸騰したらお皿とポリ袋を入れる。
           </p>
         </div>
         <div class="item box-3">
-          <span class="name-3">03</span>
-          <div class="img-item" src="#"></div>
+          <span class="number">03</span>
+          <div class="img-item-3">
+            <img src="/images/about_cook/step_3.png">
+          </div>
           <p class="item-text">
             出来上がるまで待つだけ！
             <br>

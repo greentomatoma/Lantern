@@ -18721,6 +18721,7 @@ button {
   flex-direction: column;
   align-items: center;
   background-color: #faf8f2;
+  border-radius: 7px;
   width: 360px;
 }
 
@@ -18744,9 +18745,7 @@ button {
   margin-top: 13px;
 }
 
-.t-item .name-1,
-.t-item .name-2,
-.t-item .name-3 {
+.t-item .number {
   font-size: 2rem;
   position: absolute;
   top: -13;
@@ -18754,7 +18753,7 @@ button {
   padding: 0px 16px;
   color: #fff;
   border-bottom: 3px solid orange;
-  border-radius: 0 0 10px 0;
+  border-radius: 7px 0 10px 0;
   background: orange;
 }
 
@@ -18814,16 +18813,35 @@ button {
   line-height: 2.2;
 }
 
-.img-item {
-  background-color: #ffdfb6;
-  width: 260px;
-  height: 200px;
+.img-item img {
+  width: 100%;
+}
+
+.img-item-3 img {
+  margin-top: 9rem;
+  zoom: 0.5;
 }
 
 .img-about-pack {
   margin-top: 8rem;
-  background-color: #ffdfb6;
+  background-color: #ffedba;
   width: 380px;
   height: 300px;
+}
+
+.item {
+  position: relative;
+  background-color: #ffedba;
+  margin: 10px;
+  border-radius: 7px;
+}
+
+.number {
+  position: absolute;
+  font-size: 2rem;
+  padding: 0px 16px;
+  color: #fff;
+  border-radius: 7px 0 10px 0;
+  background: orange;
 }
 
