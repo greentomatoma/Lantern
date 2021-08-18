@@ -10,7 +10,7 @@
   {{-- 検索結果一覧 --}}
   <div class="all-post-lists">
     <div class="list-title">
-      <p>検索結果： <span class="count">{{ $searchCount }}</span> <span class="items">品</span></p>
+      <p>検索結果： <span class="count">{{ $searchCount }}</span> <span class="list-title-items">品</span></p>
     </div>
 
     @if(!empty($recipes))

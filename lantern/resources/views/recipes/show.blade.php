@@ -108,19 +108,19 @@
           </ul>
         </div>
         <div class="ingredients-list">
-            <p class="item-title ingredients"><span>■ </span>材料</p>
+            <p class="recipe-detail-title ingredients">材料</p>
             <div class="ingredients-text">{!! nl2br(e($recipe->ingredients)) !!}</div>
         </div>
       </div>
     </div>
   
       <div class="description-list">
-        <p class="item-title description"><span>■ </span>作り方</p>
+        <p class="recipe-detail-title description">作り方</p>
         <div class="description-text">{!! nl2br(e($recipe->description)) !!}</div>
       </div>
 
     <div class="comment">
-        <p class="item-title"><span>■ </span>コメント</p>
+        <p class="recipe-detail-title">コメント</p>
         <div class="comment-text">
           @if(!empty($recipe->comment))
             {!! nl2br(e($recipe->comment)) !!}

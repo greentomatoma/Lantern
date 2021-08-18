@@ -17732,19 +17732,21 @@ button {
   margin-left: 10px;
 }
 
-.recipe-detail .item-title {
+.recipe-detail .recipe-detail-title {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 @media screen and (max-width: 479px) {
-  .recipe-detail .item-title {
+  .recipe-detail .recipe-detail-title {
     margin-bottom: 8px;
   }
 }
 
-.recipe-detail .item-title span {
+.recipe-detail .recipe-detail-title:before {
   color: orange;
+  margin-right: 5px;
+  content: "\25A0";
 }
 
 .top-page-button {
@@ -18393,7 +18395,7 @@ button {
   font-size: 1.5rem;
 }
 
-.list-title .items {
+.list-title .list-title-items {
   font-size: 1.2rem;
 }
 

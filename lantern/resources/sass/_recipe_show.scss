@@ -152,15 +152,18 @@
       margin-left: 10px;
     }
 
-    .item-title {
+    .recipe-detail-title {
       font-size: 1.2rem;
       font-weight: bold;
-      @include sp {
-        margin-bottom: 8px;
-      }
-        span {
-          color:orange;
+        @include sp {
+          margin-bottom: 8px;
         }
+    }
+
+    .recipe-detail-title:before {
+      color: orange;
+      margin-right: 5px;
+      content: "■";
     }
   }
   
