@@ -16,7 +16,7 @@
         このように調理を行うのに十分な環境が整わない中で、個別に対応ができる調理法として「パッククッキング」があります。
       </p>
     </div>
-    <div class="main">
+    <div class="main-about">
       <div class="m-about-pack">
         <div class="m-about-pack-text">
           <h2 class="main-title">パッククッキングとは</h2>
