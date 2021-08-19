@@ -17975,7 +17975,6 @@ button {
   width: 100%;
   padding-bottom: 150px;
   background-color: #3e3e3e;
-  margin-top: 30px;
   padding: 24px;
   color: #fff;
 }
@@ -18598,17 +18597,16 @@ button {
   opacity: 0.5;
 }
 
-.top-container {
-  padding: 0 60px;
+#main {
   background-color: #faf8f2;
 }
 
 .t-wrapper {
   position: relative;
-  margin-top: 7rem;
 }
 
 .t-main-top-img {
+  padding-top: 3rem;
   opacity: 0.9;
   filter: grayscale(10%);
 }
@@ -18632,11 +18630,12 @@ button {
 
 .t-main-top-img-lantern {
   position: absolute;
-  top: 9rem;
+  top: 12rem;
   left: 23rem;
 }
 
 .t-main-content {
+  padding: 0 60px;
   margin-top: 14rem;
 }
 
@@ -18717,6 +18716,7 @@ a.t-button-text:hover {
 
 .t-main-about {
   margin-top: 110px;
+  padding-bottom: 3rem;
 }
 
 .t-main-about .t-main-about-text {
@@ -18784,14 +18784,14 @@ a.t-button-text:hover {
 .m-about-pack {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .top-title {
   text-align: center;
   font-weight: 600;
   font-size: 2.1rem;
-  margin-top: 10rem;
+  padding-top: 7rem;
   margin-bottom: 4rem;
 }
 
@@ -18801,6 +18801,10 @@ a.t-button-text:hover {
   font-size: 18px;
   margin-top: 30px;
   line-height: 3.22222;
+}
+
+.main-about {
+  padding: 0 60px;
 }
 
 .main-title {
@@ -18834,13 +18838,6 @@ a.t-button-text:hover {
 .img-item-3 img {
   margin-top: 9rem;
   zoom: 0.5;
-}
-
-.img-about-pack {
-  margin-top: 8rem;
-  background-color: #ffedba;
-  width: 380px;
-  height: 300px;
 }
 
 .item {

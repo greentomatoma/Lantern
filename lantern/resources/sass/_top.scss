@@ -1,15 +1,14 @@
-.top-container {
-  padding: 0 60px;
+#main {
   background-color: #faf8f2;
 }
 
 
 .t-wrapper {
   position: relative;
-  margin-top: 7rem;
 }
 
 .t-main-top-img {
+  padding-top: 3rem;
   opacity: 0.9;
   filter: grayscale(10%);
 }
@@ -32,11 +31,12 @@
 
 .t-main-top-img-lantern {
   position: absolute;
-  top: 9rem;
+  top: 12rem;
   left: 23rem;
 }
 
 .t-main-content {
+  padding: 0 60px;
   margin-top: 14rem;
 }
 
@@ -113,6 +113,7 @@ a.t-button-text {
 
 .t-main-about {
   margin-top: 110px;
+  padding-bottom: 3rem;
 
   .t-main-about-text {
     font-weight: bold;
