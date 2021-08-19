@@ -18600,35 +18600,47 @@ button {
 
 .top-container {
   padding: 0 60px;
+  background-color: #faf8f2;
 }
 
 .t-wrapper {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  margin-top: 7rem;
 }
 
-.t-wrapper .t-main-title {
+.t-main-top-img {
+  opacity: 0.9;
+  filter: grayscale(10%);
+}
+
+.t-main-title {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  right: 5rem;
   font-weight: bold;
-  font-size: 75px;
-  margin-top: 10rem;
-  margin-left: 2rem;
+  font-size: 6rem;
+  margin-left: 8rem;
+  line-height: inherit;
 }
 
-.t-wrapper .t-main-title .t-main-title-orange {
+.t-main-title .t-main-title-orange {
   display: block;
   color: orange;
 }
 
-.t-wrapper .t-wrapper-right {
-  position: relative;
-  height: 800px;
-  width: 750px;
-  background-color: #ffdfb6;
+.t-main-top-img-lantern {
+  position: absolute;
+  top: 9rem;
+  left: 23rem;
 }
 
-.t-wrapper a.t-button-text {
+.t-main-content {
+  margin-top: 14rem;
+}
+
+a.t-button-text {
   position: absolute;
   color: white;
   margin-left: 2.2rem;
@@ -18637,37 +18649,37 @@ button {
   font-weight: 600;
 }
 
-.t-wrapper a.t-button-text:hover {
+a.t-button-text:hover {
   opacity: 0.5;
 }
 
-.t-wrapper .t-wrapper-list {
+.t-wrapper-list {
   position: absolute;
   margin-top: 12rem;
   list-style: none;
 }
 
-.t-wrapper .t-wrapper-list .t-list-item {
+.t-wrapper-list .t-list-item {
   color: #3b3f44;
   padding-top: 20px;
   font-size: 1.3rem;
   font-weight: 600;
 }
 
-.t-wrapper .t-wrapper-list .t-list {
+.t-wrapper-list .t-list {
   color: #3b3f44;
 }
 
-.t-wrapper .t-wrapper-list .t-list:hover {
+.t-wrapper-list .t-list:hover {
   color: orange;
 }
 
-.t-wrapper .t-wrapper-list .t-list:before {
+.t-wrapper-list .t-list:before {
   color: orange;
   content: "\25A0";
 }
 
-.t-wrapper .t-button {
+.t-button {
   width: 220px;
   height: 50px;
   background-color: orange;
@@ -18722,7 +18734,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #faf8f2;
+  background-color: white;
   border-radius: 7px;
   width: 360px;
 }

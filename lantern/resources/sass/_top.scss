@@ -1,77 +1,88 @@
 .top-container {
   padding: 0 60px;
+  background-color: #faf8f2;
 }
 
+
 .t-wrapper {
+  position: relative;
+  margin-top: 7rem;
+}
+
+.t-main-top-img {
+  opacity: 0.9;
+  filter: grayscale(10%);
+}
+
+.t-main-title {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  top: 3rem;
+  right: 5rem;
+  font-weight: bold;
+  font-size: 6rem;
+  margin-left: 8rem;
+  line-height: inherit;
+    .t-main-title-orange {
+      display: block;
+      color: orange;
+    }
+}
 
+.t-main-top-img-lantern {
+  position: absolute;
+  top: 9rem;
+  left: 23rem;
+}
 
-  .t-main-title {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: 75px;
-    margin-top: 10rem;
-    margin-left: 2rem;
-      .t-main-title-orange {
-        display: block;
-        color: orange;
-      }
-  }
+.t-main-content {
+  margin-top: 14rem;
+}
 
-  .t-wrapper-right {
-    position: relative;
-    height: 800px;
-    width: 750px;
-    background-color: #ffdfb6;
-  }
+a.t-button-text {
+  position: absolute;
+  color: white;
+  margin-left: 2.2rem;
+  margin-top: 3.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+    &:hover {
+      opacity: 0.5;
+    }
+}
 
-  a.t-button-text {
-    position: absolute;
-    color: white;
-    margin-left: 2.2rem;
-    margin-top: 3.5rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-      &:hover {
-        opacity: 0.5;
-      }
-  }
+.t-wrapper-list {
+  position: absolute;
+  margin-top: 12rem;
+  list-style: none;
+    .t-list-item {
+      color: #3b3f44;
+      padding-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
 
-  .t-wrapper-list {
-    position: absolute;
-    margin-top: 12rem;
-    list-style: none;
-      .t-list-item {
-        color: #3b3f44;
-        padding-top: 20px;
-        font-size: 1.3rem;
-        font-weight: 600;
-      }
+    .t-list {
+      color: #3b3f44;
+        &:hover {
+          color: orange;
+        }
+    }
 
-      .t-list {
-        color: #3b3f44;
-          &:hover {
-            color: orange;
-          }
-      }
+    .t-list:before {
+      color: orange;
+      content: "■";
+    }
+}
 
-      .t-list:before {
-        color: orange;
-        content: "■";
-      }
-  }
-
-  .t-button {
-    width: 220px;
-    height: 50px;
-    background-color:  orange;
-    border-radius: 5px;
-    text-align: center;
-    padding-top: 9px;
-  }
-
+.t-button {
+  width: 220px;
+  height: 50px;
+  background-color:  orange;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 9px;
 }
 
 .concept-title, .about-title {
@@ -120,7 +131,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #faf8f2;
+  background-color: white;
   border-radius: 7px;
   width: 360px;
   

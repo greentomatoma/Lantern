@@ -4,26 +4,15 @@
 
 <div id="main" class="top-container">
   <div class="t-wrapper">
-    <div class="t-wrapper-left">
-      <div class="h1 t-main-title">
+    <img class="t-main-top-img" src="/images/top_page/top_image.png">
+    <div class="h1 t-main-contents">
+      <span class="t-main-title">
         アイデアを
-        <span class="t-main-title-orange">共有しよう</span>
-      </div>
-      <ul class="t-wrapper-list">
-        <li class="t-list-item">
-        <a class="t-list" href="#item1">
-          コンセプト
-          </a>
-        </li>
-        <li class="t-list-item">
-          <a class="t-list" href="#item2">
-          Lanternでできること
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="t-wrapper-right">
-      
+        <span class="t-main-title-orange">共有</span>しよう
+      </span>
+      <span class="t-main-top-img-lantern">
+        <img src="/images/top_page/top_page_lantern.png">
+      </span>
     </div>
   </div>
 
