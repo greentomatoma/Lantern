@@ -13,7 +13,7 @@
     <div class="hashtag-list d-flex" style="flex-direction: column;">
       <h2 class="list-title">{{ $tag->hashtag }}</h2>
       <div class="list-title">
-        <p>検索結果： <span class="count">{{ $tag->recipes->count() }}</span> <span class="items">品</span></p>
+        <p>検索結果： <span class="count">{{ $tag->recipes->count() }}</span> <span class="list-title-items">品</span></p>
       </div>
     </div>
 
