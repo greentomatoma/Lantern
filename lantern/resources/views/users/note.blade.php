@@ -3,6 +3,7 @@
 @section('title', $user->name . 'のノート')
 
 @include('layouts/nav')
+@include('layouts/search_box')
 
 @section('content')
 <div id="app" class="container mt-4">

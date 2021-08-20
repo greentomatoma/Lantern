@@ -3,6 +3,7 @@
 @section('title', $tag->hashtag . '検索結果')
 
 @include('layouts/nav')
+@include('layouts/search_box')
 
 @section('content')
 <div class="container mt-4">

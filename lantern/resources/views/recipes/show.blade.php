@@ -7,7 +7,7 @@
 
 
 @include('layouts/nav')
-
+@include('layouts/search_box')
 
 @section('content')
   <div class="recipe-detail shadow-sm">

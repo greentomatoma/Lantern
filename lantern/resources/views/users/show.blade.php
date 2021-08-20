@@ -3,6 +3,7 @@
 @section('title', $user->name)
 
 @include('layouts/nav')
+@include('layouts/search_box')
 
 @section('content')
 <div class="user-page">
