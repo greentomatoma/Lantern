@@ -35,36 +35,74 @@ Lantern
 - ユーザー編集
 
 # アプリケーションの様子
-## ログイン / ログアウト
-画面上部のナビバーでログイン・ログアウトができます。<br>
-<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/128831988-e98cdb8b-aaea-4677-9138-27da2fa9ef8a.gif">
+## トップページ
+アプリを開いた時の一番初めに出てくる画面です。<br>
+「Lanternのコンセプト」と「Lanternでできること」を記載しています。<br>
+使用しているイラストは、Illustratorを用いて作成しています。
+<img width="60%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130207038-3c9caa74-49b1-45b4-afa3-33be78048c25.png">
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130207135-83aeb07d-4aee-4204-80ca-3581f2a857af.gif">
+
+## ログイン / ログアウト ・　新規登録
+画面上部のナビバーより、ログイン/ログアウト、新規登録ができます。<br>
+### ログイン
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130206206-1beb9930-ccec-4de0-bc33-9d20ef0eea45.gif">
+
+### ログアウト
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130207747-ec032ce3-51c6-455e-b345-12f1f54143d5.gif">
+
+## 投稿一覧画面
+画面上部のナビバーにある「レシピをみる/書く」から、全ユーザーが投稿したレシピを閲覧することができます。<br>
+レシピは、ログイン・非ログイン関係なく閲覧ができます。
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130208223-76a300df-5cd4-483b-9f7b-5d9b9a738850.gif">
 
 ## 投稿
-画面上部のナビバーから新規投稿画面へ遷移できます。<br>
+ユーザーアイコンのドロップダウンメニューにある「レシピを書く」を押すことで、新規投稿画面へ遷移できます（ログイン時のみ）。<br>
 必須項目の欄を埋めていれば投稿が可能です。<br>
-<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/128959569-7e2f0536-15f5-4437-b0cc-ba10c42804d1.gif">
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130208517-57d1f5c6-5bd5-4d00-ad97-7e32c333651e.gif">
 ### 投稿画面
 <img width="50%" alt="スクリーンショット 2021-08-10 15 48 45" src="https://user-images.githubusercontent.com/80607137/128832260-428772a2-f247-49ca-b8f3-64aa839780db.png">
 
 ## 投稿詳細画面
-画像またはタイトルをクリックすると、投稿詳細画面へ遷移します。<br>
-<img width="80%" alt="スクリーンショット 2021-08-10 15 48 45" src="https://user-images.githubusercontent.com/80607137/128873215-02e08165-89d0-4608-b74c-87483d6cff4c.gif">
+画像またはタイトルをクリックすると、その投稿の詳細画面へ遷移します。<br>
+<img width="80%" alt="スクリーンショット 2021-08-10 15 48 45" src="https://user-images.githubusercontent.com/80607137/130208876-1e4f16ea-6894-4418-9db1-8155e5824d7e.gif">
+<br>
 
 ##  マイページ
-画面上部のナビバーまたは、投稿ユーザーのリンクをクリックすることでそのユーザーの詳細ページへ遷移できます。<br>
-ユーザー詳細ページでは、そのユーザーの投稿一覧が表示され、自身の投稿を編集・削除できます。<br>
-<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/128832521-66526451-d8b1-40d2-b007-eab79554fcc6.gif">
+ユーザーアイコンのドロップダウンメニューにある「マイページ」を押すことで、マイページへ遷移します。<br>
+マイページでは自身が今まで投稿したレシピの一覧が表示されるだけでなく、投稿の編集・削除ができます。<br>
+また、他ユーザーでも投稿したユーザーの名前を押すことでそのユーザーのマイページへ遷移することができます。<br>
+### マイページへ遷移
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130208970-1a4bed2b-f22c-4384-8c92-e23989465c1b.gif">
+
+### 編集/削除ボタン
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130209264-fbf15222-e877-42fc-a390-331d955169e0.gif">
 
 ## 保存機能
 気になる投稿があれば、保存マークを押すことでその投稿を保存することができます。<br>
-また、画面上部の「マイノート」で保存したお気に入りの投稿を一覧で閲覧できます。<br>
-<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/128831871-30c04daa-3e20-4a5c-a96a-a9906feaff82.gif">
+また、ユーザーアイコンのドロップダウンメニューにある「マイノート」を押すことで、保存したお気に入りの投稿を一覧で閲覧できます。<br>
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130209473-19c27dab-2c7c-4d98-a566-cac026033cc7.gif">
+<br>
+
+## キーワード検索/タグ検索
+投稿一覧画面の上部にある検索窓では、キーワード検索が可能となっています。<br>
+また、レシピにあるタグを押すことでそのタグが付けられたレシピの一覧が表示されます。<br>
+### キーワード検索
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130212899-2e977534-8753-4847-a63a-1bcc82fed0ac.gif">
+
+### タグ検索
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130213850-c61e8754-e541-4433-8c86-8eeda066b558.gif">
 
 # 工夫したポイント
 ## 1. 気に入った投稿をストック
 気に入った投稿をいつでもすぐに確認することができます。<br>
-そして、ストックしたレシピをすぐに確認できるよう非同期(Vue.js)で検索を行える検索窓を設けました。
-<img width="60%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/128828865-bcbe7955-3780-4aaa-ae94-fca8d603711f.gif">
+そして、ストックしたレシピをすぐに確認できるよう非同期(Vue.js)で検索を行える検索窓を設けました。<br>
+<img width="60%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130210589-3f37a692-6059-4e1c-8f01-c99b16a59a08.png">
+### レシピをストックする様子
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130210299-3839edf5-63b7-4389-b616-aa3bbbb7b6fa.gif">
+
+### 非同期検索の様子
+<img width="80%" alt="スクリーンショット 2021-08-06 13 34 52" src="https://user-images.githubusercontent.com/80607137/130209951-66ad35fc-03f0-40e3-9396-068fbea963d0.gif">
+
 
 ## 2. アイコン表示でよりわかりやすく
 投稿されたレシピの<br>
@@ -96,7 +134,7 @@ GitHub, GitHubDesktop
 
 ## テスト
 PHPUnit, CircleCI<br>
-（※実装途中 2021.08.11現在）
+（※実装途中 2021.08.20現在）
 
 ## エディタ
 VSCode
