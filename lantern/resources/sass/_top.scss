@@ -2,17 +2,12 @@
   background-color: #faf8f2;
 }
 
-
+// トップページのメイン部分
 .t-wrapper {
   position: relative;
 }
 
-.t-main-top-img {
-  padding-top: 3rem;
-  opacity: 0.9;
-  filter: grayscale(10%);
-}
-
+// メインタイトル
 .t-main-title {
   display: flex;
   flex-direction: column;
@@ -23,68 +18,34 @@
   font-size: 6rem;
   margin-left: 8rem;
   line-height: inherit;
-    .t-main-title-orange {
-      display: block;
-      color: orange;
-    }
+  .t-main-title-orange {
+    display: block;
+    color: orange;
+  }
 }
 
-.t-main-top-img-lantern {
+// トップページメイン画像
+.top-img {
+  padding-top: 3rem;
+  opacity: 0.9;
+  filter: grayscale(10%);
+}
+
+// トップページメイン画像 -ランタン-
+.top-img-lantern {
   position: absolute;
   top: 12rem;
   left: 23rem;
 }
 
+
+// トップページの内容
 .t-main-content {
   padding: 0 60px;
   margin-top: 14rem;
 }
 
-a.t-button-text {
-  position: absolute;
-  color: white;
-  margin-left: 2.2rem;
-  margin-top: 3.5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-    &:hover {
-      opacity: 0.5;
-    }
-}
-
-.t-wrapper-list {
-  position: absolute;
-  margin-top: 12rem;
-  list-style: none;
-    .t-list-item {
-      color: #3b3f44;
-      padding-top: 20px;
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-
-    .t-list {
-      color: #3b3f44;
-        &:hover {
-          color: orange;
-        }
-    }
-
-    .t-list:before {
-      color: orange;
-      content: "■";
-    }
-}
-
-.t-button {
-  width: 220px;
-  height: 50px;
-  background-color:  orange;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 9px;
-}
-
+// 「コンセプト」、「Lanternにできること」のタイトル
 .concept-title, .about-title {
   text-align: center;
   font-weight: 600;
@@ -93,12 +54,14 @@ a.t-button-text {
   margin-bottom: 4rem;
 }
 
+// 「コンセプト」のタイトルの下線部分
 .concept-title {
   margin: 10rem auto 4rem auto;
   width: 210px;
   background: linear-gradient(transparent 70%, #ffba3c 60%);
 }
 
+// 「コンセプト」のテキスト
 .concept-text {
   text-align: center;
   font-weight: 600;
@@ -111,6 +74,9 @@ a.t-button-text {
   color: orange;
 }
 
+
+
+// Lanternのできること
 .t-main-about {
   margin-top: 110px;
   padding-bottom: 3rem;
@@ -136,19 +102,20 @@ a.t-button-text {
   border-radius: 7px;
   width: 360px;
   
-    // ３つのできることの画像
+    // 「Lanternのできること」の画像サイズの変更
     img {
       position: relative;
       height: 430px;
     }
     
     // 「投稿」の画像サイズ変更
-    .img2 {
+    .top-share {
       height: 400px;
       margin-top: 30px;
     }
 
-    .t-item-name {
+    // 「Lanternのできること」のそれぞれのタイトル
+    .t-item-title {
       position: absolute;
       text-align: center;
       font-size: 24px;
@@ -158,6 +125,7 @@ a.t-button-text {
       margin-top: 13px;
     }
     
+    // 画像番号
     .number {
       font-size: 2rem;
       position: absolute;
@@ -170,6 +138,7 @@ a.t-button-text {
       background: orange;
     }
 
+    // 各画像の説明文
     .t-item-text {
       font-weight: bold;
       font-size: 18px;
