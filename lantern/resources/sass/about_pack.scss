@@ -9,13 +9,21 @@
   justify-content: space-between;
 }
 
+// 「災害時の調理について」タイトル
 .top-title {
   text-align: center;
   font-weight: 600;
   font-size: 2.1rem;
   padding-top: 7rem;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem auto;
+  width: 21rem;
+
+  // 下線
+  background: linear-gradient(transparent 90%, #ffba3c 60%);
 }
+
+
+// 「災害時の調理について」テキスト部分
 .top-text {
   text-align: center;
   font-weight: 600;
@@ -24,18 +32,23 @@
   line-height: 3.22222;
 }
 
-.main-about {
+
+
+.main {
   padding: 0 60px;
 }
 
+// 「パッククッキングとは」タイトル
 .main-title {
   text-align: left;
   font-weight: 600;
   font-size: 2.1rem;
-  margin-top: 10rem;
+  margin-top: 15rem;
   margin-bottom: 4rem;
+  width: 22rem;
 }
 
+// 「パッククッキングとは」テキスト
 .main-text {
   text-align: left;
   font-size: 18px;
@@ -43,6 +56,7 @@
   margin-top: 30px;
   line-height: 3.2;
 }
+
 
 .item-title, .item-text {
   text-align: center;
@@ -53,26 +67,18 @@
 
 
 
-// 画像
+// 調理の手順画像
 .img-item img {
   width: 100%;
 }
 
+// 手順3のみサイズ変更
 .img-item-3 img {
   margin-top: 9rem;
   zoom: 0.5;
 }
 
-
-// 「パッククッキングとは」の横の画像
-// .img-about-pack {
-//   margin-top: 8rem;
-//   background-color: #ffedba;
-//   width: 380px;
-//   height: 300px;
-// }
-
-
+// 手順の枠
 .item {
   position: relative;
   background-color: #ffedba;
@@ -80,7 +86,7 @@
   border-radius: 7px;
 }
 
-
+// 手順番号
 .number {
   position: absolute;
   font-size: 2rem;

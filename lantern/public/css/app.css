@@ -18605,12 +18605,6 @@ button {
   position: relative;
 }
 
-.t-main-top-img {
-  padding-top: 3rem;
-  opacity: 0.9;
-  filter: grayscale(10%);
-}
-
 .t-main-title {
   display: flex;
   flex-direction: column;
@@ -18628,7 +18622,13 @@ button {
   color: orange;
 }
 
-.t-main-top-img-lantern {
+.top-img {
+  padding-top: 3rem;
+  opacity: 0.9;
+  filter: grayscale(10%);
+}
+
+.top-img-lantern {
   position: absolute;
   top: 12rem;
   left: 23rem;
@@ -18637,54 +18637,6 @@ button {
 .t-main-content {
   padding: 0 60px;
   margin-top: 14rem;
-}
-
-a.t-button-text {
-  position: absolute;
-  color: white;
-  margin-left: 2.2rem;
-  margin-top: 3.5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-a.t-button-text:hover {
-  opacity: 0.5;
-}
-
-.t-wrapper-list {
-  position: absolute;
-  margin-top: 12rem;
-  list-style: none;
-}
-
-.t-wrapper-list .t-list-item {
-  color: #3b3f44;
-  padding-top: 20px;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.t-wrapper-list .t-list {
-  color: #3b3f44;
-}
-
-.t-wrapper-list .t-list:hover {
-  color: orange;
-}
-
-.t-wrapper-list .t-list:before {
-  color: orange;
-  content: "\25A0";
-}
-
-.t-button {
-  width: 220px;
-  height: 50px;
-  background-color: orange;
-  border-radius: 5px;
-  text-align: center;
-  padding-top: 9px;
 }
 
 .concept-title,
@@ -18744,12 +18696,12 @@ a.t-button-text:hover {
   height: 430px;
 }
 
-.t-item .img2 {
+.t-item .top-share {
   height: 400px;
   margin-top: 30px;
 }
 
-.t-item .t-item-name {
+.t-item .t-item-title {
   position: absolute;
   text-align: center;
   font-size: 24px;
@@ -18792,7 +18744,9 @@ a.t-button-text:hover {
   font-weight: 600;
   font-size: 2.1rem;
   padding-top: 7rem;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem auto;
+  width: 21rem;
+  background: linear-gradient(transparent 90%, #ffba3c 60%);
 }
 
 .top-text {
@@ -18803,7 +18757,7 @@ a.t-button-text:hover {
   line-height: 3.22222;
 }
 
-.main-about {
+.main {
   padding: 0 60px;
 }
 
@@ -18811,8 +18765,9 @@ a.t-button-text:hover {
   text-align: left;
   font-weight: 600;
   font-size: 2.1rem;
-  margin-top: 10rem;
+  margin-top: 15rem;
   margin-bottom: 4rem;
+  width: 22rem;
 }
 
 .main-text {
