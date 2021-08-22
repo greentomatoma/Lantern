@@ -34,7 +34,7 @@ services:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
     ports:
-      - ${DB_PORT}:3306
+      - ${DB_PORT:-13306}:3306
     environment:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
@@ -43,3 +43,13 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - mysql-volume:/var/lib/mysql
+
+  db-testing:
+    build: ./docker/mysql
+    ports:
+      - ${DB_TESTING_PORT:-13307}:3306
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
