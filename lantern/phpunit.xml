@@ -18,15 +18,15 @@
         </whitelist>
     </filter>
     <php>
-        <env name="APP_ENV" value="testing"/>
+        <env name="APP_ENV" value="testing" force="true"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
-        <env name="DB_CONNECTION" value="mysql" force="true"/>
-        <env name="DB_HOST" value="db-testing" force="true"/>
-        <env name="DB_PORT" value="3306" force="true"/>
-        <env name="DB_DATABASE" value="lantern" force="true"/>
-        <env name="DB_USERNAME" value="lantern_user" force="true"/>
-        <env name="DB_PASSWORD" value="lantern_pass" force="true"/>
+        <env name="DB_CONNECTION" value="testing" force="true"/>
+        <env name="DB_HOST" value="db_testing" force="true"/>
+        <env name="DB_PORT" value="3308" force="true"/>
+        <env name="DB_DATABASE" value="lantern_test" force="true"/>
+        <env name="DB_USERNAME" value="test_user" force="true"/>
+        <env name="DB_PASSWORD" value="test_pass" force="true"/>
         <env name="MAIL_DRIVER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
