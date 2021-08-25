@@ -38,7 +38,7 @@ class RecipesControllerTest extends TestCase
     /**
      * @test
      */
-    public function 未ログインでレシピを投稿できない()
+    public function 未ログインではレシピ投稿画面へ遷移できない()
     {
         $response = $this->get(route('recipes.create'));
         $response->assertRedirect('login');
@@ -48,7 +48,7 @@ class RecipesControllerTest extends TestCase
     /**
      * @test
      */
-    public function ログインしているとレシピを投稿できる()
+    public function ログインしているとレシピ投稿画面へ遷移できる()
     {
         // Userモデルを用意
         $user = factory(User::class)->create(); 

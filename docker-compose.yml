@@ -45,14 +45,13 @@ services:
       - mysql-volume:/var/lib/mysql
 
   db_testing:
-    build:
-      context: .
-      dockerfile: ./docker/mysql/Dockerfile
+    container_name: db_testing
+    build: ./docker/mysql/
+    ports:
+      - 3308:3306
     environment:
-      MYSQL_DATABASE: ${DB_TEST_NAME}
-      MYSQL_USER: ${DB_TEST_USER}
-      MYSQL_PASSWORD: ${DB_TEST_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_TEST_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       TZ: 'Asia/Tokyo'
-    volumes:
-      - mysql-volume:/var/lib/mysql
