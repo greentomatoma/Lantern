@@ -61,37 +61,61 @@ class UserControllerTest extends TestCase
 
         $user = factory(User::class)->create();
 
-        $recipe = factory(Recipe::class, $count)->create([
+        $recipes = factory(Recipe::class, $count)->create([
             'user_id' => $user->id,
         ]);
 
-        $this->assertEquals($count, count($recipe));
+        $response = Recipe::find($user->id)->count();
+
+        $this->assertEquals($count, $response);
     }
 
 
-    // /**
-    //  * ユーザーに紐づくレシピの表示
-    //  * @test
-    //  */
-    public function そのユーザーに紐づくレシピの表示()
+    /**
+    * ユーザーに紐づくレシピの表示
+    * @test
+    */
+    public function ユーザーページでのそのユーザーに紐づくレシピの表示()
     {
         $user = factory(User::class)->create();
 
-        $recipe = factory(Recipe::class)->create([
+        $recipes = factory(Recipe::class)->create([
             'user_id' => $user->id,
         ]);
 
         $response = $this->get(route('users.show', [
-            'user' => $user,
-            'recipe' => $recipe
+            'name' => $user->name,
+            'recipe' => $recipes
         ]));
 
         $response->assertStatus(200)
             ->assertViewIs('users.show', [
-                'user' => $user,
-               'recipe' => $recipe,
+                'name' => $user->name,
+               'recipe' => $recipes,
         ]);
-
     }
+
+
+   /**
+    * プロフィール編集画面
+    * @test
+    * @depends ユーザーを取得できる
+    */
+    public function 自身のマイページではプロフィール編集画面へ遷移できる($user)
+    {
+        $response = $this
+        // 認証済みユーザー
+        ->actingAs($user)
+        // // マイページへ遷移できる
+        // ->get('/users/' . $user->name)
+        // // プロフィール編集ボタンが表示されている
+        // ->assertSee('class="edit-profile"')
+        // プロフィール編集画面へ遷移できる
+        ->get('/users/' . $user->name . '/edit-profile');
+        
+        $response->assertOk();
+    }
+
+
 
 }
