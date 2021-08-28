@@ -71,7 +71,7 @@ class UserControllerTest extends TestCase
     }
 
 
-    /**
+   /**
     * ユーザーに紐づくレシピの表示
     * @test
     */
@@ -106,16 +106,13 @@ class UserControllerTest extends TestCase
         $response = $this
         // 認証済みユーザー
         ->actingAs($user)
-        // // マイページへ遷移できる
-        // ->get('/users/' . $user->name)
-        // // プロフィール編集ボタンが表示されている
-        // ->assertSee('class="edit-profile"')
         // プロフィール編集画面へ遷移できる
         ->get('/users/' . $user->name . '/edit-profile');
         
-        $response->assertOk();
+        $response->assertOk()
+            // 画像変更欄がある
+            ->assertSee('avatar_image')
+            // ニックネーム変更欄がある
+            ->assertSee('nickname form-control');
     }
-
-
-
 }
