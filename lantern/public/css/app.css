@@ -17086,6 +17086,23 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+#container {
+  background-color: #faf8f2;
+  width: 1280px;
+}
+
+@media screen and (min-width: 600px) {
+  #container {
+    width: 1440px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #container {
+    width: 1440px;
+  }
+}
+
 .container {
   min-height: 100vh;
   position: relative;
@@ -17978,30 +17995,36 @@ button {
 
 .footer {
   position: absolute;
-  width: 100%;
+  width: 1280px;
   padding-bottom: 150px;
   background-color: #3e3e3e;
   padding: 24px;
   color: #fff;
 }
 
-@media screen and (mim-width: 480px) {
+@media screen and (min-width: 600px) {
   .footer {
-    padding: 20px;
+    width: 1440px;
   }
 }
 
-.logo {
-  font-size: 32px;
+@media screen and (min-width: 960px) {
+  .footer {
+    width: 1440px;
+  }
 }
 
-.footer-container {
+.footer__container {
   display: flex;
   justify-content: space-between;
   margin: 0 50px;
 }
 
-.nav-menu {
+.footer__logo {
+  font-size: 32px;
+}
+
+.footer__menu {
   display: flex;
   flex-direction: column;
   font-weight: lighter;
@@ -18010,27 +18033,27 @@ button {
   margin-top: 15px;
 }
 
-.nav-menu a {
+.footer__menu a {
   font-size: 0.8rem;
   color: #6c757d;
   font-weight: bold;
 }
 
-.nav-menu a:hover {
+.footer__menu a:hover {
   -webkit-text-decoration: underline #3b3f44;
           text-decoration: underline #3b3f44;
 }
 
-.nav-menu a {
+.footer__menu .rink {
   color: #c0c4c7;
 }
 
-.nav-menu a:hover {
+.footer__menu .rink:hover {
   -webkit-text-decoration: underline #c0c4c7;
           text-decoration: underline #c0c4c7;
 }
 
-.copyright {
+.footer__copyright {
   text-align: center;
   margin: 0 50px;
   color: #c0c4c7;
@@ -18601,29 +18624,6 @@ button {
 
 .btn.btn-danger:hover {
   opacity: 0.5;
-}
-
-#container {
-  background-color: #faf8f2;
-  width: 1280px;
-}
-
-@media screen and (mim-width: 480px) {
-  #container {
-    width: 100vw;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  #container {
-    width: 157%;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  #container {
-    width: 1440px;
-  }
 }
 
 .screen .screen__main {
