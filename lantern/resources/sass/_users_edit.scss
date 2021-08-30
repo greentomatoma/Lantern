@@ -47,7 +47,7 @@
         @include _btn;
         width: 35%;
         box-shadow: none;
-        @include md {
+        @include tb {
           width: 45%;
         }
       }

@@ -1,19 +1,34 @@
 // レスポンシブ
-$sp: 479px;
-$md: 768px;
+$sp: 480px;
+$tb: 600px;
+$tb_land: 960px;
+$dis: 1280px;
 
 
 @mixin sp {
-  @media screen and (max-width: $sp) {
+  @media screen and (mim-width: $sp) {
     @content;
   }
 }
 
-@mixin md {
-  @media screen and (max-width: $md) {
+@mixin tb {
+  @media screen and (min-width: $tb) {
     @content;
   }
 }
+
+@mixin tb_land {
+  @media screen and (min-width: $tb_land) {
+    @content;
+  }
+}
+
+@mixin dis {
+  @media screen and (min-width: $dis) {
+    @content;
+  }
+}
+
 
 .container {
   min-height: 100vh;
