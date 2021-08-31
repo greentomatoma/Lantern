@@ -58,6 +58,7 @@
                       @endguest
                   </ul>
               </div>
+
               <div class="nav-main">
                   <ul class="nav-list">
                       <li class="nav-list-item">
@@ -82,8 +83,15 @@
                       </li>
                   </ul>
               </div>
+
+              <div class="mobile-btn">
+                  <button class="mobile-menu__btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+              </div>
           </div>
-    
           <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item"> -->
@@ -96,4 +104,28 @@
           </div> -->
       </div>
     </nav>
+    <div class="mobile-menu">
+        <ul class="mobile-menu__list">
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="{{url('/')}}">
+                    Lanternについて
+                </a>
+            </li>
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="#">
+                    使い方
+                </a>
+            </li>
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="{{url('/about_pack')}}">
+                    災害時での調理
+                </a>
+            </li>
+            <li class="mobile-menu__item">
+                <a class="mobile-menu__link" href="{{ route('recipes.index') }}">
+                    レシピをみる / 書く
+                </a>
+            </li>
+        </ul>
+    </div>
 </header>

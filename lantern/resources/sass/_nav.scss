@@ -1,11 +1,18 @@
 .navbar {
   background-color: $yellow;
   display: block;
-  padding: 0.5rem 4.3rem;
   height: 160px;
-  @include sp {
-    width: 100%;
-    padding: 0.5rem 2.3rem;
+
+  @include tb {
+  padding: 0.5rem 4.3rem;
+  }
+
+  @include tb_land {
+  padding: 0.5rem 4.3rem;
+  }
+
+  @include dis {
+  padding: 0.5rem 4.3rem;
   }
 
   .nav-container {
@@ -13,10 +20,67 @@
     justify-content: space-between;
     width: 100%;
 
-    .nav-main-content {
+      // @include tb {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   width: 100%;
+      // }
+    
+      // @include tb_land {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   width: 100%;
+      // }
+
+      // @include dis {
+      //   display: flex;
+      //   justify-content: space-between;
+      //   width: 100%;
+      // }
+
+    .nav-top {
+      display: block;
       display: flex;
       flex-direction: column;
       width: 100%;
+      // display: none;
+      
+      // @include tb {
+      //   display: block;
+      //   display: flex;
+      //   flex-direction: column;
+      //   width: 100%;
+      // }
+    
+      // @include tb_land {
+      //   display: block;
+      //   display: flex;
+      //   flex-direction: column;
+      //   width: 100%;
+      // }
+
+      // @include dis {
+      //   display: block;
+      //   display: flex;
+      //   flex-direction: column;
+      //   width: 100%;
+      // }
+    }
+
+    .nav-main {
+      display: none;
+
+      @include tb {
+        display: block;
+      }
+    
+      @include tb_land {
+        display: block;
+      }
+
+      @include dis {
+        display: block;
+      }
     }
 
     .nav-item, .nav-item.dropdown {

@@ -17100,6 +17100,7 @@ readers do not read off random characters that represent icons */
   position: relative;
   padding-bottom: 120px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 ul {
@@ -17192,6 +17193,14 @@ ul {
 
 /* ======================================= */
 
+.mobile-btn {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 300;
+  position: relative;
+  bottom: -10px;
+}
+
 @media screen and (min-width: 600px) {
   .mobile-menu__btn {
     display: none;
@@ -17211,11 +17220,10 @@ ul {
 }
 
 .mobile-menu {
-  background-color: peru;
-  margin: 50px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
+  opacity: 0;
+  background-color: #ffc107;
+  position: relative;
+  z-index: 200;
 }
 
 @media screen and (min-width: 600px) {
@@ -17234,6 +17242,28 @@ ul {
   .mobile-menu {
     display: none;
   }
+}
+
+.mobile-menu__list {
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-menu__item {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+  padding: 10px;
+}
+
+.mobile-menu__link {
+  color: white;
+}
+
+.mobile-menu__link:hover {
+  color: #3b3f44;
+}
+
+.menu-open {
+  opacity: 1;
 }
 
 .card {
@@ -17878,14 +17908,24 @@ button {
 .navbar {
   background-color: #ffc107;
   display: block;
-  padding: 0.5rem 4.3rem;
   height: 160px;
 }
 
-@media screen and (mim-width: 480px) {
+@media screen and (min-width: 600px) {
   .navbar {
-    width: 100%;
-    padding: 0.5rem 2.3rem;
+    padding: 0.5rem 4.3rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .navbar {
+    padding: 0.5rem 4.3rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navbar {
+    padding: 0.5rem 4.3rem;
   }
 }
 
@@ -17895,35 +17935,11 @@ button {
   width: 100%;
 }
 
-.navbar .nav-container .nav-main-content {
-  display: none;
-}
-
-@media screen and (min-width: 600px) {
-  .navbar .nav-container .nav-main-content {
-    display: block;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .navbar .nav-container .nav-main-content {
-    display: block;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .navbar .nav-container .nav-main-content {
-    display: block;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+.navbar .nav-container .nav-top {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .navbar .nav-container .nav-main {
@@ -18740,7 +18756,6 @@ button {
 
 .screen .screen__main {
   position: relative;
-  margin-top: 27px;
 }
 
 @media screen and (min-width: 960px) {

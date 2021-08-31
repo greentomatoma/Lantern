@@ -29,19 +29,15 @@ $dis: 1280px;
   }
 }
 
+#app {
+  overflow: hidden;
+}
 
 #container {
   background-color: #faf8f2;
-  width: 1280px;
-
-  @include tb {
-    width: 1440px;
-  }
-
-  @include tb_land {
-    width: 1440px;
-  }
+  overflow: hidden;
 }
+
 
 
 .container {
@@ -49,6 +45,7 @@ $dis: 1280px;
   position: relative;
   padding-bottom: 120px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 ul {
