@@ -1,18 +1,10 @@
 .footer {
     position: absolute;
-    width: 1280px;
     padding-bottom: 150px;
     background-color: #3e3e3e;
     padding: 24px;
     color: #fff;
-
-    @include tb {
-      width: 1440px;
-    }
-
-    @include tb_land {
-      width: 1440px;
-    }
+    width: 100%;
 
     &__container {
       display: flex;
