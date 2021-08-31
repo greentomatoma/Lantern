@@ -2,35 +2,77 @@
 .screen {
   .screen__main {
     position: relative;
+    margin-top: 27px;
+    @include tb {
+    }
+  
+    @include tb_land {
+      width: 73%;
+    }
+
+    @include dis {
+      margin-top: 0px;
+    }
     
     // トップページメイン画像
     .main-image {
       padding-top: 3rem;
       opacity: 0.9;
       filter: grayscale(10%);
+      width: 340px;
+      @include tb {
+        width: 100%;
+      }
+    
+      @include tb_land {
+        width: 100%;
+      }
+
+      // @include dis {
+      //   width: 73%;
+      //   top: 12rem;
+      //   left: 25rem;
+      // }
     }
   
     // トップページメイン画像 -ランタン-
     .main-lantern {
       position: absolute;
-      top: 12rem;
-      left: 24rem;
+      top: 6rem;
+      left: 6rem;
         @include sp {
           top: 12rem;
           left: 23rem;
         }
       
         @include tb {
+          top: 9rem;
+          left: 17rem;
         }
       
         @include tb_land {
-          top: 12rem;
-          left: 25rem;
+          top: 9rem;
+          left: 16rem;
         }
 
         @include dis {
-          top: 12rem;
-          left: 25rem;
+          top: 9rem;
+          left: 20rem;
+        }
+
+        & > img {
+          width: 104px;
+        
+          @include tb {
+            width: 66%;
+          }
+        
+          @include tb_land {
+          }
+  
+          @include dis {
+            width: 100%;
+          }
         }
     }
 
@@ -42,11 +84,10 @@
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    font-size: 6rem;
+    font-size: 2.1rem;
     z-index: 1;
-    width: 500px;
-    top: 13rem;
-    left: 44rem;
+    top: 11rem;
+    left: 2rem;
 
       @include sp {
         top: 12rem;
@@ -55,16 +96,18 @@
 
       @include tb {
         max-width: 100%;
+        font-size: 6rem;
       }
     
       @include tb_land {
         max-width: 100%;
-        left: 50rem;
+        left: 33rem;
+        font-size: 5rem;
       }
 
       @include dis {
         max-width: 100%;
-        left: 50rem;
+        font-size: 6rem;
       }
   
     .screen-title {
@@ -83,44 +126,27 @@
 
 // コンセプト
 .concept {
-  padding: 0 60px;
+  padding: 0 9px;
   margin-top: 14rem;
 
-    &__title {
-      text-align: center;
-      font-weight: 600;
-      font-size: 40px;
-      margin-top: 10rem;
-      margin-bottom: 4rem;
+  @include tb {
+    padding: 0 60px;
+  }
 
-      // 下線
-      margin: 10rem auto 4rem auto;
-      width: 210px;
-      background: linear-gradient(transparent 70%, #ffba3c 60%);
+  @include tb_land {
+    padding: 0 60px;
+  }
+
+  @include dis {
+    padding: 0 60px;
+  }
+
+    &__title {
+      @include _title;
     }
 
     &__text {
-      text-align: center;
-      font-weight: 600;
-      font-size: 30px;
-      margin-top: 30px;
-      line-height: 3.2;
-
-      @include sp {
-        margin-top: 30px;
-      }
-    
-      @include tb {
-        font-size: 22px;
-      }
-    
-      @include tb_land {
-        font-size: 22px;
-      }
-
-      @include dis {
-        font-size: 22px;
-      }
+      @include _text;
 
         &.orange {
           color: orange;
@@ -136,16 +162,7 @@
   padding-bottom: 3rem;
 
   &__title {
-    text-align: center;
-    font-weight: 600;
-    font-size: 40px;
-    margin-top: 10rem;
-    margin-bottom: 4rem;
-
-    // 下線
-    margin: 10rem auto 4rem auto;
-    width: 210px;
-    background: linear-gradient(transparent 70%, #ffba3c 60%);
+    @include _title;
   }
 
   &__items {
@@ -183,8 +200,7 @@
     align-items: center;
     background-color: white;
     border-radius: 7px;
-    margin: 0 auto 50px auto;
-    width: 50%;
+    margin: 0 10px 50px 10px;
   
     @include tb {
       width: 360px;
@@ -201,7 +217,20 @@
 
     & > img {
       position: relative;
-      height: 430px;
+      max-height: 330px;
+      width: auto;
+
+      @include tb {
+        height: 430px;
+      }
+    
+      @include tb_land {
+        height: 430px;
+      }
+  
+      @include dis {
+        height: 430px;
+      }
     }
     
     .share {
@@ -210,25 +239,28 @@
     }
 
       .item-title {
-        position: absolute;
         text-align: center;
-        font-size: 33px;
-        font-weight: bold;
-        color: #3b3f44;
-        width: 100px;
-        margin-top: 13px;
+        font-weight: 600;
+        font-size: 1.5rem;
+        margin: 0;
+
+        // font-size: 33px;
+        // font-weight: bold;
+        // color: #3b3f44;
+        // width: 100px;
+        // margin-top: 13px;
       
-        @include tb {
-          font-size: 25px;
-        }
+        // @include tb {
+        //   font-size: 25px;
+        // }
       
-        @include tb_land {
-          font-size: 25px;
-        }
+        // @include tb_land {
+        //   font-size: 25px;
+        // }
   
-        @include dis {
-          font-size: 25px;
-        }
+        // @include dis {
+        //   font-size: 25px;
+        // }
       }
 
       // 画像番号
@@ -261,8 +293,8 @@
       }
 
       .item-text {
-        font-weight: bold;
-        font-size: 30px;
+        font-weight: 600;
+        font-size: 16px;
       
         @include tb {
           font-size: 20px;

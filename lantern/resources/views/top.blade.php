@@ -2,6 +2,7 @@
 
 @include('layouts/nav')
 
+
 <div id="container">
   <div id="content">
     <main>

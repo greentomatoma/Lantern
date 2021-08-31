@@ -17086,21 +17086,13 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+#app {
+  overflow: hidden;
+}
+
 #container {
   background-color: #faf8f2;
-  width: 1280px;
-}
-
-@media screen and (min-width: 600px) {
-  #container {
-    width: 1440px;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  #container {
-    width: 1440px;
-  }
+  overflow: hidden;
 }
 
 .container {
@@ -17156,6 +17148,91 @@ ul {
   100% {
     opacity: 0;
     transform: translateY(-30px);
+  }
+}
+
+/* ======================================= */
+
+/* ハンバーガーメニューのデザイン */
+
+.mobile-menu__btn {
+  position: relative;
+  width: 50px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.mobile-menu__btn span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.mobile-menu__btn,
+.mobile-menu__btn span {
+  display: inline-block;
+  transition: all 0.5s;
+  box-sizing: border-box;
+}
+
+.mobile-menu__btn span:nth-of-type(1) {
+  top: 0;
+}
+
+.mobile-menu__btn span:nth-of-type(2) {
+  top: 20px;
+}
+
+.mobile-menu__btn span:nth-of-type(3) {
+  bottom: 0;
+}
+
+/* ======================================= */
+
+@media screen and (min-width: 600px) {
+  .mobile-menu__btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .mobile-menu__btn {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mobile-menu__btn {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  background-color: peru;
+  margin: 50px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+@media screen and (min-width: 600px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mobile-menu {
+    display: none;
   }
 }
 
@@ -17416,20 +17493,32 @@ a:hover {
 }
 
 .recipe-card .card-body .recipe-title {
-  font-size: 1.3rem;
-  margin-bottom: 1.75rem;
-  border: none;
-  text-align: left;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
 }
 
-.recipe-card .card-body .recipe-title a {
-  color: #3b3f44;
-  text-decoration: none;
+@media screen and (min-width: 600px) {
+  .recipe-card .card-body .recipe-title {
+    font-size: 2.5rem;
+  }
 }
 
-.recipe-card .card-body .recipe-title a:hover {
-  -webkit-text-decoration: underline #3b3f44;
-          text-decoration: underline #3b3f44;
+@media screen and (min-width: 960px) {
+  .recipe-card .card-body .recipe-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .recipe-card .card-body .recipe-title {
+    font-size: 2.5rem;
+  }
 }
 
 .recipe-card .card-body .card-body-md {
@@ -17819,9 +17908,56 @@ button {
 }
 
 .navbar .nav-container .nav-main-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar .nav-container .nav-main-content {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .navbar .nav-container .nav-main-content {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navbar .nav-container .nav-main-content {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.navbar .nav-container .nav-main {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar .nav-container .nav-main {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .navbar .nav-container .nav-main {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navbar .nav-container .nav-main {
+    display: block;
+  }
 }
 
 .navbar .nav-container .nav-item,
@@ -17995,23 +18131,11 @@ button {
 
 .footer {
   position: absolute;
-  width: 1280px;
   padding-bottom: 150px;
   background-color: #3e3e3e;
   padding: 24px;
   color: #fff;
-}
-
-@media screen and (min-width: 600px) {
-  .footer {
-    width: 1440px;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .footer {
-    width: 1440px;
-  }
+  width: 100%;
 }
 
 .footer__container {
@@ -18260,20 +18384,32 @@ button {
 }
 
 .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-  font-size: 1.3rem;
-  margin-bottom: 1.75rem;
-  border: none;
-  text-align: left;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
 }
 
-.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title a {
-  color: #3b3f44;
-  text-decoration: none;
+@media screen and (min-width: 600px) {
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
+    font-size: 2.5rem;
+  }
 }
 
-.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title a:hover {
-  -webkit-text-decoration: underline #3b3f44;
-          text-decoration: underline #3b3f44;
+@media screen and (min-width: 960px) {
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (mim-width: 480px) {
@@ -18551,20 +18687,32 @@ button {
 }
 
 .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-  font-size: 1.3rem;
-  margin-bottom: 1.75rem;
-  border: none;
-  text-align: left;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
 }
 
-.all-post-lists .post-recipe-card .card-main .card-main-text .card-title a {
-  color: #3b3f44;
-  text-decoration: none;
+@media screen and (min-width: 600px) {
+  .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
+    font-size: 2.5rem;
+  }
 }
 
-.all-post-lists .post-recipe-card .card-main .card-main-text .card-title a:hover {
-  -webkit-text-decoration: underline #3b3f44;
-          text-decoration: underline #3b3f44;
+@media screen and (min-width: 960px) {
+  .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (mim-width: 480px) {
@@ -18628,18 +18776,44 @@ button {
 
 .screen .screen__main {
   position: relative;
+  margin-top: 27px;
+}
+
+@media screen and (min-width: 960px) {
+  .screen .screen__main {
+    width: 73%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .screen .screen__main {
+    margin-top: 0px;
+  }
 }
 
 .screen .screen__main .main-image {
   padding-top: 3rem;
   opacity: 0.9;
   filter: grayscale(10%);
+  width: 340px;
+}
+
+@media screen and (min-width: 600px) {
+  .screen .screen__main .main-image {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .screen .screen__main .main-image {
+    width: 100%;
+  }
 }
 
 .screen .screen__main .main-lantern {
   position: absolute;
-  top: 12rem;
-  left: 24rem;
+  top: 6rem;
+  left: 6rem;
 }
 
 @media screen and (mim-width: 480px) {
@@ -18649,17 +18823,40 @@ button {
   }
 }
 
+@media screen and (min-width: 600px) {
+  .screen .screen__main .main-lantern {
+    top: 9rem;
+    left: 17rem;
+  }
+}
+
 @media screen and (min-width: 960px) {
   .screen .screen__main .main-lantern {
-    top: 12rem;
-    left: 25rem;
+    top: 9rem;
+    left: 16rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .screen .screen__main .main-lantern {
-    top: 12rem;
-    left: 25rem;
+    top: 9rem;
+    left: 20rem;
+  }
+}
+
+.screen .screen__main .main-lantern > img {
+  width: 104px;
+}
+
+@media screen and (min-width: 600px) {
+  .screen .screen__main .main-lantern > img {
+    width: 66%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .screen .screen__main .main-lantern > img {
+    width: 100%;
   }
 }
 
@@ -18668,11 +18865,10 @@ button {
   display: flex;
   flex-direction: column;
   font-weight: 600;
-  font-size: 6rem;
+  font-size: 2.1rem;
   z-index: 1;
-  width: 500px;
-  top: 13rem;
-  left: 44rem;
+  top: 11rem;
+  left: 2rem;
 }
 
 @media screen and (mim-width: 480px) {
@@ -18685,20 +18881,22 @@ button {
 @media screen and (min-width: 600px) {
   .screen .screen__content {
     max-width: 100%;
+    font-size: 6rem;
   }
 }
 
 @media screen and (min-width: 960px) {
   .screen .screen__content {
     max-width: 100%;
-    left: 50rem;
+    left: 33rem;
+    font-size: 5rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .screen .screen__content {
     max-width: 100%;
-    left: 50rem;
+    font-size: 6rem;
   }
 }
 
@@ -18714,14 +18912,32 @@ button {
 }
 
 .concept {
-  padding: 0 60px;
+  padding: 0 9px;
   margin-top: 14rem;
+}
+
+@media screen and (min-width: 600px) {
+  .concept {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .concept {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .concept {
+    padding: 0 60px;
+  }
 }
 
 .concept__title {
   text-align: center;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 1.5rem;
   margin-top: 10rem;
   margin-bottom: 4rem;
   margin: 10rem auto 4rem auto;
@@ -18729,18 +18945,29 @@ button {
   background: linear-gradient(transparent 70%, #ffba3c 60%);
 }
 
+@media screen and (min-width: 600px) {
+  .concept__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .concept__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .concept__title {
+    font-size: 2.5rem;
+  }
+}
+
 .concept__text {
   text-align: center;
   font-weight: 600;
-  font-size: 30px;
   margin-top: 30px;
   line-height: 3.2;
-}
-
-@media screen and (mim-width: 480px) {
-  .concept__text {
-    margin-top: 30px;
-  }
 }
 
 @media screen and (min-width: 600px) {
@@ -18773,12 +19000,30 @@ button {
 .about__title {
   text-align: center;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 1.5rem;
   margin-top: 10rem;
   margin-bottom: 4rem;
   margin: 10rem auto 4rem auto;
   width: 210px;
   background: linear-gradient(transparent 70%, #ffba3c 60%);
+}
+
+@media screen and (min-width: 600px) {
+  .about__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about__title {
+    font-size: 2.5rem;
+  }
 }
 
 .about__items {
@@ -18820,8 +19065,7 @@ button {
   align-items: center;
   background-color: white;
   border-radius: 7px;
-  margin: 0 auto 50px auto;
-  width: 50%;
+  margin: 0 10px 50px 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -18844,7 +19088,26 @@ button {
 
 .about__item > img {
   position: relative;
-  height: 430px;
+  max-height: 330px;
+  width: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .about__item > img {
+    height: 430px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about__item > img {
+    height: 430px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about__item > img {
+    height: 430px;
+  }
 }
 
 .about__item .share {
@@ -18853,31 +19116,10 @@ button {
 }
 
 .about__item .item-title {
-  position: absolute;
   text-align: center;
-  font-size: 33px;
-  font-weight: bold;
-  color: #3b3f44;
-  width: 100px;
-  margin-top: 13px;
-}
-
-@media screen and (min-width: 600px) {
-  .about__item .item-title {
-    font-size: 25px;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .about__item .item-title {
-    font-size: 25px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .about__item .item-title {
-    font-size: 25px;
-  }
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
 .about__item .number {
@@ -18915,8 +19157,8 @@ button {
 }
 
 .about__item .item-text {
-  font-weight: bold;
-  font-size: 30px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 600px) {
