@@ -1,5 +1,5 @@
 // タイトル
-@mixin _title {
+@mixin _s-title {
   text-align: center;
   font-weight: 600;
   font-size: 1.5rem;
@@ -26,7 +26,7 @@
 
 
 // テキスト
-@mixin _text {
+@mixin _s-text {
   text-align: center;
   font-weight: 600;
   margin-top: 30px;

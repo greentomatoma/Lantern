@@ -142,11 +142,11 @@
   }
 
     &__title {
-      @include _title;
+      @include _s-title;
     }
 
     &__text {
-      @include _text;
+      @include _s-text;
 
         &.orange {
           color: orange;
@@ -162,7 +162,7 @@
   padding-bottom: 3rem;
 
   &__title {
-    @include _title;
+    @include _s-title;
   }
 
   &__items {

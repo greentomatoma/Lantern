@@ -17493,32 +17493,20 @@ a:hover {
 }
 
 .recipe-card .card-body .recipe-title {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-top: 10rem;
-  margin-bottom: 4rem;
-  margin: 10rem auto 4rem auto;
-  width: 210px;
-  background: linear-gradient(transparent 70%, #ffba3c 60%);
+  font-size: 1.3rem;
+  margin-bottom: 1.75rem;
+  border: none;
+  text-align: left;
 }
 
-@media screen and (min-width: 600px) {
-  .recipe-card .card-body .recipe-title {
-    font-size: 2.5rem;
-  }
+.recipe-card .card-body .recipe-title a {
+  color: #3b3f44;
+  text-decoration: none;
 }
 
-@media screen and (min-width: 960px) {
-  .recipe-card .card-body .recipe-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .recipe-card .card-body .recipe-title {
-    font-size: 2.5rem;
-  }
+.recipe-card .card-body .recipe-title a:hover {
+  -webkit-text-decoration: underline #3b3f44;
+          text-decoration: underline #3b3f44;
 }
 
 .recipe-card .card-body .card-body-md {
@@ -18384,32 +18372,20 @@ button {
 }
 
 .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-top: 10rem;
-  margin-bottom: 4rem;
-  margin: 10rem auto 4rem auto;
-  width: 210px;
-  background: linear-gradient(transparent 70%, #ffba3c 60%);
+  font-size: 1.3rem;
+  margin-bottom: 1.75rem;
+  border: none;
+  text-align: left;
 }
 
-@media screen and (min-width: 600px) {
-  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-    font-size: 2.5rem;
-  }
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title a {
+  color: #3b3f44;
+  text-decoration: none;
 }
 
-@media screen and (min-width: 960px) {
-  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-    font-size: 2.5rem;
-  }
+.user-page .all-post-lists .post-recipe-card .card-main .card-main-text .card-title a:hover {
+  -webkit-text-decoration: underline #3b3f44;
+          text-decoration: underline #3b3f44;
 }
 
 @media screen and (mim-width: 480px) {
@@ -18687,32 +18663,20 @@ button {
 }
 
 .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-top: 10rem;
-  margin-bottom: 4rem;
-  margin: 10rem auto 4rem auto;
-  width: 210px;
-  background: linear-gradient(transparent 70%, #ffba3c 60%);
+  font-size: 1.3rem;
+  margin-bottom: 1.75rem;
+  border: none;
+  text-align: left;
 }
 
-@media screen and (min-width: 600px) {
-  .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-    font-size: 2.5rem;
-  }
+.all-post-lists .post-recipe-card .card-main .card-main-text .card-title a {
+  color: #3b3f44;
+  text-decoration: none;
 }
 
-@media screen and (min-width: 960px) {
-  .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .all-post-lists .post-recipe-card .card-main .card-main-text .card-title {
-    font-size: 2.5rem;
-  }
+.all-post-lists .post-recipe-card .card-main .card-main-text .card-title a:hover {
+  -webkit-text-decoration: underline #3b3f44;
+          text-decoration: underline #3b3f44;
 }
 
 @media screen and (mim-width: 480px) {
