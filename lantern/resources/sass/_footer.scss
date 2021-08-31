@@ -7,13 +7,29 @@
     width: 100%;
 
     &__container {
-      display: flex;
-      justify-content: space-between;
-      margin: 0 50px;
+
+      @include tb {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 50px;
+      }
+    
+      @include tb_land {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 50px;
+      }
+  
+      @include dis {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 50px;
+      }
     }
     
     &__logo {
       font-size: 32px;
+      text-align: center;
     }
     
     &__menu {
@@ -21,6 +37,9 @@
       flex-direction: column;
       font-weight: lighter;
       list-style-type: none;
+      margin-top: 15px;
+      padding: 0;
+      text-align: center;
       @include _tag;
     
       .rink {
@@ -29,7 +48,20 @@
           text-decoration: underline #c0c4c7;
         }
       }
+
+      @include tb {
+
+      }
+    
+      @include tb_land {
+
+      }
+  
+      @include dis {
+
+      }
     }
+    
     
     &__copyright {
       text-align: center;
@@ -38,35 +70,3 @@
       font-weight: lighter;
     }
 }
-
-
-// .logo {
-//   font-size: 32px;
-// }
-
-// .footer-container {
-//   display: flex;
-//   justify-content: space-between;
-//   margin: 0 50px;
-// }
-
-// .nav-menu {
-//   display: flex;
-//   flex-direction: column;
-//   font-weight: lighter;
-//   list-style-type: none;
-//   @include _tag;
-//     a {
-//       color: #c0c4c7;
-//         &:hover {
-//           text-decoration: underline #c0c4c7;
-//         }
-//     }
-// }
-
-// .copyright {
-//   text-align: center;
-//   margin: 0 50px;
-//   color: #c0c4c7;
-//   font-weight: lighter;
-// }
