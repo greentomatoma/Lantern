@@ -20,62 +20,23 @@
     justify-content: space-between;
     width: 100%;
 
-      // @include tb {
-      //   display: flex;
-      //   justify-content: space-between;
-      //   width: 100%;
-      // }
-    
-      // @include tb_land {
-      //   display: flex;
-      //   justify-content: space-between;
-      //   width: 100%;
-      // }
-
-      // @include dis {
-      //   display: flex;
-      //   justify-content: space-between;
-      //   width: 100%;
-      // }
-
     .nav-top {
       display: block;
       display: flex;
       flex-direction: column;
       width: 100%;
-      // display: none;
-      
-      // @include tb {
-      //   display: block;
-      //   display: flex;
-      //   flex-direction: column;
-      //   width: 100%;
-      // }
-    
-      // @include tb_land {
-      //   display: block;
-      //   display: flex;
-      //   flex-direction: column;
-      //   width: 100%;
-      // }
-
-      // @include dis {
-      //   display: block;
-      //   display: flex;
-      //   flex-direction: column;
-      //   width: 100%;
-      // }
     }
 
     .nav-main {
       display: none;
 
-      @include tb {
-        display: block;
-      }
+      // @include tb {
+      //   display: block;
+      // }
     
       @include tb_land {
         display: block;
+        margin-right: 14rem;
       }
 
       @include dis {
@@ -83,9 +44,24 @@
       }
     }
 
+
     .nav-item, .nav-item.dropdown {
-      margin-left: 30px;
-      margin-top: 3px;
+      margin-left: 9px;
+
+      @include tb {
+        margin-left: 30px;
+        margin-top: 3px;
+      }
+    
+      @include tb_land {
+        margin-left: 30px;
+        margin-top: 3px;
+      }
+
+      @include dis {
+        margin-left: 30px;
+        margin-top: 3px;
+      }
 
         // ログイン/新規登録ボタン
         .nav-link {

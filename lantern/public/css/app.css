@@ -17163,7 +17163,7 @@ ul {
   cursor: pointer;
 }
 
-.mobile-menu__btn span {
+.mobile-menu__btn > span {
   position: absolute;
   left: 0;
   width: 100%;
@@ -17191,20 +17191,27 @@ ul {
   bottom: 0;
 }
 
+.mobile-menu__btn.active span:nth-of-type(1) {
+  transform: translateY(20px) rotate(-45deg);
+}
+
+.mobile-menu__btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.mobile-menu__btn.active span:nth-of-type(3) {
+  transform: translateY(-20px) rotate(45deg);
+}
+
 /* ======================================= */
 
 .mobile-btn {
   display: flex;
-  justify-content: flex-end;
-  z-index: 300;
+  flex-direction: column;
+  align-items: flex-end;
   position: relative;
   bottom: -10px;
-}
-
-@media screen and (min-width: 600px) {
-  .mobile-menu__btn {
-    display: none;
-  }
+  z-index: 300;
 }
 
 @media screen and (min-width: 960px) {
@@ -17219,17 +17226,19 @@ ul {
   }
 }
 
+.mobile-menu__text {
+  color: white;
+  text-align: center;
+  margin-right: 4px;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
 .mobile-menu {
   opacity: 0;
   background-color: #ffc107;
   position: relative;
   z-index: 200;
-}
-
-@media screen and (min-width: 600px) {
-  .mobile-menu {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 960px) {
@@ -17946,15 +17955,10 @@ button {
   display: none;
 }
 
-@media screen and (min-width: 600px) {
-  .navbar .nav-container .nav-main {
-    display: block;
-  }
-}
-
 @media screen and (min-width: 960px) {
   .navbar .nav-container .nav-main {
     display: block;
+    margin-right: 14rem;
   }
 }
 
@@ -17966,8 +17970,31 @@ button {
 
 .navbar .nav-container .nav-item,
 .navbar .nav-container .nav-item.dropdown {
-  margin-left: 30px;
-  margin-top: 3px;
+  margin-left: 9px;
+}
+
+@media screen and (min-width: 600px) {
+  .navbar .nav-container .nav-item,
+  .navbar .nav-container .nav-item.dropdown {
+    margin-left: 30px;
+    margin-top: 3px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .navbar .nav-container .nav-item,
+  .navbar .nav-container .nav-item.dropdown {
+    margin-left: 30px;
+    margin-top: 3px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .navbar .nav-container .nav-item,
+  .navbar .nav-container .nav-item.dropdown {
+    margin-left: 30px;
+    margin-top: 3px;
+  }
 }
 
 .navbar .nav-container .nav-item .nav-link,
@@ -18889,7 +18916,7 @@ button {
 @media screen and (min-width: 960px) {
   .screen .screen__content {
     max-width: 100%;
-    left: 33rem;
+    left: 46rem;
     font-size: 5rem;
   }
 }

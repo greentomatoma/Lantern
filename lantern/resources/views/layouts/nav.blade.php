@@ -90,6 +90,9 @@
                     <span></span>
                     <span></span>
                   </button>
+                  <span class="mobile-menu__text">
+                    MENU
+                  </span>
               </div>
           </div>
           <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
