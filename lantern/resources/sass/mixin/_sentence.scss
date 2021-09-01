@@ -12,15 +12,15 @@
   background: linear-gradient(transparent 70%, #ffba3c 60%);
 
   @include tb {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   @include tb_land {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   @include dis {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -33,14 +33,14 @@
   line-height: 3.2;
 
   @include tb {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   @include tb_land {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   @include dis {
-    font-size: 22px;
+    font-size: 18px;
   }
 }

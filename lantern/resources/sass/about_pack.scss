@@ -1,90 +1,167 @@
-.items {
-  display: flex;
-  justify-content: space-between;
-}
+/* ======================================= */
+/* 災害時の調理について */
+.about-top {
+  padding: 0 10px 0 10px;
 
-.m-about-pack {
+  &__title {
+    @include _s-title;
+
+    width: 250px;
+
+    @include tb {
+      width: 410px;
+    }
+
+    @include tb_land {
+      width: 410px;
+    }
+
+    @include tb_land {
+      width: 410px;
+    }
+  }
+
+  &__text {
+    @include _s-text;
+  }
+}
+/* ======================================= */
+
+
+
+/* ======================================= */
+/* パッククッキングとは */
+.about-pack {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: 0 10px 0 10px;
+
+  @include tb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include tb_land {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include tb_land {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+
+  &__title {
+    @include _s-title;
+
+    width: 267px;
+
+    @include tb {
+      width: 410px;
+    }
+
+    @include tb_land {
+      width: 410px;
+    }
+
+    @include tb_land {
+      width: 410px;
+    }
+  }
+
+  &__text {
+    @include _s-text;
+    margin: 0;
+  }
+}
+/* ======================================= */
+
+
+
+/* ======================================= */
+/* 調理に必要な道具 */
+/* 調理手順 */
+
+.about-items, .about-cook {
+  padding: 0 30px 0 30px;
+
+  &__title {
+    @include _s-title;
+    margin: 0;
+    margin-top: 10rem;
+    width: 280px;
+    
+    @include tb {
+      text-align: left;
+    }
+
+    @include tb_land {
+      text-align: left;
+    }
+
+    @include tb_land {
+      text-align: left;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+    @include tb {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    @include tb_land {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include tb_land {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    position: relative;
+    background-color: #ffedba;
+    margin: 10px;
+    border-radius: 7px;
+    width: 100%;
+    padding: 0 5px 0 5px;
+  }
+
+  .img-item {
+      & > img {
+        width: 100%;
+      }
+  }
+
+
+  .step_3 {
+    margin-top: 4rem;
+    margin-left: 6rem;
+    zoom: 0.5;
+  }
+
+
+  &__text {
+    @include _s-text;
+  }
+
 }
 
-// 「災害時の調理について」タイトル
-.top-title {
-  text-align: center;
-  font-weight: 600;
-  font-size: 2.1rem;
-  padding-top: 7rem;
-  margin: 0 auto 4rem auto;
-  width: 21rem;
-
-  // 下線
-  background: linear-gradient(transparent 90%, #ffba3c 60%);
-}
-
-
-// 「災害時の調理について」テキスト部分
-.top-text {
-  text-align: center;
-  font-weight: 600;
-  font-size: 18px;
-  margin-top: 30px;
-  line-height: 3.22222;
-}
-
-
-
-.main {
-  padding: 0 60px;
-}
-
-// 「パッククッキングとは」タイトル
-.main-title {
-  text-align: left;
-  font-weight: 600;
-  font-size: 2.1rem;
-  margin-top: 15rem;
-  margin-bottom: 4rem;
-  width: 22rem;
-}
-
-// 「パッククッキングとは」テキスト
-.main-text {
-  text-align: left;
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 30px;
-  line-height: 3.2;
-}
-
-
-.item-title, .item-text {
-  text-align: center;
-  font-weight: 600;
-  margin-top: 17px;
-  line-height: 2.2;
-}
-
-
-
-// 調理の手順画像
-.img-item img {
-  width: 100%;
-}
-
-// 手順3のみサイズ変更
-.img-item-3 img {
-  margin-top: 9rem;
-  zoom: 0.5;
-}
-
-// 手順の枠
-.item {
-  position: relative;
-  background-color: #ffedba;
-  margin: 10px;
-  border-radius: 7px;
-}
 
 // 手順番号
 .number {
@@ -94,4 +171,7 @@
   color: #fff;
   border-radius: 7px 0 10px 0;
   background: orange;
+  left: 0px;
 }
+
+/* ======================================= */

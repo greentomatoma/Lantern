@@ -18975,19 +18975,19 @@ button {
 
 @media screen and (min-width: 600px) {
   .concept__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (min-width: 960px) {
   .concept__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .concept__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -19000,19 +19000,19 @@ button {
 
 @media screen and (min-width: 600px) {
   .concept__text {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
 @media screen and (min-width: 960px) {
   .concept__text {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .concept__text {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
@@ -19038,19 +19038,19 @@ button {
 
 @media screen and (min-width: 600px) {
   .about__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (min-width: 960px) {
   .about__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .about__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -19207,78 +19207,351 @@ button {
   }
 }
 
-.items {
-  display: flex;
-  justify-content: space-between;
+/* ======================================= */
+
+/* 災害時の調理について */
+
+.about-top {
+  padding: 0 10px 0 10px;
 }
 
-.m-about-pack {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.top-title {
+.about-top__title {
   text-align: center;
   font-weight: 600;
-  font-size: 2.1rem;
-  padding-top: 7rem;
-  margin: 0 auto 4rem auto;
-  width: 21rem;
-  background: linear-gradient(transparent 90%, #ffba3c 60%);
-}
-
-.top-text {
-  text-align: center;
-  font-weight: 600;
-  font-size: 18px;
-  margin-top: 30px;
-  line-height: 3.22222;
-}
-
-.main {
-  padding: 0 60px;
-}
-
-.main-title {
-  text-align: left;
-  font-weight: 600;
-  font-size: 2.1rem;
-  margin-top: 15rem;
+  font-size: 1.5rem;
+  margin-top: 10rem;
   margin-bottom: 4rem;
-  width: 22rem;
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
+  width: 250px;
 }
 
-.main-text {
-  text-align: left;
-  font-size: 18px;
+@media screen and (min-width: 600px) {
+  .about-top__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-top__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about-top__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .about-top__title {
+    width: 410px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-top__title {
+    width: 410px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-top__title {
+    width: 410px;
+  }
+}
+
+.about-top__text {
+  text-align: center;
   font-weight: 600;
   margin-top: 30px;
   line-height: 3.2;
 }
 
-.item-title,
-.item-text {
+@media screen and (min-width: 600px) {
+  .about-top__text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-top__text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about-top__text {
+    font-size: 18px;
+  }
+}
+
+/* ======================================= */
+
+/* ======================================= */
+
+/* パッククッキングとは */
+
+.about-pack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .about-pack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-pack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-pack {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.about-pack__title {
   text-align: center;
   font-weight: 600;
-  margin-top: 17px;
-  line-height: 2.2;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
+  width: 267px;
 }
 
-.img-item img {
-  width: 100%;
+@media screen and (min-width: 600px) {
+  .about-pack__title {
+    font-size: 2rem;
+  }
 }
 
-.img-item-3 img {
-  margin-top: 9rem;
-  zoom: 0.5;
+@media screen and (min-width: 960px) {
+  .about-pack__title {
+    font-size: 2rem;
+  }
 }
 
-.item {
+@media screen and (min-width: 1280px) {
+  .about-pack__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .about-pack__title {
+    width: 410px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-pack__title {
+    width: 410px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-pack__title {
+    width: 410px;
+  }
+}
+
+.about-pack__text {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 30px;
+  line-height: 3.2;
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .about-pack__text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-pack__text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about-pack__text {
+    font-size: 18px;
+  }
+}
+
+/* ======================================= */
+
+/* ======================================= */
+
+/* 調理に必要な道具 */
+
+/* 調理手順 */
+
+.about-items,
+.about-cook {
+  padding: 0 30px 0 30px;
+}
+
+.about-items__title,
+.about-cook__title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  margin: 10rem auto 4rem auto;
+  width: 210px;
+  background: linear-gradient(transparent 70%, #ffba3c 60%);
+  margin: 0;
+  margin-top: 10rem;
+  width: 280px;
+}
+
+@media screen and (min-width: 600px) {
+  .about-items__title,
+  .about-cook__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-items__title,
+  .about-cook__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about-items__title,
+  .about-cook__title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .about-items__title,
+  .about-cook__title {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-items__title,
+  .about-cook__title {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-items__title,
+  .about-cook__title {
+    text-align: left;
+  }
+}
+
+.about-items__items,
+.about-cook__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .about-items__items,
+  .about-cook__items {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-items__items,
+  .about-cook__items {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-items__items,
+  .about-cook__items {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.about-items__item,
+.about-cook__item {
   position: relative;
   background-color: #ffedba;
   margin: 10px;
   border-radius: 7px;
+  width: 100%;
+  padding: 0 5px 0 5px;
+}
+
+.about-items .img-item > img,
+.about-cook .img-item > img {
+  width: 100%;
+}
+
+.about-items .step_3,
+.about-cook .step_3 {
+  margin-top: 4rem;
+  margin-left: 6rem;
+  zoom: 0.5;
+}
+
+.about-items__text,
+.about-cook__text {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 30px;
+  line-height: 3.2;
+}
+
+@media screen and (min-width: 600px) {
+  .about-items__text,
+  .about-cook__text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .about-items__text,
+  .about-cook__text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .about-items__text,
+  .about-cook__text {
+    font-size: 18px;
+  }
 }
 
 .number {
@@ -19288,5 +19561,8 @@ button {
   color: #fff;
   border-radius: 7px 0 10px 0;
   background: orange;
+  left: 0px;
 }
+
+/* ======================================= */
 
