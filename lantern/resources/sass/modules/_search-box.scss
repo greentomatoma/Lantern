@@ -1,0 +1,41 @@
+/* ======================================= */
+/* 検索窓 */
+
+.search {
+  margin: 0 5px;
+
+  @include tb {
+    width: 500px;
+    margin: 10px auto;
+  }
+
+  @include tb_land {
+    width: 500px;
+    margin: 10px auto;
+  }
+
+  @include dis {
+    width: 500px;
+    margin: 10px auto;
+  }
+
+    .search-form {
+      position: relative;
+      margin: 0;
+      span {
+        position: absolute;
+        color: #6c757d;
+        top: 11px;
+        left: 13px;
+      }
+    }
+    .input-form {
+      width: 100%;
+      height: 35px;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      padding-left: 40px;
+    }
+}
+
+/* ======================================= */

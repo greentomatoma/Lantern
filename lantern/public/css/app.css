@@ -17275,6 +17275,57 @@ ul {
   opacity: 1;
 }
 
+/* ======================================= */
+
+/* 検索窓 */
+
+.search {
+  margin: 0 5px;
+}
+
+@media screen and (min-width: 600px) {
+  .search {
+    width: 500px;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .search {
+    width: 500px;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .search {
+    width: 500px;
+    margin: 10px auto;
+  }
+}
+
+.search .search-form {
+  position: relative;
+  margin: 0;
+}
+
+.search .search-form span {
+  position: absolute;
+  color: #6c757d;
+  top: 11px;
+  left: 13px;
+}
+
+.search .input-form {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding-left: 40px;
+}
+
+/* ======================================= */
+
 .card {
   width: 500px;
 }
@@ -18121,43 +18172,6 @@ button {
 
 .navbar .rounded-circle {
   background-color: white;
-}
-
-.search {
-  margin-left: 50px;
-  margin-top: 20px;
-}
-
-@media screen and (mim-width: 480px) {
-  .search {
-    margin: 10px 0 0 35px;
-  }
-}
-
-.search .search-form {
-  position: relative;
-  margin: 0;
-}
-
-.search .search-form span {
-  position: absolute;
-  color: #6c757d;
-  top: 11px;
-  left: 13px;
-}
-
-.search .input-form {
-  width: 400px;
-  height: 35px;
-  border: 1px solid #dee2e6;
-  border-radius: 5px;
-  padding-left: 40px;
-}
-
-@media screen and (mim-width: 480px) {
-  .search .input-form {
-    width: 355px;
-  }
 }
 
 .footer {

@@ -162,35 +162,3 @@
     background-color: white;
   }
 }
-
-
-// 検索窓
-.search {
-  margin-left: 50px;
-  margin-top: 20px;
-
-  @include sp {
-    margin: 10px 0 0 35px;
-  }
-
-    .search-form {
-      position: relative;
-      margin: 0;
-      span {
-        position: absolute;
-        color: #6c757d;
-        top: 11px;
-        left: 13px;
-      }
-    }
-    .input-form {
-      width: 400px;
-      height: 35px;
-      border: 1px solid #dee2e6;
-      border-radius: 5px;
-      padding-left: 40px;
-      @include sp {
-        width: 355px;
-      }
-    }
-}
