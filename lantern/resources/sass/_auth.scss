@@ -11,17 +11,23 @@
 }
 
 .form-area {
-  padding-left: 3rem;
-  padding-right: 3rem;
   padding-top: 3rem;
   padding-bottom: 1rem;
   margin: auto;
-  @include sp {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+  @include tb {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    }
+  
+    @include tb_land {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  
+    @include dis {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
 
   .form-group {
     margin-bottom: 30px;
