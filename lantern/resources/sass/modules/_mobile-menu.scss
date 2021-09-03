@@ -60,9 +60,9 @@
 
 .mobile-menu__btn {
   
-  // @include tb {
-  //   display: none;
-  // }
+  @include tb {
+    display: none;
+  }
 
   @include tb_land {
     display: none;
@@ -79,6 +79,17 @@
   margin-right: 4px;
   margin-top: 3px;
   font-weight: 600;
+    // @include tb {
+  //   display: none;
+  // }
+
+  @include tb_land {
+    display: none;
+  }
+
+  @include dis {
+    display: none;
+  }
 }
 
 
@@ -88,9 +99,9 @@
   position: relative;
   z-index: 200;
 
-  // @include tb {
-  //   display: none;
-  // }
+  @include tb {
+    display: none;
+  }
 
   @include tb_land {
     display: none;

@@ -70,9 +70,7 @@
           font-weight: lighter;
           padding: 0;
           color: white;
-          @include sp {
-            font-size: 10px;
-          }
+
             &:hover {
               color: #805f0e;
               transition: all .3s ease;
