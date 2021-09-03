@@ -1,23 +1,48 @@
 .user-page {
-  margin: 20px 150px;
   display: flex;
-  @include sp {
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  align-items: flex-start;
+
+  @include tb {
+    margin: 20px 150px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
+    flex-direction: row;
+    }
+  
+  @include tb_land {
+    margin: 20px 150px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  @include dis {
+    margin: 20px 150px;
+    display: flex;
+    flex-direction: row;
   }
 
   // ユーザー情報
   .user-detail {
-    margin-right: 16px;
+    text-align: center;
     padding: 24px;
     width: 360px; 
-    height: 590px; 
     background-color: white; 
-    @include sp {
-      height: 400px;
-      margin: 20px 0;
+
+    @include tb {
+      height: 590px;
+      margin-right: 16px;
+      }
+    
+    @include tb_land {
+      height: 590px;
+      margin-right: 16px;
+    }
+  
+    @include dis {
+      height: 590px;
+      margin-right: 16px;
     }
     
       .user-detail-top {
@@ -60,7 +85,8 @@
         font-weight: bold;
         font-size: 1.3rem;
         padding: 16px;
-        margin: 0;
+        margin-top: 20px;
+        text-align: center;
           i.title {
             color: orange;
             margin-right: 10px;
@@ -89,9 +115,7 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 16px;
-                @include sp {
-                  align-items: normal;
-                }
+                margin-left: 12rem;
                   a {
                     margin-left: 20px;
                     &.edit-btn {

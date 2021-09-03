@@ -45,9 +45,21 @@
 
         .card-top {
           display: flex;
-          justify-content: space-between;
-          @include sp {
-            display: flex;
+          flex-direction: column;
+          align-items: center;
+          @include tb {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+          
+          @include tb_land {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        
+          @include dis {
+            flex-direction: row;
+            justify-content: space-between;
           }
             .post-time {
               @include _user;
@@ -82,10 +94,20 @@
         }
         .card-main {
           display: flex;
-          @include sp {
-            display: flex;
-            flex-direction: column;
+          flex-direction: column;
+          align-items: center;
+          @include tb {
+            flex-direction: row;
+            }
+          
+          @include tb_land {
+            flex-direction: row;
           }
+        
+          @include dis {
+            flex-direction: row;
+          }
+
             .post-recipe-img {
               margin-right: 30px;
               @include sp {
