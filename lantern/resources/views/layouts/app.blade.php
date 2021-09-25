@@ -7,6 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Loader -->
+    <link rel="stylesheet" href="../../public/css/loader.css"/>
+    <script src="./../js/pace.js"></script>
+
     <title>@yield('title')</title>
 
     <!-- Fonts -->

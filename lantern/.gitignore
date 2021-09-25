@@ -3,6 +3,7 @@
 /public/css/app.css
 /public/hot
 /public/js  
+/resources/js/pace.js
 /public/mix-manifest.json
 /public/storage
 /storage/*.key
