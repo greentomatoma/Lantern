@@ -8,8 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Loader -->
-    <link rel="stylesheet" href="../../public/css/loader.css"/>
-    <script src="./../js/pace.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/loader.css') }}"/>
+    <script src="{{ asset('js/pace.js') }}"></script>
 
     <title>@yield('title')</title>
 
@@ -27,7 +27,8 @@
             {{ session('message') }}
             </div>
         @endif
-        
+
+        @include('layouts/nav')
         @yield('content')
         @include('layouts/footer')
     </div>
