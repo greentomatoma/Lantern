@@ -1,7 +1,6 @@
 @extends('layouts/app')
 
-@include('layouts/nav')
-
+@section('content')
 <div id="container">
     <div class="about-top">
       <h1 class="about-top__title">災害時の調理について</h1>
@@ -105,3 +104,4 @@
       </section>
     </main>
 </div>
+@endsection

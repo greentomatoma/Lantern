@@ -1,8 +1,6 @@
 @extends('layouts/app')
 
-@include('layouts/nav')
-
-
+@section('content')
 <div id="container">
   <div id="content">
     <main>
@@ -67,3 +65,4 @@
     </section>
   </main>
 </div>
+@endsection

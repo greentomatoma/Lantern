@@ -1,13 +1,8 @@
 @extends('layouts.app')
 
-
 @section('title')
 ログイン画面
 @endsection
-
-@include('layouts/nav')
-
-
 
 @section('content')
 <div class="container">

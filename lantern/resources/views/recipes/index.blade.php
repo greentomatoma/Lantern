@@ -2,10 +2,9 @@
 
 @section('title', 'レシピ一覧')
 
-@include('layouts/nav')
-@include('layouts/search_box')
 
 @section('content')
+@include('layouts/search_box')
 
 <div class="recipe-container">
   <div class="recipes">

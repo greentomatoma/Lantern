@@ -1,11 +1,8 @@
 @extends('layouts.app')
 
-
 @section('title')
 新規登録
 @endsection
-
-@include('layouts/nav')
 
 @section('content')
 <div class="container">

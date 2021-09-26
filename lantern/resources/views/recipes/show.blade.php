@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
-
 @section('title')
 {{ $recipe -> name }}レシピ詳細
 @endsection
 
 
-@include('layouts/nav')
-@include('layouts/search_box')
-
 @section('content')
+@include('layouts/search_box')
   <div class="recipe-detail shadow-sm">
     <div class="post-user">
       <a href="{{ route('users.show', ['name' => $recipe->user->name]) }}">

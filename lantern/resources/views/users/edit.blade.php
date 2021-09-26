@@ -2,8 +2,6 @@
 
 @section('title', 'プロフィール編集')
 
-@include('layouts/nav')
-
 @section('content')
 
 <div class="container">

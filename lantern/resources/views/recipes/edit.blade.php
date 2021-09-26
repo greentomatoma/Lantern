@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
-
 @section('title')
 レシピ編集
 @endsection
 
-@include('layouts/nav')
 
 @section('content')
 <div class="container">

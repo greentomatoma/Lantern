@@ -2,10 +2,8 @@
 
 @section('title', $user->name)
 
-@include('layouts/nav')
-@include('layouts/search_box')
-
 @section('content')
+@include('layouts/search_box')
 <div class="user-page">
   
   {{-- ユーザー情報 --}}
