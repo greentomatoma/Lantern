@@ -1,3 +1,14 @@
+.pace-done #app,
+.pace-done #container
+ {
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+#app, #container {
+	opacity: 0;
+}
+
 .pace {
 	width: 140px;
 	height: 300px;
@@ -29,7 +40,7 @@
 	width: 140px;
 	height: 140px;
 	border-radius: 70px;
-	background: #29d;
+	background: orange;
 	position: absolute;
 	top: 0;
 	z-index: 1911;
