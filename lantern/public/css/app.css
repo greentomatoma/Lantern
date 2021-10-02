@@ -18229,6 +18229,7 @@ button {
 .navbar .nav-top .nav-top-menu {
   display: flex;
   justify-content: flex-end;
+  margin: 0;
 }
 
 .navbar .app-logo {
@@ -18241,7 +18242,6 @@ button {
   justify-content: center;
   font-weight: 600;
   font-size: 15px;
-  margin-top: 30px;
 }
 
 @media screen and (mim-width: 480px) {
@@ -18252,15 +18252,19 @@ button {
 
 .navbar .nav-list-item {
   margin-right: 5rem;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar .nav-list-item .nav-icon {
+  margin-bottom: 5px;
 }
 
 .navbar .navbar-about {
   margin-right: 5px;
   color: white;
-}
-
-.navbar .navbar-about:hover {
-  color: #805f0e;
+  text-align: center;
 }
 
 .navbar .rounded-circle {

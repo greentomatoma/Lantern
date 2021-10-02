@@ -63,22 +63,42 @@
                   <ul class="nav-list">
                       <li class="nav-list-item">
                           <a class="navbar-about" href="{{url('/')}}">
-                              Lanternについて
+                            <div class="nav-icon">
+                            <img class="icon-before" src="/images/header/about_before.svg"
+                                onmouseover="this.src='/images/header/about_after.svg'"
+                                onmouseout="this.src='/images/header/about_before.svg'">
+                            </div>
+                            <p>Lanternについて</p>
                           </a>
                       </li>
                       <li class="nav-list-item">
                           <a class="navbar-about" href="#">
-                              使い方
+                            <div class="nav-icon">
+                            <img class="icon-before" src="/images/header/pot_before.svg"
+                                onmouseover="this.src='/images/header/pot_after.svg'"
+                                onmouseout="this.src='/images/header/pot_before.svg'">
+                            </div>
+                            <p>使い方</p>
                           </a>
                       </li>
                       <li class="nav-list-item">
                           <a class="navbar-about" href="{{url('/about_pack')}}">
-                              災害時での調理
+                          <div class="nav-icon">
+                            <img class="icon-before" src="/images/header/pot_before.svg"
+                                onmouseover="this.src='/images/header/pot_after.svg'"
+                                onmouseout="this.src='/images/header/pot_before.svg'">
+                            </div>
+                            <p>災害時での調理</p>
                           </a>
                       </li>
                       <li class="nav-list-item">
                           <a class="navbar-about" href="{{ route('recipes.index') }}">
-                              レシピをみる / 書く
+                            <div class="nav-icon">
+                            <img class="icon-before" src="/images/header/recipe_before.svg"
+                                onmouseover="this.src='/images/header/recipe_after.svg'"
+                                onmouseout="this.src='/images/header/recipe_before.svg'">
+                            </div>
+                            <p>レシピをみる / 書く</p>
                           </a>
                       </li>
                   </ul>
